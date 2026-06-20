@@ -1,0 +1,17 @@
+[project]
+name = "tech-events-tracker"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "anthropic>=0.111.0",
+    "frozen-flask>=1.0.2",
+    "jinja2>=3.1.6",
+    "pyyaml>=6.0.3",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]

@@ -1,0 +1,184 @@
+- name: PyConf Hyderabad 2026
+  mode: hybrid
+  venue: Engineering Staff College of India, Gachibowli
+  country: India
+  topic: Python
+  description: Regional gathering of Pythonistas and the largest Python Conference
+    in Hyderabad
+  scope: national conference
+  date: 2026-03-14 to 2026-03-15
+  conference_website: https://2026.pyconfhyd.org/
+  ticket_booking_link: https://konfhub.com/pyconf-hyderabad-2026
+  cfp_submission_link: null
+  source_url: https://2026.pyconfhyd.org/
+- name: Open Source Summit India 2026
+  mode: in-person
+  venue: Jio World Convention Centre, Bandra Kurla Complex
+  country: India
+  topic: Open Source
+  description: The premier event for open source developers, technologists, and community
+    leaders to collaborate, share information, solve problems, and gain knowledge.
+  scope: international conference
+  date: 2026-06-16 to 2026-06-17
+  conference_website: https://events.linuxfoundation.org/open-source-summit-india/
+  ticket_booking_link: https://events.linuxfoundation.org/open-source-summit-india/register/
+  cfp_submission_link: https://sessionize.com/open-source-summit-india-2026/
+  source_url: https://events.linuxfoundation.org/open-source-summit-india/
+- name: Open Source India 2026
+  mode: in-person
+  venue: NIMHANS Convention Centre
+  country: India
+  topic: Open Source
+  description: Asia's No. 1 Conference On Open Source - an initiative by Open Source
+    For You magazine and India's Open Source community to unite stakeholders for the
+    advancement of Open Source in India and globally.
+  scope: national conference
+  date: 2026-10-07 to 2026-10-08
+  conference_website: https://www.opensourceindia.in/
+  ticket_booking_link: https://www.opensourceindia.in/passes/
+  cfp_submission_link: null
+  source_url: https://www.opensourceindia.in/
+- name: IndiaFOSS 2026
+  mode: in-person
+  venue: NIMHANS Convention Centre
+  country: India
+  topic: Free and Open Source Software
+  description: A large, community-led Open Source conference bringing together contributors,
+    maintainers, startups, and organizations from across the Indian Open Source ecosystem.
+  scope: national conference
+  date: 2026-09-26 to 2026-09-27
+  conference_website: https://fossunited.org/indiafoss/2026
+  ticket_booking_link: https://fossunited.org/indiafoss/tickets
+  cfp_submission_link: null
+  source_url: https://fossunited.org/indiafoss/2026
+- name: ChennaiFOSS 2026
+  mode: in-person
+  venue: IC&SR Building, IIT Madras
+  country: India
+  topic: Free and Open Source Software
+  description: An annual conference organised by the FOSS United Chennai community
+    to promote Free and Open Source Software.
+  scope: local meetup
+  date: '2026-04-18'
+  conference_website: https://fossunited.org/c/chennai/2026
+  ticket_booking_link: null
+  cfp_submission_link: https://fossunited.org/dashboard/cfp/all/chennai/2026
+  source_url: https://fossunited.org/c/chennai/2026
+- name: 'Inside the Token Factory: How LLMs Really Work?'
+  mode: in-person
+  venue: Sabari Complex, Residency Rd, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka
+    560025
+  country: India
+  topic: Artificial Intelligence, LLMs
+  description: 'Understanding how LLMs work: token behavior, attention mechanisms,
+    hallucinations, and building better prompts and features'
+  scope: local meetup
+  date: '2026-04-18'
+  conference_website: https://www.meetup.com/experttalks-bengaluru/events/313810352/
+  ticket_booking_link: null
+  cfp_submission_link: null
+  source_url: https://www.meetup.com/experttalks-bengaluru/events/313810352/
+- name: ExpertTalks Bengaluru Event
+  mode: in-person
+  venue: null
+  country: India
+  topic: Software Development
+  description: null
+  scope: local meetup
+  date: '2026-05-09'
+  conference_website: https://www.meetup.com/experttalks-bengaluru/
+  ticket_booking_link: null
+  cfp_submission_link: null
+  source_url: https://www.meetup.com/find/in--bangalore/ai/
+- name: ExpertTalks Bengaluru Event
+  mode: online
+  venue: null
+  country: India
+  topic: Software Development
+  description: null
+  scope: local meetup
+  date: '2026-06-24'
+  conference_website: https://www.meetup.com/experttalks-bengaluru/
+  ticket_booking_link: null
+  cfp_submission_link: null
+  source_url: https://www.meetup.com/find/in--bangalore/web-development/
+- name: ExpertTalks Bengaluru Event
+  mode: in-person
+  venue: null
+  country: India
+  topic: Software Development
+  description: null
+  scope: local meetup
+  date: '2026-06-27'
+  conference_website: https://www.meetup.com/experttalks-bengaluru/
+  ticket_booking_link: null
+  cfp_submission_link: null
+  source_url: https://www.meetup.com/find/in--yelahanka/
+- name: RubyConf Thailand 2026
+  mode: in-person
+  venue: Novotel Bangkok Sukhumvit 20
+  country: Thailand
+  topic: Ruby programming language, software engineering practices, and community
+  description: A two-day conference featuring 18-19 talks from expert speakers, including
+    keynotes by Irina Nazarova, Ridhwana Khan, Carmine Paolino, and Marco Roth. The
+    event brings together 200-250 Ruby developers from across Asia.
+  scope: international conference
+  date: 2026-01-31 to 2026-02-01
+  conference_website: https://rubyconfth.com/
+  ticket_booking_link: https://www.eventpop.me/e/80284/rubyconf-th-2026
+  cfp_submission_link: https://www.papercall.io/rubyconfth2026
+  source_url: https://rubyconfth.com/
+- name: RubyConf India 2026
+  mode: in-person
+  venue: null
+  country: India
+  topic: Ruby Language, Framework, and Tools
+  description: null
+  scope: international conference
+  date: '2026-11-21'
+  conference_website: https://rubyconf.in/
+  ticket_booking_link: null
+  cfp_submission_link: null
+  source_url: https://www.rubyevents.org/events/series/rubyconf-india
+- name: RubyCon Italy 2026
+  mode: in-person
+  venue: Hotel Ambasciatori
+  country: Italy
+  topic: Ruby and Rails
+  description: A single-day Ruby and Rails conference with keynotes and technical
+    talks on production case studies, tooling updates, and architecture decisions.
+    Includes meals and a Toga party.
+  scope: international conference
+  date: '2026-05-08'
+  conference_website: https://rubycon.it
+  ticket_booking_link: https://ti.to/rubycon/rubycon-2026
+  cfp_submission_link: null
+  source_url: https://rubycon.it/
+- name: Deccan Queen on Rails 2026
+  mode: in-person
+  venue: Pune
+  country: India
+  topic: Ruby on Rails
+  description: A community-first Rails conference rooted in Pune's heritage, bringing
+    Rails developers from across India together and inviting voices from the global
+    community
+  scope: international conference
+  date: 2026-10-08 to 2026-10-11
+  conference_website: https://deccanqueenonrails.com/
+  ticket_booking_link: null
+  cfp_submission_link: https://cfp.deccanqueenonrails.com/
+  source_url: https://deccanqueenonrails.com/
+- name: KubeCon + CloudNativeCon India 2026
+  mode: in-person
+  venue: Jio World Convention Centre, Mumbai
+  country: India
+  topic: Cloud Native Computing, Kubernetes, Open Source
+  description: The Cloud Native Computing Foundation's flagship conference bringing
+    together adopters and technologists from leading open source and cloud native
+    communities
+  scope: international conference
+  date: 2026-06-18 to 2026-06-19
+  conference_website: https://events.linuxfoundation.org/kubecon-cloudnativecon-india/
+  ticket_booking_link: https://events.linuxfoundation.org/kubecon-cloudnativecon-india/register/
+  cfp_submission_link: https://sessionize.com/kubecon-cloudnativecon-india-2026/
+  source_url: https://events.linuxfoundation.org/kubecon-cloudnativecon-india/

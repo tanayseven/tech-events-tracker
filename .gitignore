@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[oc]
+dist/
+wheels/
+*.egg-info
+
+# Virtual environment
+.venv/
+
+# Build output (Frozen-Flask)
+build/
+
+# IDE
+.idea/
+.vscode/
+
+# Environment
+.env
+
+# OS
+.DS_Store

@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tech Events {{ year }}</title>
+  <style>
+    /* ── Palette ─────────────────────────────────────────────────── */
+    :root {
+      --danube:      #5992c6;
+      --cocoa:       #31241f;
+      --shilo:       #e9b8c9;
+      --torea:       #0a2a92;
+      --bg:          #f7f3f0;
+      --card-bg:     #ffffff;
+      --text:        #31241f;
+      --muted:       #7a6560;
+      --border:      #ddd4cf;
+    }
+
+    /* ── Reset / base ────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a { color: var(--danube); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Header ─────────────────────────────────────────────────── */
+    header {
+      background: var(--torea);
+      color: #fff;
+      padding: clamp(1.5rem, 5vw, 2.5rem) clamp(1rem, 4vw, 1.5rem) clamp(1.25rem, 4vw, 2rem);
+      text-align: center;
+    }
+    header h1 {
+      font-size: clamp(1.4rem, 5vw, 2.2rem);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    header p {
+      margin-top: 0.5rem;
+      font-size: clamp(0.85rem, 2.5vw, 1rem);
+      opacity: 0.8;
+    }
+
+    /* ── Main layout ─────────────────────────────────────────────── */
+    main {
+      flex: 1;
+      max-width: 960px;
+      width: 100%;
+      margin: 0 auto;
+      padding: clamp(1rem, 4vw, 2rem) clamp(0.875rem, 4vw, 1.5rem);
+    }
+
+    /* ── Summary bar ─────────────────────────────────────────────── */
+    .summary {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .summary strong { color: var(--text); font-size: 1rem; }
+
+    /* ── Event cards ─────────────────────────────────────────────── */
+    .events { display: flex; flex-direction: column; gap: 1.25rem; }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--danube);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.25rem 1.5rem;
+    }
+    .card-body { min-width: 0; }
+    .card-side {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    /* name */
+    .card-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--cocoa);
+      margin-bottom: 0.3rem;
+    }
+    .card-name a { color: inherit; }
+    .card-name a:hover { color: var(--torea); text-decoration: none; }
+
+    /* meta row */
+    .card-meta {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem 0.9rem;
+      align-items: center;
+    }
+    .card-meta span::before { margin-right: 0.3rem; }
+
+    /* description */
+    .card-desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.55;
+      margin-bottom: 0.75rem;
+    }
+
+    /* action links */
+    .card-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.25rem;
+    }
+    .btn {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.3rem 0.75rem;
+      border-radius: 4px;
+      border: 1.5px solid currentColor;
+      transition: background 0.15s, color 0.15s;
+    }
+    .btn-tickets {
+      color: var(--torea);
+      border-color: var(--torea);
+    }
+    .btn-tickets:hover { background: var(--torea); color: #fff; text-decoration: none; }
+    .btn-cfp {
+      color: var(--danube);
+      border-color: var(--danube);
+    }
+    .btn-cfp:hover { background: var(--danube); color: #fff; text-decoration: none; }
+    .btn-disabled {
+      color: var(--muted);
+      border-color: var(--border);
+      cursor: default;
+      opacity: 0.7;
+    }
+    .btn-disabled:hover { background: transparent; color: var(--muted); text-decoration: none; }
+
+    /* badges */
+    .badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      border-radius: 99px;
+      text-transform: capitalize;
+      white-space: nowrap;
+    }
+    .badge-mode   { background: var(--shilo); color: var(--cocoa); }
+    .badge-scope  { background: var(--danube); color: #fff; }
+    .badge-past   { background: var(--border); color: var(--muted); }
+
+    /* date on the side */
+    .card-date {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-align: right;
+      line-height: 1.4;
+    }
+
+    /* ── Series group card (multiple events under one series) ────── */
+    .series-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--danube);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .series-card-header {
+      padding: 0.75rem 1.5rem;
+      background: linear-gradient(135deg, var(--torea) 0%, var(--danube) 100%);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .series-card-header h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+    }
+    .series-count {
+      font-size: 0.75rem;
+      background: rgba(255,255,255,0.2);
+      padding: 0.15rem 0.55rem;
+      border-radius: 99px;
+      white-space: nowrap;
+    }
+    .series-event-row {
+      padding: 0.75rem 1.5rem;
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 8rem 1fr auto;
+      gap: 0.3rem 1rem;
+      align-items: center;
+    }
+    .series-event-date {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .series-event-date.past { opacity: 0.55; }
+    .series-event-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--cocoa);
+    }
+    .series-event-name a { color: inherit; }
+    .series-event-name a:hover { color: var(--torea); text-decoration: none; }
+    .series-event-meta {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 0.15rem;
+    }
+    .series-event-links { display: flex; gap: 0.4rem; flex-shrink: 0; }
+    .series-event-row[hidden] { display: none; }
+
+    @media (max-width: 600px) {
+      .series-event-row {
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto;
+      }
+      .series-event-date { grid-column: 1; grid-row: 1; }
+      .series-event-name { grid-column: 1; grid-row: 2; }
+      .series-event-links { grid-column: 2; grid-row: 1 / 3; align-self: center; }
+      .series-card-header { padding: 0.65rem 1rem; }
+      .series-event-row { padding: 0.65rem 1rem; }
+    }
+
+    /* ── Search & filter bar ────────────────────────────────────── */
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.25rem;
+      align-items: center;
+    }
+    .search-wrap {
+      position: relative;
+      flex: 1 1 220px;
+    }
+    .search-wrap svg {
+      position: absolute;
+      left: 0.7rem;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      color: var(--muted);
+    }
+    #search {
+      width: 100%;
+      padding: 0.5rem 0.75rem 0.5rem 2.2rem;
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.88rem;
+      background: var(--card-bg);
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    #search:focus { border-color: var(--danube); }
+    #search::placeholder { color: var(--muted); }
+
+    .filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .filter-select {
+      padding: 0.45rem 2rem 0.45rem 0.7rem;
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.82rem;
+      background: var(--card-bg);
+      color: var(--text);
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%237a6560' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.6rem center;
+      cursor: pointer;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .filter-select:focus { border-color: var(--danube); }
+
+    .btn-clear {
+      padding: 0.45rem 0.85rem;
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.82rem;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      transition: border-color 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+    .btn-clear:hover { border-color: var(--danube); color: var(--danube); }
+    .btn-clear:not(.visible) { display: none; }
+
+    /* ── Empty state ─────────────────────────────────────────────── */
+    .empty {
+      text-align: center;
+      padding: 4rem 1rem;
+      color: var(--muted);
+    }
+    .empty h2 { font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text); }
+
+    /* ── Footer ─────────────────────────────────────────────────── */
+    footer {
+      background: var(--cocoa);
+      color: var(--shilo);
+      text-align: center;
+      padding: 1.25rem;
+      font-size: 0.8rem;
+      opacity: 0.9;
+    }
+
+    /* ── Responsive ──────────────────────────────────────────────── */
+
+    /* Tablet */
+    @media (max-width: 768px) {
+      .card { padding: 1rem 1.25rem; gap: 0.25rem 1rem; }
+      .card-name { font-size: 1.05rem; }
+      .summary { flex-wrap: wrap; }
+    }
+
+    /* Mobile */
+    @media (max-width: 540px) {
+      .card {
+        display: flex;
+        flex-direction: column;
+        padding: 0.875rem 1rem;
+        gap: 0.6rem;
+      }
+      /* Pull date + badges above the title on mobile */
+      .card-side {
+        order: -1;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.4rem 0.5rem;
+      }
+      .card-date {
+        text-align: left;
+        font-size: 0.75rem;
+        flex: 1 1 auto;
+      }
+      .card-name { font-size: 1rem; margin-bottom: 0.2rem; }
+      .card-meta { font-size: 0.8rem; margin-bottom: 0.4rem; }
+      .card-desc { font-size: 0.84rem; }
+      /* Larger tap targets */
+      .btn {
+        padding: 0.45rem 0.9rem;
+        font-size: 0.8rem;
+        min-height: 36px;
+        display: inline-flex;
+        align-items: center;
+      }
+      .card-links { gap: 0.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+{% macro event_buttons(event, today_iso, compact=false) %}
+  {% if event.ticket_status == 'sold_out' %}
+    <span class="btn btn-disabled">Tickets sold out</span>
+  {% elif event.ticket_status == 'not_opened' %}
+    <span class="btn btn-disabled">Tickets not opened</span>
+  {% elif event.ticket_booking_link %}
+    <a class="btn btn-tickets" href="{{ event.ticket_booking_link }}" target="_blank" rel="noopener">Tickets</a>
+  {% endif %}
+  {% if event.cfp_deadline and event.cfp_deadline[:10] < today_iso %}
+    <span class="btn btn-disabled">Past CFP deadline</span>
+  {% elif event.cfp_submission_link %}
+    <a class="btn btn-cfp" href="{{ event.cfp_submission_link }}" target="_blank" rel="noopener">{{ 'CFP' if compact else 'Submit CFP' }}</a>
+  {% endif %}
+{% endmacro %}
+
+<header>
+  <h1>Tech Events {{ year }}</h1>
+  <p>Conferences, meetups &amp; summits being tracked this year</p>
+</header>
+
+<main>
+  {% set all_events = groups | sum(start=[]) %}
+  {% if all_events %}
+  <div class="summary">
+    <span id="summary-count">
+      <strong>{{ total }} event{% if total != 1 %}s{% endif %}</strong>
+      across {{ all_events | map(attribute='country') | select | unique | list | length }} countr{% if all_events | map(attribute='country') | select | unique | list | length == 1 %}y{% else %}ies{% endif %}
+    </span>
+  </div>
+
+  <div class="controls">
+    <div class="search-wrap">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input id="search" type="search" placeholder="Search events…" autocomplete="off" />
+    </div>
+    <div class="filter-group">
+      <select id="filter-timing" class="filter-select">
+        <option value="">All dates</option>
+        <option value="upcoming">Upcoming</option>
+        <option value="past">Past</option>
+      </select>
+      <select id="filter-mode" class="filter-select">
+        <option value="">All modes</option>
+        {% for m in all_events | map(attribute='mode') | select | unique | sort %}
+        <option value="{{ m }}">{{ m | capitalize }}</option>
+        {% endfor %}
+      </select>
+      <select id="filter-scope" class="filter-select">
+        <option value="">All types</option>
+        {% for s in all_events | map(attribute='scope') | select | unique | sort %}
+        <option value="{{ s }}">{{ s | capitalize }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <button id="btn-clear" class="btn-clear">Clear filters</button>
+  </div>
+
+  <div class="events" id="events-list">
+    {% for group in groups %}
+
+    {# ── Single event: use the regular card layout ── #}
+    {% if group | length == 1 %}
+    {% set event = group[0] %}
+    {% set is_past = event.date and event.date[:10] < today_iso %}
+    {% set search_text = [event.name or '', event.series or '', event.venue or '',
+        event.country or '', event.topic or '', event.description or '',
+        event.mode or '', event.scope or '', event.date or ''] | join(' ') | lower %}
+    <div class="card"
+         data-search="{{ search_text }}"
+         data-mode="{{ event.mode or '' }}"
+         data-scope="{{ event.scope or '' }}"
+         data-timing="{{ 'past' if is_past else 'upcoming' }}">
+      <div class="card-body">
+        <div class="card-name">
+          {% if event.conference_website %}
+            <a href="{{ event.conference_website }}" target="_blank" rel="noopener">{{ event.name or 'Untitled Event' }}</a>
+          {% else %}
+            {{ event.name or 'Untitled Event' }}
+          {% endif %}
+        </div>
+        <div class="card-meta">
+          {% if event.venue %}<span>📍 {{ event.venue }}{% if event.country %}, {{ event.country }}{% endif %}</span>{% elif event.country %}<span>📍 {{ event.country }}</span>{% endif %}
+          {% if event.topic %}<span>🏷 {{ event.topic }}</span>{% endif %}
+        </div>
+        {% if event.description %}<div class="card-desc">{{ event.description }}</div>{% endif %}
+        <div class="card-links">{{ event_buttons(event, today_iso) }}</div>
+      </div>
+      <div class="card-side">
+        {% if event.date %}<div class="card-date">{{ event.date }}</div>{% endif %}
+        {% if event.mode %}<span class="badge badge-mode">{{ event.mode }}</span>{% endif %}
+        {% if event.scope %}<span class="badge badge-scope">{{ event.scope }}</span>{% endif %}
+        {% if is_past %}<span class="badge badge-past">past</span>{% endif %}
+      </div>
+    </div>
+
+    {# ── Multiple events: series group card ── #}
+    {% else %}
+    {% set series_name = group[0].series or group[0].name or 'Event Series' %}
+    {% set group_search = ([series_name] + (group | map(attribute='name') | list) +
+        (group | map(attribute='venue') | select | list) +
+        (group | map(attribute='topic') | select | list) +
+        (group | map(attribute='description') | select | list)) | join(' ') | lower %}
+    {% set group_modes  = group | map(attribute='mode')  | select | unique | list %}
+    {% set group_scopes = group | map(attribute='scope') | select | unique | list %}
+    <div class="series-card"
+         data-search="{{ group_search }}"
+         data-mode="{{ group_modes | join(',') }}"
+         data-scope="{{ group_scopes | join(',') }}">
+      <div class="series-card-header">
+        <h2>{{ series_name }}</h2>
+        <span class="series-count">{{ group | length }} events</span>
+      </div>
+      {% for event in group %}
+      {% set is_past = event.date and event.date[:10] < today_iso %}
+      {% set row_search = [event.name or '', event.venue or '', event.topic or '',
+          event.description or '', event.date or ''] | join(' ') | lower %}
+      <div class="series-event-row"
+           data-search="{{ row_search }}"
+           data-timing="{{ 'past' if is_past else 'upcoming' }}">
+        <div class="series-event-date{% if is_past %} past{% endif %}">{{ event.date or 'TBD' }}</div>
+        <div>
+          <div class="series-event-name">
+            {% if event.conference_website %}<a href="{{ event.conference_website }}" target="_blank" rel="noopener">{{ event.name or series_name }}</a>
+            {% else %}{{ event.name or series_name }}{% endif %}
+          </div>
+          {% if event.venue or event.topic %}
+          <div class="series-event-meta">{% if event.venue %}📍 {{ event.venue }}{% endif %}{% if event.venue and event.topic %} · {% endif %}{% if event.topic %}🏷 {{ event.topic }}{% endif %}</div>
+          {% endif %}
+        </div>
+        <div class="series-event-links">{{ event_buttons(event, today_iso, compact=true) }}</div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% endfor %}
+  </div>
+
+  <div id="no-results" class="empty" style="display:none">
+    <h2>No events match your search</h2>
+    <p>Try different keywords or clear the filters.</p>
+  </div>
+
+  {% else %}
+  <div class="empty">
+    <h2>No events loaded yet</h2>
+    <p>Run <code>uv run main.py</code> to fetch events, then refresh.</p>
+  </div>
+  {% endif %}
+</main>
+
+<footer>
+  Made with ❤️ by <a href="https://github.com/tanayseven">Tanay PrabhuDesai</a> &mdash; {{ year }} Tech Events Tracker
+</footer>
+
+<script>
+(function () {
+  const search      = document.getElementById('search');
+  const selTiming   = document.getElementById('filter-timing');
+  const selMode     = document.getElementById('filter-mode');
+  const selScope    = document.getElementById('filter-scope');
+  const btnClear    = document.getElementById('btn-clear');
+  const noResults   = document.getElementById('no-results');
+  const summary     = document.getElementById('summary-count');
+  const singleCards = Array.from(document.querySelectorAll('#events-list .card'));
+  const seriesCards = Array.from(document.querySelectorAll('#events-list .series-card'));
+  const totalText   = summary ? summary.innerHTML : '';
+
+  function isDirty() {
+    return search.value.trim() !== '' ||
+           selTiming.value !== '' ||
+           selMode.value   !== '' ||
+           selScope.value  !== '';
+  }
+
+  function applyFilters() {
+    const q      = search.value.trim().toLowerCase();
+    const timing = selTiming.value;
+    const mode   = selMode.value;
+    const scope  = selScope.value;
+
+    let visible = 0;
+
+    // Single-event cards
+    singleCards.forEach(function (card) {
+      const show = (!q      || card.dataset.search.includes(q))
+                && (!timing || card.dataset.timing === timing)
+                && (!mode   || card.dataset.mode   === mode)
+                && (!scope  || card.dataset.scope  === scope);
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+
+    // Series group cards: filter rows by timing, hide card if nothing matches
+    seriesCards.forEach(function (card) {
+      const matchSearch = !q     || card.dataset.search.includes(q);
+      const matchMode   = !mode  || card.dataset.mode.split(',').indexOf(mode)  !== -1;
+      const matchScope  = !scope || card.dataset.scope.split(',').indexOf(scope) !== -1;
+
+      if (!matchSearch || !matchMode || !matchScope) {
+        card.style.display = 'none';
+        return;
+      }
+
+      const rows = card.querySelectorAll('.series-event-row');
+      let rowsVisible = 0;
+      rows.forEach(function (row) {
+        const show = !timing || row.dataset.timing === timing;
+        row.hidden = !show;
+        if (show) rowsVisible++;
+      });
+
+      card.style.display = rowsVisible > 0 ? '' : 'none';
+      if (rowsVisible > 0) visible += rowsVisible;
+    });
+
+    if (noResults) noResults.style.display = visible === 0 ? '' : 'none';
+
+    if (summary) {
+      summary.innerHTML = isDirty()
+        ? '<strong>' + visible + ' event' + (visible !== 1 ? 's' : '') + '</strong> match your search'
+        : totalText;
+    }
+
+    btnClear.classList.toggle('visible', isDirty());
+  }
+
+  function clearAll() {
+    search.value    = '';
+    selTiming.value = '';
+    selMode.value   = '';
+    selScope.value  = '';
+    applyFilters();
+  }
+
+  if (search)    search.addEventListener('input', applyFilters);
+  if (selTiming) selTiming.addEventListener('change', applyFilters);
+  if (selMode)   selMode.addEventListener('change', applyFilters);
+  if (selScope)  selScope.addEventListener('change', applyFilters);
+  if (btnClear)  btnClear.addEventListener('click', clearAll);
+})();
+</script>
+
+</body>
+</html>
