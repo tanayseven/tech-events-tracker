@@ -180,30 +180,50 @@ def load_existing(path: Path) -> list[dict]:
     return data or []
 
 
-def upsert(existing: list[dict], fresh_by_event: dict[str, list[dict]]) -> list[dict]:
-    """Replace each managed event series' entries with the freshly-searched
-    ones. Entries for events not in EVENT_LIST are left untouched."""
+def upsert(
+    existing: list[dict], fresh_by_event: dict[str, list[dict]]
+) -> tuple[list[dict], int, int, int]:
+    """Merge fresh entries into existing, writing only new or changed managed entries.
 
+    Returns (merged, n_new, n_changed, n_unchanged).
+    Unmanaged entries (not in EVENT_LIST) are always preserved as-is.
+    """
     managed_names = [n.lower() for n in EVENT_LIST.values()]
-    untouched = [
-        e for e in existing
-        if not any(m in (e.get("name") or "").lower() for m in managed_names)
-    ]
 
-    # Only seed `seen` from untouched (unmanaged) entries so that managed
-    # events are always fully replaced by the fresh fetch.
+    existing_managed: dict[tuple, dict] = {}
+    untouched: list[dict] = []
+    for e in existing:
+        if any(m in (e.get("name") or "").lower() for m in managed_names):
+            key = ((e.get("name") or "").lower(), e.get("date") or "")
+            existing_managed[key] = e
+        else:
+            untouched.append(e)
+
     seen: set[tuple] = {
         ((e.get("name") or "").lower(), e.get("date") or "")
         for e in untouched
     }
     updated = list(untouched)
+    n_new = n_changed = n_unchanged = 0
+
     for name in EVENT_LIST.values():
         for entry in fresh_by_event.get(name, []):
             key = ((entry.get("name") or "").lower(), entry.get("date") or "")
-            if key not in seen:
-                seen.add(key)
+            if key in seen:
+                continue
+            seen.add(key)
+            prior = existing_managed.get(key)
+            if prior is None:
+                n_new += 1
                 updated.append(entry)
-    return updated
+            elif prior == entry:
+                n_unchanged += 1
+                updated.append(prior)
+            else:
+                n_changed += 1
+                updated.append(entry)
+
+    return updated, n_new, n_changed, n_unchanged
 
 
 def main():
@@ -264,7 +284,7 @@ def main():
 
     output_path = Path(OUTPUT_FILE)
     existing = load_existing(output_path)
-    merged = upsert(existing, fresh_by_event)
+    merged, n_new, n_changed, n_unchanged = upsert(existing, fresh_by_event)
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(yaml.safe_dump(merged, sort_keys=False, allow_unicode=True))
@@ -278,6 +298,9 @@ def main():
         "",
         "| | |",
         "|---|---|",
+        f"| New entries | {n_new} |",
+        f"| Changed entries | {n_changed} |",
+        f"| Unchanged entries | {n_unchanged} |",
         f"| Input tokens | {total_in_tok:,} |",
         f"| Output tokens | {total_out_tok:,} |",
         f"| **Total cost** | **${total_cost:.4f}** |",
@@ -286,7 +309,7 @@ def main():
 
     Path("changes.md").write_text("\n".join(md) + "\n")
 
-    print(f"\nWrote {len(merged)} event(s) to {output_path}")
+    print(f"\nWrote {len(merged)} event(s) to {output_path}  ({n_new} new, {n_changed} changed, {n_unchanged} unchanged)")
     print(f"Tokens: {total_in_tok:,} in / {total_out_tok:,} out  |  Cost: ${total_cost:.4f}")
     print("Report: changes.md")
 
