@@ -30,6 +30,10 @@ uv run python app.py         # dev server on :5000
 uv run python app.py freeze  # build static site → build/
 ```
 
+## Git commits
+
+Never add a `Co-Authored-By: Claude` trailer to commit messages.
+
 ## Colour palette
 
 - Danube `#5992c6`

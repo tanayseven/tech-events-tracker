@@ -42,7 +42,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         uses: aws-actions/configure-aws-credentials@v6
         with:
-          role-to-assume: 'arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/github-actions-for-techevents'
+          role-to-assume: 'arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/github-actions-for-tech-events-tracker'
           aws-region: us-east-1
 
       - name: Deploy to S3
