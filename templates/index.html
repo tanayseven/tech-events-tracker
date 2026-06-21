@@ -38,6 +38,12 @@
       padding: clamp(1.5rem, 5vw, 2.5rem) clamp(1rem, 4vw, 1.5rem) clamp(1.25rem, 4vw, 2rem);
       text-align: center;
     }
+    .header-logo {
+      width: clamp(3rem, 8vw, 4.5rem);
+      height: auto;
+      margin-bottom: 0.6rem;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
+    }
     header h1 {
       font-size: clamp(1.4rem, 5vw, 2.2rem);
       font-weight: 800;
@@ -400,6 +406,7 @@
 {% endmacro %}
 
 <header>
+  <img src="{{ url_for('static', filename='conference-tracker.png') }}" alt="Tech Events Tracker logo" class="header-logo" />
   <h1>Tech Events {{ year }}</h1>
   <p>Conferences, meetups &amp; summits being tracked this year</p>
 </header>

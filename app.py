@@ -7,7 +7,7 @@ import yaml
 from flask import Flask, render_template
 from flask_frozen import Freezer
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="assets", static_url_path="/assets")
 app.config["FREEZER_DESTINATION"] = "build"
 app.config["FREEZER_RELATIVE_URLS"] = True
 

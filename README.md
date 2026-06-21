@@ -1,5 +1,7 @@
 # Tech Events Tracker
 
+ <img src="assets/conference-tracker.png" alt="Tech Events Tracker logo" width="100" />
+
 Tracks a curated list of tech conferences and meetups, populates event data via AI-assisted web search, and serves a searchable static webpage.
 
 ## How it works
