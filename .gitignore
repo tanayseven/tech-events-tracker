@@ -18,5 +18,8 @@ build/
 # Environment
 .env
 
+# Generated run report
+changes.md
+
 # OS
 .DS_Store

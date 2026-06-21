@@ -2,6 +2,17 @@
 
  <img src="assets/conference-tracker.png" alt="Tech Events Tracker logo" width="100" />
 
+**Live site: [techevents.tanay.tech](https://techevents.tanay.tech/)**
+
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/tanayseven/tech-events-tracker/build.yml?branch=main&style=for-the-badge&label=CI)](https://github.com/tanayseven/tech-events-tracker/actions)
+[![Website](https://img.shields.io/website?style=for-the-badge&url=https%3A%2F%2Ftechevents.tanay.tech&up_message=online&down_message=offline)](https://techevents.tanay.tech)
+[![GitHub License](https://img.shields.io/github/license/tanayseven/tech-events-tracker?style=for-the-badge)](https://github.com/tanayseven/tech-events-tracker/blob/main/LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.14-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Flask](https://img.shields.io/badge/Flask-3.1.3-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
+[![Pydantic](https://img.shields.io/badge/Pydantic-2.13.4-E92063?style=for-the-badge&logo=pydantic&logoColor=white)](https://docs.pydantic.dev/)
+[![Amazon S3](https://img.shields.io/badge/Amazon%20S3-FF9900?style=for-the-badge&logo=amazons3&logoColor=white)](https://aws.amazon.com/s3/)
+[![Claude](https://img.shields.io/badge/Claude-Haiku_4.5-D97706?style=for-the-badge&logo=anthropic&logoColor=white)](https://www.anthropic.com/)
+
 Tracks a curated list of tech conferences and meetups, populates event data via AI-assisted web search, and serves a searchable static webpage.
 
 ## How it works
