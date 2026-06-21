@@ -4,7 +4,7 @@ Tracks a curated list of tech conferences and meetups, populates event data via 
 
 ## How it works
 
-1. `main.py` uses Claude (`claude-haiku-4-5`) with the `web_search` tool to search for each conference in `CONFERENCE_LIST` and writes results to `event/<year>.yaml`.
+1. `main.py` uses Claude (`claude-haiku-4-5`) with the `web_search` tool to search for each entry in `EVENT_LIST` and writes results to `event/<year>.yaml`.
 2. `app.py` is a Flask + Frozen-Flask app that reads the YAML and renders a responsive HTML page via a Jinja2 template.
 3. Running with `freeze` mode produces a fully static `build/` directory ready to deploy anywhere.
 
@@ -26,7 +26,7 @@ export ANTHROPIC_API_KEY=sk-ant-...
 uv run python main.py
 ```
 
-Re-running is safe — it upserts managed conference entries and leaves any manually added entries untouched.
+Re-running is safe — it upserts managed event entries and leaves any manually added entries untouched.
 
 ### Run the dev server
 
@@ -44,9 +44,9 @@ uv run python app.py freeze
 
 Output goes to `build/`.
 
-## Adding or removing conferences
+## Adding or removing tracked events
 
-Edit `CONFERENCE_LIST` in `main.py` — it's a `dict[url, name]`. Re-run `main.py` to pick up changes.
+Edit `EVENT_LIST` in `main.py` — it's a `dict[url, name]`. Re-run `main.py` to pick up changes.
 
 ## Event data schema
 
@@ -63,7 +63,7 @@ Each entry in `event/<year>.yaml` has these fields:
 | `description` | Short description |
 | `scope` | `local meetup` / `national conference` / `international conference` |
 | `date` | ISO date or range: `YYYY-MM-DD` or `YYYY-MM-DD to YYYY-MM-DD` |
-| `conference_website` | Official event page |
+| `event_website` | Official event page |
 | `ticket_booking_link` | Ticketing URL |
 | `ticket_status` | `available` / `sold_out` / `not_opened` |
 | `cfp_submission_link` | CFP submission URL |

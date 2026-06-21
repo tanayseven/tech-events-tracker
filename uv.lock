@@ -411,6 +411,7 @@ dependencies = [
     { name = "anthropic" },
     { name = "frozen-flask" },
     { name = "jinja2" },
+    { name = "pydantic" },
     { name = "pyyaml" },
 ]
 
@@ -424,6 +425,7 @@ requires-dist = [
     { name = "anthropic", specifier = ">=0.111.0" },
     { name = "frozen-flask", specifier = ">=1.0.2" },
     { name = "jinja2", specifier = ">=3.1.6" },
+    { name = "pydantic", specifier = ">=2.13.4" },
     { name = "pyyaml", specifier = ">=6.0.3" },
 ]
 

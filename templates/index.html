@@ -458,8 +458,8 @@
          data-timing="{{ 'past' if is_past else 'upcoming' }}">
       <div class="card-body">
         <div class="card-name">
-          {% if event.conference_website %}
-            <a href="{{ event.conference_website }}" target="_blank" rel="noopener">{{ event.name or 'Untitled Event' }}</a>
+          {% if event.event_website %}
+            <a href="{{ event.event_website }}" target="_blank" rel="noopener">{{ event.name or 'Untitled Event' }}</a>
           {% else %}
             {{ event.name or 'Untitled Event' }}
           {% endif %}
@@ -506,7 +506,7 @@
         <div class="series-event-date{% if is_past %} past{% endif %}">{{ event.date or 'TBD' }}</div>
         <div>
           <div class="series-event-name">
-            {% if event.conference_website %}<a href="{{ event.conference_website }}" target="_blank" rel="noopener">{{ event.name or series_name }}</a>
+            {% if event.event_website %}<a href="{{ event.event_website }}" target="_blank" rel="noopener">{{ event.name or series_name }}</a>
             {% else %}{{ event.name or series_name }}{% endif %}
           </div>
           {% if event.venue or event.topic %}

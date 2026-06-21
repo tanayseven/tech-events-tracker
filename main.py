@@ -2,10 +2,9 @@
 agent_search.py
 
 Searches the web (via Claude's web_search tool) for a fixed list of named
-tech conferences, keeps only future events, and upserts the results into
-a YAML file. Re-running it updates changed fields and adds newly-announced
-dates for the same conferences -- it never adds conferences outside the
-list below.
+tech events, keeps only current-year results, and upserts them into a YAML
+file. Re-running updates changed fields and adds newly-announced dates --
+it never adds events outside the list below.
 
 Requirements:
     pip install anthropic pyyaml
@@ -26,48 +25,42 @@ from pathlib import Path
 
 import yaml
 from anthropic import Anthropic
+from pydantic import BaseModel, ValidationError
+from typing import Literal
 
-# ----------------------------------------------------------------------
-# The ONLY conferences this script will ever search for / write to YAML.
-# Add/remove names here to change scope.
-# ----------------------------------------------------------------------
 YEAR = dt.datetime.now().year
-CONFERENCE_LIST = {
-    "https://in.pycon.org/": "PyCon India",
-    "https://gopherconindia.org/": "GopherCon India",
-    f"https://{YEAR}.pyconfhyd.org/": "PyConf Hyderabad",
-    "https://events.linuxfoundation.org/open-source-summit-india/": "Open Source Summit India",
-    f"https://fossunited.org/indiafoss/{YEAR}": "India FOSS",
-    "https://www.opensourceindia.in/": "Open Source India",
-    "https://www.meetup.com/experttalks-bengaluru/": "Expert Talks Bangalore",
-    "https://www.meetup.com/expert-talks-chennai/": "Expert Talks Chennai",
-    "https://rubyconfth.com/": "Rubyconf Thailand",
-    "https://rubyconf.in/": "Rubyconf India",
-    "https://rubycon.it/": "RubyCon Italy",
-    "https://deccanqueenonrails.com/": "Deccan Queen on Rails",
-    "https://events.linuxfoundation.org/kubecon-cloudnativecon-india/": "KubeCon India",
-}
-
 OUTPUT_FILE = f"event/{YEAR}.yaml"
+
+
+def _load_event_list() -> dict[str, str]:
+    raw = yaml.safe_load(Path("events_list.yaml").read_text()) or []
+    return {
+        entry["url"].replace("{year}", str(YEAR)): entry["name"]
+        for entry in raw
+    }
+
+
+EVENT_LIST = _load_event_list()
+
 MODEL = "claude-haiku-4-5"
 
-FIELDS = [
-    "name",
-    "series",              # parent series name, e.g. "Expert Talks Bangalore"
-    "mode",                # "online" | "in-person" | "hybrid"
-    "venue",
-    "country",
-    "topic",
-    "description",
-    "scope",                # "local meetup" | "national conference" | "international conference"
-    "date",                 # ISO date or date range string, e.g. "2026-09-12" or "2026-09-12 to 2026-09-14"
-    "conference_website",   # official site / "conference booking" page
-    "ticket_booking_link",
-    "ticket_status",       # "available" | "sold_out" | "not_opened" | null
-    "cfp_submission_link",
-    "cfp_deadline",        # ISO date the CFP closes, e.g. "2026-07-31"
-    "source_url",           # the page the info was confirmed from
-]
+
+class TechEvent(BaseModel):
+    name: str | None = None
+    series: str | None = None
+    mode: Literal["online", "in-person", "hybrid"] | None = None
+    venue: str | None = None
+    country: str | None = None
+    topic: str | None = None
+    description: str | None = None
+    scope: Literal["local meetup", "national conference", "international conference"] | None = None
+    date: str | None = None
+    event_website: str | None = None
+    ticket_booking_link: str | None = None
+    ticket_status: Literal["available", "sold_out", "not_opened"] | None = None
+    cfp_submission_link: str | None = None
+    cfp_deadline: str | None = None
+    source_url: str | None = None
 
 
 def _extract_json_array(text: str) -> str | None:
@@ -89,12 +82,11 @@ def _extract_json_array(text: str) -> str | None:
     return None
 
 
-def search_conference(client: Anthropic, name: str, url: str, today: dt.date) -> list[dict]:
-    """Ask Claude to web-search for a single conference and return a list
-    of future event entries (a conference series may have multiple
-    upcoming editions/dates)."""
+def search_event(client: Anthropic, name: str, url: str, today: dt.date) -> list[dict]:
+    """Ask Claude to web-search for a single event series and return a list
+    of individual event entries (a series may have multiple occurrences)."""
 
-    fields_inline = ", ".join(FIELDS)
+    fields_inline = ", ".join(TechEvent.model_fields.keys())
     prompt = f"""Search for all {today.year} events in "{name}" (site: {url}).
 
 Return a JSON array only — no markdown, no commentary. One object per event occurrence.
@@ -149,8 +141,15 @@ Empty array [] if no {today.year} events found.
         print(f"  [!] Expected list, got {type(entries).__name__} for {name!r}", file=sys.stderr)
         return []
 
-    print(f"  [debug] parsed {len(entries)} entries; dates: {[e.get('date') for e in entries]}", file=sys.stderr)
-    return entries
+    validated: list[dict] = []
+    for entry in entries:
+        try:
+            validated.append(TechEvent.model_validate(entry).model_dump())
+        except ValidationError as exc:
+            print(f"  [!] Skipping invalid entry for {name!r}: {exc}", file=sys.stderr)
+
+    print(f"  [debug] parsed {len(validated)} entries; dates: {[e.get('date') for e in validated]}", file=sys.stderr)
+    return validated
 
 
 def is_current_year(entry: dict, year: int) -> bool:
@@ -171,25 +170,25 @@ def load_existing(path: Path) -> list[dict]:
     return data or []
 
 
-def upsert(existing: list[dict], fresh_by_conference: dict[str, list[dict]]) -> list[dict]:
-    """Replace each managed conference's entries with the freshly-searched
-    ones. Entries for conferences not in CONFERENCE_LIST are left untouched."""
+def upsert(existing: list[dict], fresh_by_event: dict[str, list[dict]]) -> list[dict]:
+    """Replace each managed event series' entries with the freshly-searched
+    ones. Entries for events not in EVENT_LIST are left untouched."""
 
-    managed_names = [n.lower() for n in CONFERENCE_LIST.values()]
+    managed_names = [n.lower() for n in EVENT_LIST.values()]
     untouched = [
         e for e in existing
         if not any(m in (e.get("name") or "").lower() for m in managed_names)
     ]
 
     # Only seed `seen` from untouched (unmanaged) entries so that managed
-    # conference events are always fully replaced by the fresh fetch.
+    # events are always fully replaced by the fresh fetch.
     seen: set[tuple] = {
         ((e.get("name") or "").lower(), e.get("date") or "")
         for e in untouched
     }
     updated = list(untouched)
-    for name in CONFERENCE_LIST.values():
-        for entry in fresh_by_conference.get(name, []):
+    for name in EVENT_LIST.values():
+        for entry in fresh_by_event.get(name, []):
             key = ((entry.get("name") or "").lower(), entry.get("date") or "")
             if key not in seen:
                 seen.add(key)
@@ -205,19 +204,19 @@ def main():
     client = Anthropic(api_key=api_key)
     today = dt.date.today()
 
-    fresh_by_conference: dict[str, list[dict]] = {}
-    for url, name in CONFERENCE_LIST.items():
+    fresh_by_event: dict[str, list[dict]] = {}
+    for url, name in EVENT_LIST.items():
         print(f"Searching: {name}")
-        entries = search_conference(client, name, url, today)
+        entries = search_event(client, name, url, today)
         year_entries = [e for e in entries if is_current_year(e, today.year)]
         for e in year_entries:
             e.setdefault("series", name)
         print(f"  -> {len(year_entries)} event(s) found")
-        fresh_by_conference[name] = year_entries
+        fresh_by_event[name] = year_entries
 
     output_path = Path(OUTPUT_FILE)
     existing = load_existing(output_path)
-    merged = upsert(existing, fresh_by_conference)
+    merged = upsert(existing, fresh_by_event)
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(yaml.safe_dump(merged, sort_keys=False, allow_unicode=True))

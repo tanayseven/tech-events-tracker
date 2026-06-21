@@ -7,7 +7,7 @@
     in Hyderabad
   scope: national conference
   date: 2026-03-14 to 2026-03-15
-  conference_website: https://2026.pyconfhyd.org/
+  event_website: https://2026.pyconfhyd.org/
   ticket_booking_link: https://konfhub.com/pyconf-hyderabad-2026
   cfp_submission_link: null
   source_url: https://2026.pyconfhyd.org/
@@ -20,7 +20,7 @@
     leaders to collaborate, share information, solve problems, and gain knowledge.
   scope: international conference
   date: 2026-06-16 to 2026-06-17
-  conference_website: https://events.linuxfoundation.org/open-source-summit-india/
+  event_website: https://events.linuxfoundation.org/open-source-summit-india/
   ticket_booking_link: https://events.linuxfoundation.org/open-source-summit-india/register/
   cfp_submission_link: https://sessionize.com/open-source-summit-india-2026/
   source_url: https://events.linuxfoundation.org/open-source-summit-india/
@@ -34,7 +34,7 @@
     advancement of Open Source in India and globally.
   scope: national conference
   date: 2026-10-07 to 2026-10-08
-  conference_website: https://www.opensourceindia.in/
+  event_website: https://www.opensourceindia.in/
   ticket_booking_link: https://www.opensourceindia.in/passes/
   cfp_submission_link: null
   source_url: https://www.opensourceindia.in/
@@ -47,7 +47,7 @@
     maintainers, startups, and organizations from across the Indian Open Source ecosystem.
   scope: national conference
   date: 2026-09-26 to 2026-09-27
-  conference_website: https://fossunited.org/indiafoss/2026
+  event_website: https://fossunited.org/indiafoss/2026
   ticket_booking_link: https://fossunited.org/indiafoss/tickets
   cfp_submission_link: null
   source_url: https://fossunited.org/indiafoss/2026
@@ -60,7 +60,7 @@
     to promote Free and Open Source Software.
   scope: local meetup
   date: '2026-04-18'
-  conference_website: https://fossunited.org/c/chennai/2026
+  event_website: https://fossunited.org/c/chennai/2026
   ticket_booking_link: null
   cfp_submission_link: https://fossunited.org/dashboard/cfp/all/chennai/2026
   source_url: https://fossunited.org/c/chennai/2026
@@ -74,7 +74,7 @@
     hallucinations, and building better prompts and features'
   scope: local meetup
   date: '2026-04-18'
-  conference_website: https://www.meetup.com/experttalks-bengaluru/events/313810352/
+  event_website: https://www.meetup.com/experttalks-bengaluru/events/313810352/
   ticket_booking_link: null
   cfp_submission_link: null
   source_url: https://www.meetup.com/experttalks-bengaluru/events/313810352/
@@ -86,7 +86,7 @@
   description: null
   scope: local meetup
   date: '2026-05-09'
-  conference_website: https://www.meetup.com/experttalks-bengaluru/
+  event_website: https://www.meetup.com/experttalks-bengaluru/
   ticket_booking_link: null
   cfp_submission_link: null
   source_url: https://www.meetup.com/find/in--bangalore/ai/
@@ -98,7 +98,7 @@
   description: null
   scope: local meetup
   date: '2026-06-24'
-  conference_website: https://www.meetup.com/experttalks-bengaluru/
+  event_website: https://www.meetup.com/experttalks-bengaluru/
   ticket_booking_link: null
   cfp_submission_link: null
   source_url: https://www.meetup.com/find/in--bangalore/web-development/
@@ -110,7 +110,7 @@
   description: null
   scope: local meetup
   date: '2026-06-27'
-  conference_website: https://www.meetup.com/experttalks-bengaluru/
+  event_website: https://www.meetup.com/experttalks-bengaluru/
   ticket_booking_link: null
   cfp_submission_link: null
   source_url: https://www.meetup.com/find/in--yelahanka/
@@ -124,7 +124,7 @@
     event brings together 200-250 Ruby developers from across Asia.
   scope: international conference
   date: 2026-01-31 to 2026-02-01
-  conference_website: https://rubyconfth.com/
+  event_website: https://rubyconfth.com/
   ticket_booking_link: https://www.eventpop.me/e/80284/rubyconf-th-2026
   cfp_submission_link: https://www.papercall.io/rubyconfth2026
   source_url: https://rubyconfth.com/
@@ -136,7 +136,7 @@
   description: null
   scope: international conference
   date: '2026-11-21'
-  conference_website: https://rubyconf.in/
+  event_website: https://rubyconf.in/
   ticket_booking_link: null
   cfp_submission_link: null
   source_url: https://www.rubyevents.org/events/series/rubyconf-india
@@ -150,7 +150,7 @@
     Includes meals and a Toga party.
   scope: international conference
   date: '2026-05-08'
-  conference_website: https://rubycon.it
+  event_website: https://rubycon.it
   ticket_booking_link: https://ti.to/rubycon/rubycon-2026
   cfp_submission_link: null
   source_url: https://rubycon.it/
@@ -164,7 +164,7 @@
     community
   scope: international conference
   date: 2026-10-08 to 2026-10-11
-  conference_website: https://deccanqueenonrails.com/
+  event_website: https://deccanqueenonrails.com/
   ticket_booking_link: null
   cfp_submission_link: https://cfp.deccanqueenonrails.com/
   source_url: https://deccanqueenonrails.com/
@@ -178,7 +178,7 @@
     communities
   scope: international conference
   date: 2026-06-18 to 2026-06-19
-  conference_website: https://events.linuxfoundation.org/kubecon-cloudnativecon-india/
+  event_website: https://events.linuxfoundation.org/kubecon-cloudnativecon-india/
   ticket_booking_link: https://events.linuxfoundation.org/kubecon-cloudnativecon-india/register/
   cfp_submission_link: https://sessionize.com/kubecon-cloudnativecon-india-2026/
   source_url: https://events.linuxfoundation.org/kubecon-cloudnativecon-india/
