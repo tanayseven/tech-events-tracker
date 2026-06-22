@@ -14,7 +14,7 @@
 [![Amazon S3](https://img.shields.io/badge/Amazon%20S3-FF9900?style=for-the-badge&logo=amazons3&logoColor=white)](https://aws.amazon.com/s3/)
 [![Claude](https://img.shields.io/badge/Claude-Sonnet_4.6-D97706?style=for-the-badge&logo=anthropic&logoColor=white)](https://www.anthropic.com/)
 
-Tracks a curated list of tech conferences and meetups, populates event data via AI-assisted web scraping, and serves a searchable static webpage.
+Tracks ~100 tech conferences and meetups across India and internationally, populates event data via AI-assisted web scraping, and serves a searchable static webpage.
 
 ## How it works
 
@@ -65,9 +65,35 @@ uv run python app.py freeze
 
 Output goes to `build/`.
 
+## Tracked events
+
+`events_list.yaml` is the source of truth. It currently covers ~100 events across:
+
+| Category | Examples |
+|---|---|
+| India-specific | PyCon India, GopherCon India, PyConF Hyderabad, India FOSS, Nullcon, Rootconf, JSFoo, ReactFoo |
+| Cloud / DevOps | KubeCon, DockerCon, PlatformCon, DevOpsDays, SREcon, GrafanaCON |
+| Major tech company | AWS re:Invent, Google Cloud Next, Google I/O, Microsoft Build, Microsoft Ignite, WWDC |
+| Security | Black Hat, DEF CON, RSA Conference, USENIX Security, NDSS, CRYPTO |
+| AI / ML | NeurIPS, ICML, ICLR, KDD, Data + AI Summit, ODSC |
+| Systems / OS / DB | USENIX ATC, OSDI, SOSP, SIGMOD, VLDB, CIDR |
+| Language communities | PyCon US, EuroPython, RustConf, GopherCon, CppCon, KotlinConf, JavaOne |
+| Frontend / JS | React Summit, JSConf, ng-conf, Vue.js Amsterdam, Frontend Nation |
+| Hardware / Embedded | Embedded World, CES, DAC, Electronica, Maker Faire |
+| Networking | SIGCOMM, IEEE INFOCOM, HotNets |
+
 ## Adding or removing tracked events
 
-Edit `events_list.yaml` — add or remove entries with a `url` and `name`. Re-run `main.py` to pick up changes.
+Edit `events_list.yaml` — add or remove entries with a `url` and `name`. Use `{year}` anywhere in the URL where the year should be substituted at crawl time:
+
+```yaml
+- url: https://ep{year}.europython.eu   # becomes ep2026.europython.eu
+  name: EuroPython
+- url: https://{year}.pyconfhyd.org/    # year as subdomain
+  name: PyConF Hyderabad
+```
+
+Re-run `main.py` to pick up changes.
 
 ## Event data schema
 

@@ -1,3 +1,4 @@
+# India-specific events
 - url: https://in.pycon.org/{year}/
   name: PyCon India
 - url: https://gopherconindia.org/
@@ -8,3 +9,215 @@
   name: Open Source Summit India
 - url: https://fossunited.org/indiafoss/{year}
   name: India FOSS
+- url: https://events.linuxfoundation.org/kubecon-cloudnativecon-india/
+  name: KubeCon + CloudNativeCon India
+- url: https://www.opensourceindia.in/
+  name: Open Source India
+- url: https://reactindia.io/
+  name: React India
+- url: https://indiadevopsshow.com/
+  name: India DevOps Show
+- url: https://indiagdc.com/
+  name: India Game Developer Conference
+- url: https://www.techfest.org/
+  name: Techfest IIT Bombay
+- url: https://techkriti.org/
+  name: Techkriti IIT Kanpur
+- url: https://www.nullcon.net/
+  name: Nullcon
+- url: https://c0c0n.org/
+  name: c0c0n
+- url: https://www.bangaloretechsummit.com/
+  name: Bangalore Tech Summit
+- url: https://gids.dev/
+  name: Great International Developer Summit
+- url: https://www.agileindia.org/
+  name: Agile India
+- url: https://rustindia.org/
+  name: Rust India
+- url: https://cypher.analyticsindiamag.com/
+  name: Cypher
+- url: https://machinecon.analyticsindiamag.com/
+  name: MachineCon
+- url: https://www.comsnets.org/
+  name: COMSNETS
+- url: https://www.efyexpo.com/
+  name: EFY Expo
+- url: https://electronica-india.com/
+  name: Electronica India
+- url: https://aws.amazon.com/events/summits/india/
+  name: AWS Summit India
+- url: https://developers.google.com/community/devfest
+  name: Google DevFest India
+- url: https://community.cncf.io
+  name: Kubernetes Community Days India
+- url: https://rubyconfindia.org
+  name: RubyConf India
+- url: https://hasgeek.com/rootconf/
+  name: Rootconf
+- url: https://hasgeek.com/jsfoo/
+  name: JSFoo
+- url: https://hasgeek.com/reactfoo/
+  name: ReactFoo
+- url: https://droidcon.com
+  name: Droidcon Bengaluru
+
+# Major tech company events
+- url: https://aws.amazon.com/events/reinvent/
+  name: AWS re:Invent
+- url: https://cloud.withgoogle.com/next
+  name: Google Cloud Next
+- url: https://ignite.microsoft.com/
+  name: Microsoft Ignite
+- url: https://build.microsoft.com
+  name: Microsoft Build
+- url: https://io.google/{year}/
+  name: Google I/O
+- url: https://developer.apple.com/wwdc/
+  name: WWDC
+
+# Cloud, containers & DevOps
+- url: https://www.cncf.io/kubecon-cloudnativecon-events/
+  name: KubeCon + CloudNativeCon
+- url: https://events.linuxfoundation.org/open-source-summit-north-america/
+  name: Open Source Summit North America
+- url: https://events.linuxfoundation.org/embedded-linux-conference/
+  name: Embedded Linux Conference
+- url: https://www.hashicorp.com/conferences/hashiconf
+  name: HashiConf
+- url: https://dockercon.com
+  name: DockerCon
+- url: https://platformcon.com
+  name: PlatformCon
+- url: https://www.devopsdays.org
+  name: DevOpsDays
+- url: https://www.usenix.org/conference/srecon
+  name: SREcon
+- url: https://grafana.com/events/grafanacon/
+  name: GrafanaCON
+
+# General developer conferences
+- url: https://qconferences.com
+  name: QCon
+- url: https://developerweek.com
+  name: DeveloperWeek
+- url: https://agilealliance.org/agile{year}
+  name: Agile Conference
+- url: https://fosdem.org/{year}/
+  name: FOSDEM
+- url: https://allthingsopen.org
+  name: All Things Open
+- url: https://debconf.org
+  name: DebConf
+- url: https://linuxplumbersconf.org
+  name: Linux Plumbers Conference
+
+# Security
+- url: https://www.blackhat.com
+  name: Black Hat
+- url: https://defcon.org
+  name: DEF CON
+- url: https://www.rsaconference.com
+  name: RSA Conference
+- url: https://securitybsides.com
+  name: BSides
+- url: https://www.usenix.org/conference/usenixsecurity26
+  name: USENIX Security Symposium
+- url: https://www.ndss-symposium.org
+  name: NDSS
+- url: https://crypto.iacr.org
+  name: CRYPTO
+- url: https://eurocrypt.iacr.org
+  name: EUROCRYPT
+- url: https://asiacrypt.iacr.org
+  name: ASIACRYPT
+
+# Systems & OS
+- url: https://www.usenix.org/conference/atc
+  name: USENIX ATC
+- url: https://www.usenix.org/conference/osdi
+  name: OSDI
+- url: https://sosp.org
+  name: SOSP
+- url: https://scconf.org
+  name: Supercomputing Conference
+
+# Databases
+- url: https://sigmod.org
+  name: SIGMOD
+- url: https://vldb.org
+  name: VLDB
+- url: https://cidrdb.org
+  name: CIDR
+
+# AI & ML
+- url: https://neurips.cc
+  name: NeurIPS
+- url: https://icml.cc
+  name: ICML
+- url: https://iclr.cc
+  name: ICLR
+- url: https://kdd.org
+  name: KDD
+- url: https://odsc.com
+  name: ODSC
+- url: https://www.databricks.com/dataaisummit
+  name: Data + AI Summit
+- url: https://mlopsworld.com
+  name: MLOps World
+
+# Hardware & embedded
+- url: https://embedded-world.de
+  name: Embedded World
+- url: https://www.dac.com
+  name: Design Automation Conference
+- url: https://electronica.de
+  name: Electronica
+- url: https://www.ces.tech
+  name: CES
+- url: https://makerfaire.com
+  name: Maker Faire
+
+# Frontend & JavaScript
+- url: https://reactsummit.com
+  name: React Summit
+- url: https://vuejs.amsterdam
+  name: Vue.js Amsterdam
+- url: https://ng-conf.org
+  name: ng-conf
+- url: https://frontendnation.com
+  name: Frontend Nation
+- url: https://jsconf.com
+  name: JSConf
+
+# Language communities
+- url: https://pycon.org
+  name: PyCon US
+- url: https://ep{year}.europython.eu
+  name: EuroPython
+- url: https://rustconf.com
+  name: RustConf
+- url: https://www.gophercon.com
+  name: GopherCon
+- url: https://cppcon.org
+  name: CppCon
+- url: https://cppnorth.ca
+  name: CppNorth
+- url: https://kotlinconf.com
+  name: KotlinConf
+- url: https://javaone.com
+  name: JavaOne
+- url: https://www.javaland.eu
+  name: JavaLand
+- url: https://thestrangeloop.com
+  name: Strange Loop
+- url: https://lambdaconf.us
+  name: LambdaConf
+
+# Networking
+- url: https://www.sigcomm.org
+  name: SIGCOMM
+- url: https://infocom{year}.ieee-infocom.org
+  name: IEEE INFOCOM
+- url: https://conferences.sigcomm.org/hotnets
+  name: HotNets

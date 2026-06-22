@@ -17,7 +17,7 @@
 
 ## Key design decisions
 
-**`events_list.yaml` is the source of truth for scope.** Only events listed there are ever written or updated. Manually added entries (entries whose `series` doesn't match any managed event) are preserved across re-runs via `_upsert()` in `pipelines.py`.
+**`events_list.yaml` is the source of truth for scope.** Only events listed there are ever written or updated. Manually added entries (entries whose `series` doesn't match any managed event) are preserved across re-runs via `_upsert()` in `pipelines.py`. Currently tracks ~100 events across India-specific and international categories (cloud/DevOps, security, AI/ML, language communities, hardware, networking, etc.).
 
 **Two-stage pipeline:** Scrapy handles HTTP (retries, delays, robots.txt), Claude handles extraction. The spider yields raw HTML; `ClaudeExtractionPipeline` sends it to Claude Sonnet 4.6 as plain text (no tool use) and parses the JSON response; `YamlWriterPipeline` upserts on `close_spider`.
 
@@ -26,6 +26,10 @@
 **Upsert dedup keys:** `(series.lower(), date)` pair AND `event_website` URL. An entry is skipped if either key has been seen, preventing duplicates when multiple events share a URL.
 
 **`series` field:** stamped in `ClaudeExtractionPipeline` via `e["series"] = name` using the `events_list.yaml` name, keeping dedup stable regardless of how Claude phrases the event name.
+
+**`{year}` URL templates:** URLs in `events_list.yaml` may contain `{year}` anywhere — path segment, subdomain, query param. The spider replaces it with the current year at crawl time (e.g. `https://{year}.pyconfhyd.org/` → `https://2026.pyconfhyd.org/`). Use this for events whose URL changes each year.
+
+**Upsert across runs:** existing managed entries whose fresh scrape is skipped (e.g. 404, same-URL dedup) are preserved in `_upsert()` rather than dropped. Only entries explicitly returned by Claude as new/changed are updated.
 
 **Date handling:** entries with missing or unparseable dates are treated as current-year (future) events by `_is_current_year()`.
 
