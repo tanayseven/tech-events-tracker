@@ -9,17 +9,19 @@
 [![GitHub License](https://img.shields.io/github/license/tanayseven/tech-events-tracker?style=for-the-badge)](https://github.com/tanayseven/tech-events-tracker/blob/main/LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.14-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![Flask](https://img.shields.io/badge/Flask-3.1.3-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
-[![Pydantic](https://img.shields.io/badge/Pydantic-2.13.4-E92063?style=for-the-badge&logo=pydantic&logoColor=white)](https://docs.pydantic.dev/)
+[![Scrapy](https://img.shields.io/badge/Scrapy-2.x-60A839?style=for-the-badge&logo=scrapy&logoColor=white)](https://scrapy.org/)
+[![Pydantic](https://img.shields.io/badge/Pydantic-2.x-E92063?style=for-the-badge&logo=pydantic&logoColor=white)](https://docs.pydantic.dev/)
 [![Amazon S3](https://img.shields.io/badge/Amazon%20S3-FF9900?style=for-the-badge&logo=amazons3&logoColor=white)](https://aws.amazon.com/s3/)
-[![Claude](https://img.shields.io/badge/Claude-Haiku_4.5-D97706?style=for-the-badge&logo=anthropic&logoColor=white)](https://www.anthropic.com/)
+[![Claude](https://img.shields.io/badge/Claude-Sonnet_4.6-D97706?style=for-the-badge&logo=anthropic&logoColor=white)](https://www.anthropic.com/)
 
-Tracks a curated list of tech conferences and meetups, populates event data via AI-assisted web search, and serves a searchable static webpage.
+Tracks a curated list of tech conferences and meetups, populates event data via AI-assisted web scraping, and serves a searchable static webpage.
 
 ## How it works
 
-1. `main.py` uses Claude (`claude-haiku-4-5`) with the `web_search` tool to search for each entry in `EVENT_LIST` and writes results to `event/<year>.yaml`.
-2. `app.py` is a Flask + Frozen-Flask app that reads the YAML and renders a responsive HTML page via a Jinja2 template.
-3. Running with `freeze` mode produces a fully static `build/` directory ready to deploy anywhere.
+1. **Scrapy** fetches each event website listed in `events_list.yaml`.
+2. **Claude** (`claude-sonnet-4-6`) receives the raw HTML and extracts structured event data as JSON.
+3. Results are validated with Pydantic and upserted into `event/<year>.yaml`.
+4. **Flask + Frozen-Flask** reads the YAML and renders a responsive static HTML page.
 
 ## Setup
 
@@ -37,6 +39,12 @@ uv sync            # installs Python dependencies into .venv
 ```bash
 export ANTHROPIC_API_KEY=sk-ant-...
 uv run python main.py
+```
+
+Equivalent via the Scrapy CLI:
+
+```bash
+uv run scrapy crawl events
 ```
 
 Re-running is safe — it upserts managed event entries and leaves any manually added entries untouched.
@@ -59,7 +67,7 @@ Output goes to `build/`.
 
 ## Adding or removing tracked events
 
-Edit `EVENT_LIST` in `main.py` — it's a `dict[url, name]`. Re-run `main.py` to pick up changes.
+Edit `events_list.yaml` — add or remove entries with a `url` and `name`. Re-run `main.py` to pick up changes.
 
 ## Event data schema
 
@@ -68,7 +76,7 @@ Each entry in `event/<year>.yaml` has these fields:
 | Field | Description |
 |---|---|
 | `name` | Event name |
-| `series` | Parent series (e.g. "Expert Talks Bangalore") |
+| `series` | Parent series (e.g. "PyCon India") |
 | `mode` | `online` / `in-person` / `hybrid` |
 | `venue` | Venue name |
 | `country` | Country |

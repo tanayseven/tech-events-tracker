@@ -1,28 +1,10 @@
-- url: https://in.pycon.org/
+- url: https://in.pycon.org/{year}/
   name: PyCon India
 - url: https://gopherconindia.org/
   name: GopherCon India
 - url: https://{year}.pyconfhyd.org/
-  name: PyConf Hyderabad
+  name: PyConF Hyderabad
 - url: https://events.linuxfoundation.org/open-source-summit-india/
   name: Open Source Summit India
 - url: https://fossunited.org/indiafoss/{year}
   name: India FOSS
-- url: https://www.opensourceindia.in/
-  name: Open Source India
-- url: https://www.meetup.com/experttalks-bengaluru/events/?type=upcoming
-  name: Expert Talks Bangalore
-- url: https://www.meetup.com/expert-talks-chennai/
-  name: Expert Talks Chennai
-- url: https://rubyconfth.com/
-  name: Rubyconf Thailand
-- url: https://rubyconf.in/
-  name: Rubyconf India
-- url: https://rubycon.it/
-  name: RubyCon Italy
-- url: https://deccanqueenonrails.com/
-  name: Deccan Queen on Rails
-- url: https://events.linuxfoundation.org/kubecon-cloudnativecon-india/
-  name: KubeCon India
-- url: https://hasgeek.com/rootconf/2025/
-  name: Rootconf

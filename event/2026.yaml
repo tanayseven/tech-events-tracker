@@ -1,302 +1,71 @@
-- name: GopherCon India 2026
-  series: GopherCon India
-  mode: in-person
-  venue: Clarks Amer Hotel
-  country: India
-  topic: Go programming language
-  description: The premier Go programming language conference in India, a single-track
-    event featuring talks and sessions on Go development
-  scope: national conference
-  date: 2026-09-14 to 2026-09-15
-  event_website: https://gopherconindia.org/
-  ticket_booking_link: https://www.townscript.com/e/GopherCon-india-2026
-  ticket_status: available
-  cfp_submission_link: https://www.papercall.io/gophercon-india-2026
-  cfp_deadline: null
-  source_url: https://gopherconindia.org/
-- name: GopherCon India 2026
-  series: GopherCon India
-  mode: in-person
-  venue: Novotel Hyderabad Airport
-  country: India
-  topic: Go programming language
-  description: The premier Go programming language conference in India
-  scope: national conference
-  date: '2026-11-22'
-  event_website: https://gopherconindia.org/
-  ticket_booking_link: https://www.townscript.com/e/GopherCon-india-2026
-  ticket_status: not_opened
-  cfp_submission_link: https://www.papercall.io/gophercon-india-2026
-  cfp_deadline: null
-  source_url: https://gopherconindia.org/
 - name: PyConf Hyderabad 2026
-  series: PyConf Hyderabad
-  mode: hybrid
-  venue: Engineering Staff College of India (ESCI), Gachibowli
+  series: PyConF Hyderabad
+  mode: in-person
+  venue: null
   country: India
-  topic: Python programming, AI, Machine Learning
-  description: Flagship annual conference by HydPy Team - premier regional gathering
-    for the Python community
+  topic: Python
+  description: PyConf Hyderabad 2026 is the regional gathering of Pythonistas and
+    the largest Python Conference in Hyderabad.
   scope: national conference
-  date: 2026-03-14 to 2026-03-15
-  event_website: https://2026.pyconfhyd.org/
-  ticket_booking_link: https://konfhub.com/pyconf-hyderabad-2026
-  ticket_status: sold_out
+  date: null
+  event_website: https://2026.pyconfhyd.org
+  ticket_booking_link: null
+  ticket_status: not_opened
   cfp_submission_link: null
-  cfp_deadline: '2026-01-15'
-  source_url: https://konfhub.com/pyconf-hyderabad-2026
+  cfp_deadline: null
+  source_url: https://2026.pyconfhyd.org
+- name: IndiaFOSS 2026
+  series: India FOSS
+  mode: in-person
+  venue: NIMHANS Convention Centre, Bengaluru, Karnataka
+  country: India
+  topic: Free and Open Source Software
+  description: The 6th edition of Free and Open Source Software Festival by the FOSS
+    United community. Features talks, panel discussions, lightning talks, workshops,
+    demos, open space discussions, devrooms, and project booths.
+  scope: national conference
+  date: 2026-09-26 to 2026-09-27
+  event_website: https://fossunited.org/indiafoss/2026
+  ticket_booking_link: https://fossunited.org/indiafoss/tickets
+  ticket_status: available
+  cfp_submission_link: https://fossunited.org/dashboard/cfp/apply/indiafoss/2026
+  cfp_deadline: '2026-06-28'
+  source_url: https://fossunited.org/indiafoss/2026
 - name: Open Source Summit India 2026
   series: Open Source Summit India
   mode: in-person
   venue: Mumbai
   country: India
-  topic: Open Source
-  description: Premier event for open source developers, technologists, and community
-    leaders to collaborate, share information, solve problems, and gain knowledge,
-    furthering open source innovation and ensuring a sustainable open source ecosystem
+  topic: Open Source Software, Linux, AI, Cloud, Embedded, CI/CD, Containers, DevOps
+  description: Open Source Summit India is the premier event for open source developers,
+    technologists, and community leaders to collaborate, share information, solve
+    problems, and gain knowledge, furthering open source innovation and ensuring a
+    sustainable open source ecosystem. Tracks include CI/CD, Cloud & Orchestration,
+    Embedded, Linux, Open AI & Data, Packages/Images/Containers, Zephyr, and more.
   scope: international conference
   date: 2026-06-16 to 2026-06-17
   event_website: https://events.linuxfoundation.org/open-source-summit-india/
-  ticket_booking_link: https://events.linuxfoundation.org/open-source-summit-india/register/
-  ticket_status: available
+  ticket_booking_link: null
+  ticket_status: null
   cfp_submission_link: null
   cfp_deadline: null
   source_url: https://events.linuxfoundation.org/open-source-summit-india/
-- name: IndiaFOSS 2026
-  series: IndiaFOSS
+- name: GopherCon India 2026 (Main Conference)
+  series: GopherCon India
   mode: in-person
-  venue: NIMHANS Convention Centre
+  venue: Novotel Hyderabad Airport, Hyderabad
   country: India
-  topic: Free and Open Source Software
-  description: The 6th edition of the Free and Open Source Software Festival by the
-    FOSS United community
+  topic: Go Programming Language
+  description: GopherCon India is the premier Go programming language conference in
+    India, designed as a single-track event. The main conference day features talks
+    on CGO cross-compilation, authorization checks, payments infrastructure, MCP servers,
+    Go concurrency, WebAssembly, runtime optimizations, observability/AI, and more.
+    Includes flash talks, networking, and a party.
   scope: national conference
-  date: 2026-09-26 to 2026-09-27
-  event_website: https://fossunited.org/indiafoss/2026
-  ticket_booking_link: https://fossunited.org/indiafoss/tickets
-  ticket_status: not_opened
-  cfp_submission_link: https://fossunited.org/indiafoss/cfp
-  cfp_deadline: '2026-06-28'
-  source_url: https://fossunited.org/indiafoss/2026
-- name: Open Source India 2026
-  series: Open Source India
-  mode: in-person
-  venue: NIMHANS Convention Center, Bengaluru
-  country: India
-  topic: Open Source Technology
-  description: Asia's leading open source event featuring 6,500+ delegates, 85+ speakers,
-    and 50+ sessions. Accelerate development and deployment of open source.
-  scope: national conference
-  date: 2026-10-07 to 2026-10-08
-  event_website: https://www.opensourceindia.in/
-  ticket_booking_link: https://www.opensourceindia.in/register/
+  date: '2026-11-22'
+  event_website: https://gopherconindia.org/
+  ticket_booking_link: https://gopherconindia.org/
   ticket_status: available
-  cfp_submission_link: https://docs.google.com/forms/d/e/1FAIpQLSfp2kMcjE4DyRNOsRbhOBXUhlCpAGO1H896ToPIc19OG3K5sg/viewform
+  cfp_submission_link: https://gopherconindia.org/
   cfp_deadline: null
-  source_url: https://www.opensourceindia.in/
-- name: RubyConf Thailand 2026
-  series: RubyConf Thailand
-  mode: in-person
-  venue: Novotel Bangkok Sukhumvit 20
-  country: Thailand
-  topic: Ruby, Rails
-  description: Southeast Asia's only event where you'll network with Rails core contributors,
-    CTOs, and engineers shipping code at scale. Features 18 speakers, 200+ attendees,
-    keynotes, and networking sessions.
-  scope: international conference
-  date: 2026-01-31 to 2026-02-01
-  event_website: https://rubyconfth.com/
-  ticket_booking_link: null
-  ticket_status: null
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://rubyconfth.com/
-- name: RubyConf India 2026 - Day 1
-  series: RubyConf India
-  mode: in-person
-  venue: Clarks Amer Hotel
-  country: India
-  topic: Ruby, Rails, and Ruby Tools
-  description: A 1-day, single-track conference focused on Ruby language, framework,
-    and tools. Day 1 of 2-day event.
-  scope: national conference
-  date: '2026-09-12'
-  event_website: https://rubyconf.in/
-  ticket_booking_link: https://www.townscript.com/e/rubyconf-india-2026
-  ticket_status: available
-  cfp_submission_link: https://www.papercall.io/rubyconf-india-2026
-  cfp_deadline: null
-  source_url: https://rubyconf.in/
-- name: RubyConf India 2026 - Day 2
-  series: RubyConf India
-  mode: in-person
-  venue: Clarks Amer Hotel
-  country: India
-  topic: Ruby, Rails, and Ruby Tools
-  description: A 1-day, single-track conference focused on Ruby language, framework,
-    and tools. Day 2 of 2-day event.
-  scope: national conference
-  date: '2026-09-13'
-  event_website: https://rubyconf.in/
-  ticket_booking_link: https://www.townscript.com/e/rubyconf-india-2026
-  ticket_status: available
-  cfp_submission_link: https://www.papercall.io/rubyconf-india-2026
-  cfp_deadline: null
-  source_url: https://rubyconf.in/
-- name: RubyCon Italy 2026
-  series: null
-  mode: in-person
-  venue: Hotel Ambasciatori
-  country: Italy
-  topic: Ruby
-  description: A full day of Ruby talks featuring keynotes, production case studies,
-    and tooling updates. Includes lunch, dinner on the beach, and a Toga Party.
-  scope: international conference
-  date: '2026-05-08'
-  event_website: https://rubycon.it/
-  ticket_booking_link: https://ti.to/rubycon/rubycon-2026
-  ticket_status: null
-  cfp_submission_link: null
-  cfp_deadline: '2026-01-15'
-  source_url: https://rubycon.it/
-- name: Deccan Queen on Rails
-  series: null
-  mode: in-person
-  venue: Pune
-  country: India
-  topic: Ruby on Rails
-  description: A Rails conference rooted in Pune's heritage. Rails developers from
-    across India gather, and invited voices from the world arrive.
-  scope: national conference
-  date: 2026-10-08 to 2026-10-09
-  event_website: https://deccanqueenonrails.com/
-  ticket_booking_link: null
-  ticket_status: not_opened
-  cfp_submission_link: https://cfp.deccanqueenonrails.com/
-  cfp_deadline: null
-  source_url: https://deccanqueenonrails.com/
-- name: Rails Girls Pune
-  series: Rails Girls
-  mode: in-person
-  venue: Pune
-  country: India
-  topic: Ruby on Rails
-  description: A full-day program for women and non-binary people. Build your first
-    Rails app with coaches from the community.
-  scope: local meetup
-  date: '2026-10-11'
-  event_website: https://deccanqueenonrails.com/
-  ticket_booking_link: null
-  ticket_status: not_opened
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://deccanqueenonrails.com/
-- name: The Retreat
-  series: null
-  mode: in-person
-  venue: Maharashtra
-  country: India
-  topic: Ruby on Rails
-  description: A curated day through Maharashtra — forts, ghats, food trails, and
-    the kind of conversations that only happen away from a desk. Requires a conference
-    ticket.
-  scope: local meetup
-  date: '2026-10-11'
-  event_website: https://deccanqueenonrails.com/
-  ticket_booking_link: null
-  ticket_status: not_opened
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://deccanqueenonrails.com/
-- name: KubeCon + CloudNativeCon India
-  series: KubeCon + CloudNativeCon
-  mode: in-person
-  venue: Mumbai
-  country: India
-  topic: Cloud Native Computing
-  description: The Cloud Native Computing Foundation's flagship conference bringing
-    together adopters and technologists from leading open source and cloud native
-    communities.
-  scope: international conference
-  date: 2026-06-18 to 2026-06-19
-  event_website: https://events.linuxfoundation.org/kubecon-cloudnativecon-india/
-  ticket_booking_link: https://events.linuxfoundation.org/kubecon-cloudnativecon-india/register/
-  ticket_status: null
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://events.linuxfoundation.org/kubecon-cloudnativecon-india/
-- name: Rootconf - Rows, columns, and consequences
-  series: Rootconf
-  mode: online
-  venue: Bangalore
-  country: India
-  topic: Distributed data systems
-  description: null
-  scope: local meetup
-  date: 2026-03-09 to 2026-03-30
-  event_website: https://hasgeek.com/rootconf
-  ticket_booking_link: null
-  ticket_status: null
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://hasgeek.com/rootconf
-- name: Rootconf - Workshop
-  series: Rootconf
-  mode: in-person
-  venue: TERI Auditorium, Bengaluru
-  country: India
-  topic: Database systems
-  description: null
-  scope: local meetup
-  date: '2026-06-20'
-  event_website: https://hasgeek.com/rootconf
-  ticket_booking_link: null
-  ticket_status: null
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://hasgeek.com/
-- name: Rootconf - Cascade — build a toy LSM Tree from scratch
-  series: Rootconf
-  mode: in-person
-  venue: e6data, Bengaluru
-  country: India
-  topic: Database systems
-  description: null
-  scope: local meetup
-  date: '2026-06-27'
-  event_website: https://hasgeek.com/rootconf
-  ticket_booking_link: null
-  ticket_status: null
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://hasgeek.com/
-- name: Rootconf - Workshop
-  series: Rootconf
-  mode: in-person
-  venue: Bangalore
-  country: India
-  topic: AI systems
-  description: When data is for Agents, not humans
-  scope: local meetup
-  date: '2026-07-07'
-  event_website: https://hasgeek.com/rootconf
-  ticket_booking_link: null
-  ticket_status: null
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://hasgeek.com/
-- name: Rootconf - Workshop
-  series: Rootconf
-  mode: in-person
-  venue: Bangalore
-  country: India
-  topic: Database systems
-  description: null
-  scope: local meetup
-  date: '2026-07-18'
-  event_website: https://hasgeek.com/rootconf
-  ticket_booking_link: null
-  ticket_status: null
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://hasgeek.com/
+  source_url: https://gopherconindia.org/
