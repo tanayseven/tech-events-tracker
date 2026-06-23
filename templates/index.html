@@ -7,6 +7,12 @@
   <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}" />
   <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32.png') }}" />
   <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon-16.png') }}" />
+  <script>
+    (function(){
+      var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+      document.documentElement.dataset.theme=t;
+    })();
+  </script>
   <style>
     /* ── Palette ─────────────────────────────────────────────────── */
     :root {
@@ -19,6 +25,29 @@
       --text:        #31241f;
       --muted:       #7a6560;
       --border:      #ddd4cf;
+    }
+    :root[data-theme="dark"] {
+      --bg:      #171210;
+      --card-bg: #221c19;
+      --text:    #f0ebe6;
+      --muted:   #9d8880;
+      --border:  #3d3028;
+      --danube:  #6ba3d6;
+      --shilo:   #c9869a;
+      --torea:   #5072d4;
+      /* --cocoa stays dark: used for footer bg and badge text */
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg:      #171210;
+        --card-bg: #221c19;
+        --text:    #f0ebe6;
+        --muted:   #9d8880;
+        --border:  #3d3028;
+        --danube:  #6ba3d6;
+        --shilo:   #c9869a;
+        --torea:   #5072d4;
+      }
     }
 
     /* ── Reset / base ────────────────────────────────────────────── */
@@ -40,6 +69,36 @@
       color: #fff;
       padding: clamp(1.5rem, 5vw, 2.5rem) clamp(1rem, 4vw, 1.5rem) clamp(1.25rem, 4vw, 2rem);
       text-align: center;
+      position: relative;
+    }
+
+    /* ── Theme toggle ────────────────────────────────────────────── */
+    .theme-toggle {
+      position: absolute;
+      top: clamp(0.75rem, 2vw, 1rem);
+      right: clamp(0.75rem, 2vw, 1.25rem);
+      background: rgba(255,255,255,0.15);
+      border: 1.5px solid rgba(255,255,255,0.3);
+      border-radius: 6px;
+      color: #fff;
+      cursor: pointer;
+      padding: 0.4rem 0.55rem;
+      display: flex;
+      align-items: center;
+      line-height: 1;
+      transition: background 0.15s;
+    }
+    .theme-toggle:hover { background: rgba(255,255,255,0.28); }
+    .theme-toggle svg { width: 1.1rem; height: 1.1rem; }
+
+    /* show moon in light mode (click → go dark), sun in dark mode (click → go light) */
+    .icon-sun  { display: none; }
+    .icon-moon { display: block; }
+    :root[data-theme="dark"] .icon-sun  { display: block; }
+    :root[data-theme="dark"] .icon-moon { display: none; }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) .icon-sun  { display: block; }
+      :root:not([data-theme="light"]) .icon-moon { display: none; }
     }
     .header-logo {
       width: clamp(3rem, 8vw, 4.5rem);
@@ -104,7 +163,7 @@
     .card-name {
       font-size: 1.15rem;
       font-weight: 700;
-      color: var(--cocoa);
+      color: var(--text);
       margin-bottom: 0.3rem;
     }
     .card-name a { color: inherit; }
@@ -250,7 +309,7 @@
     .series-event-name {
       font-size: 0.9rem;
       font-weight: 600;
-      color: var(--cocoa);
+      color: var(--text);
     }
     .series-event-name a { color: inherit; }
     .series-event-name a:hover { color: var(--torea); text-decoration: none; }
@@ -439,6 +498,10 @@
 {% endmacro %}
 
 <header>
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
   <img src="{{ url_for('static', filename='conference-tracker.png') }}" alt="Tech Events Tracker logo" class="header-logo" />
   <h1>Tech Events {{ year }}</h1>
   <p>Conferences, meetups &amp; summits being tracked this year</p>
@@ -666,6 +729,16 @@
   if (selMode)   selMode.addEventListener('change', applyFilters);
   if (selScope)  selScope.addEventListener('change', applyFilters);
   if (btnClear)  btnClear.addEventListener('click', clearAll);
+
+  // ── Theme toggle ──────────────────────────────────────────────
+  var themeBtn = document.getElementById('theme-toggle');
+  if (themeBtn) {
+    themeBtn.addEventListener('click', function () {
+      var next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = next;
+      localStorage.setItem('theme', next);
+    });
+  }
 })();
 </script>
 
