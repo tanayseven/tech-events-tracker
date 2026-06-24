@@ -246,6 +246,15 @@
     .badge-mode   { background: var(--shilo); color: var(--cocoa); }
     .badge-scope  { background: var(--danube); color: #fff; }
     .badge-past   { background: var(--border); color: var(--muted); }
+    /* img icons inside coloured badges need colour correction */
+    .badge-scope img.icon { filter: brightness(0) invert(1); }
+    .badge-past  img.icon { filter: brightness(0) opacity(0.55); }
+    /* location pin: brighten the hardcoded near-black fill in dark mode */
+    :root[data-theme="dark"] .card-meta img.icon,
+    :root[data-theme="dark"] .series-event-meta img.icon { filter: brightness(4); }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) .card-meta img.icon,
+      :root:not([data-theme="light"]) .series-event-meta img.icon { filter: brightness(4); }
 
     /* date on the side */
     .card-date {
@@ -540,6 +549,12 @@
 
 {% macro icon_online() %}<img class="icon" src="{{ url_for('static', filename='online-conference.svg') }}" alt="" aria-hidden="true" />{% endmacro %}
 
+{% macro icon_past() %}<img class="icon" src="{{ url_for('static', filename='past.svg') }}" alt="" aria-hidden="true" />{% endmacro %}
+
+{% macro icon_international() %}<img class="icon" src="{{ url_for('static', filename='international.svg') }}" alt="" aria-hidden="true" />{% endmacro %}
+
+{% macro icon_national() %}<img class="icon" src="{{ url_for('static', filename='national.svg') }}" alt="" aria-hidden="true" />{% endmacro %}
+
 {% macro event_buttons(event, today_iso, compact=false) %}
   {% if event.ticket_status == 'sold_out' %}
     <span class="btn btn-disabled">{{ icon_ticket() }}Tickets sold out</span>
@@ -644,8 +659,10 @@
         {% if event.mode == 'in-person' %}<span class="badge badge-mode">{{ icon_inperson() }}{{ event.mode }}</span>
         {% elif event.mode == 'online' %}<span class="badge badge-mode">{{ icon_online() }}{{ event.mode }}</span>
         {% elif event.mode %}<span class="badge badge-mode">{{ event.mode }}</span>{% endif %}
-        {% if event.scope %}<span class="badge badge-scope">{{ event.scope }}</span>{% endif %}
-        {% if is_past %}<span class="badge badge-past">past</span>{% endif %}
+        {% if event.scope == 'international conference' %}<span class="badge badge-scope">{{ icon_international() }}{{ event.scope }}</span>
+        {% elif event.scope == 'national conference' %}<span class="badge badge-scope">{{ icon_national() }}{{ event.scope }}</span>
+        {% elif event.scope %}<span class="badge badge-scope">{{ event.scope }}</span>{% endif %}
+        {% if is_past %}<span class="badge badge-past">{{ icon_past() }}past</span>{% endif %}
       </div>
     </div>
 

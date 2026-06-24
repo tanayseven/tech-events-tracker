@@ -12,6 +12,7 @@
 - `templates/index.html` — Jinja2 template with search/filter UI; SVG icons inlined via macros
 - `event/<year>.yaml` — event data (both managed and manually added entries)
 - `events_list.yaml` — source of truth for which events to track (url + name)
+- `extractors.yaml` — auto-generated; CSS selectors per series for local extraction (skip Claude on re-runs)
 - `pyproject.toml` / `uv.lock` — Python dependencies managed by uv
 - `mise.toml` — installs uv via mise
 
@@ -19,7 +20,9 @@
 
 **`events_list.yaml` is the source of truth for scope.** Only events listed there are ever written or updated. Manually added entries (entries whose `series` doesn't match any managed event) are preserved across re-runs via `_upsert()` in `pipelines.py`. Currently tracks ~100 events across India-specific and international categories (cloud/DevOps, security, AI/ML, language communities, hardware, networking, etc.).
 
-**Two-stage pipeline:** Scrapy handles HTTP (retries, delays, robots.txt), Claude handles extraction. The spider yields raw HTML; `ClaudeExtractionPipeline` sends it to Claude Sonnet 4.6 as plain text (no tool use) and parses the JSON response; `YamlWriterPipeline` upserts on `close_spider`.
+**Two-stage pipeline:** Scrapy handles HTTP (retries, delays, robots.txt), `ClaudeExtractionPipeline` handles extraction. On each item it first tries stored CSS selectors from `extractors.yaml` via `parsel`; only calls Claude when selectors are missing or return no date. Claude returns both event data and updated selectors in one call (`{"events": [...], "selectors": {...}}`). `YamlWriterPipeline` upserts on `close_spider`.
+
+**`extractors.yaml`:** auto-generated file storing per-series CSS selectors (parsel syntax). Has `container` (repeating-block selector or null) and `fields` mapping each `TechEvent` field to a CSS selector or null (for interpretation fields like `mode`, `scope`). Claude regenerates selectors whenever local extraction fails. Console labels `[local]` / `[claude]` show which path was taken.
 
 **`from_crawler()` pattern:** Both pipelines use `from_crawler()` to store the crawler and access `self.crawler.spider` — the `spider` argument on pipeline methods is deprecated in the current Scrapy version.
 

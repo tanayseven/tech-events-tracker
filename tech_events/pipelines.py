@@ -1,8 +1,9 @@
 """
 Scrapy item pipelines.
 
-ClaudeExtractionPipeline  — sends fetched HTML to Claude, gets back structured
-                             event dicts, stores them on the spider.
+ClaudeExtractionPipeline  — tries stored CSS selectors first; falls back to
+                             Claude when selectors are missing or stale, and
+                             updates extractors.yaml with new selectors.
 YamlWriterPipeline        — after all items are processed, upserts results into
                              event/<year>.yaml.
 """
@@ -22,6 +23,7 @@ from pydantic import BaseModel, ValidationError
 
 YEAR = dt.datetime.now().year
 OUTPUT_FILE = Path(f"event/{YEAR}.yaml")
+EXTRACTORS_FILE = Path("extractors.yaml")
 MAX_HTML_CHARS = 80_000
 
 MODEL = "claude-sonnet-4-6"
@@ -52,33 +54,43 @@ class TechEvent(BaseModel):
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
 def _clean_html(html: str) -> str:
-    """Strip scripts/styles/head and return readable text content."""
+    """Strip scripts/styles from HTML, returning cleaned HTML with DOM structure intact."""
     try:
-        from lxml.html import fromstring
-        doc = fromstring(html)
+        from lxml import html as lhtml
+        doc = lhtml.fromstring(html)
         for tag in doc.iter("script", "style", "noscript", "head"):
             parent = tag.getparent()
             if parent is not None:
                 parent.remove(tag)
-        return doc.text_content()
+        return lhtml.tostring(doc, encoding="unicode", method="html")
     except Exception:
         text = re.sub(r"<script[^>]*>.*?</script>", " ", html, flags=re.DOTALL | re.IGNORECASE)
         text = re.sub(r"<style[^>]*>.*?</style>", " ", text, flags=re.DOTALL | re.IGNORECASE)
         return text
 
 
-def _extract_json_array(text: str) -> str | None:
-    fence = re.search(r"```(?:json)?\s*(\[.*?])\s*```", text, re.DOTALL)
+def _extract_json(text: str) -> str | None:
+    """Extract the first JSON object or array from text, handling fenced blocks."""
+    fence = re.search(r"```(?:json)?\s*([{\[].*?[}\]])\s*```", text, re.DOTALL)
     if fence:
         return fence.group(1)
-    start = text.find("[")
-    if start == -1:
+    first_brace   = text.find("{")
+    first_bracket = text.find("[")
+    if first_brace == -1 and first_bracket == -1:
         return None
+    if first_brace == -1:
+        start = first_bracket
+    elif first_bracket == -1:
+        start = first_brace
+    else:
+        start = min(first_brace, first_bracket)
+    open_char  = text[start]
+    close_char = "}" if open_char == "{" else "]"
     depth = 0
     for i in range(start, len(text)):
-        if text[i] == "[":
+        if text[i] == open_char:
             depth += 1
-        elif text[i] == "]":
+        elif text[i] == close_char:
             depth -= 1
             if depth == 0:
                 return text[start : i + 1]
@@ -100,6 +112,53 @@ def _load_existing() -> list[dict]:
     if not OUTPUT_FILE.exists():
         return []
     return yaml.safe_load(OUTPUT_FILE.read_text()) or []
+
+
+def _load_extractors() -> dict:
+    if not EXTRACTORS_FILE.exists():
+        return {}
+    return yaml.safe_load(EXTRACTORS_FILE.read_text()) or {}
+
+
+def _apply_extractor(html: str, extractor: dict) -> list[dict] | None:
+    """
+    Apply stored CSS selectors to raw HTML.
+    Returns a list of dicts (possibly with null values), or None if extraction
+    produced nothing useful (no nodes matched the container, or all fields null).
+    """
+    try:
+        from parsel import Selector
+    except ImportError:
+        return None
+
+    sel = Selector(text=html)
+    field_selectors: dict = extractor.get("fields", {})
+    container_css: str | None = extractor.get("container")
+
+    def _extract_node(node) -> dict:
+        row: dict = {}
+        for field, css in field_selectors.items():
+            if not css:
+                row[field] = None
+                continue
+            value = node.css(css).get()
+            row[field] = value.strip() if value else None
+        return row
+
+    if container_css:
+        nodes = sel.css(container_css)
+        if not nodes:
+            return None
+        return [_extract_node(n) for n in nodes]
+
+    row = _extract_node(sel)
+    # Only return if at least one field was populated
+    return [row] if any(v for v in row.values()) else None
+
+
+def _extraction_valid(entries: list[dict]) -> bool:
+    """Extraction is considered valid when at least one entry has a date."""
+    return any(e.get("date") for e in entries)
 
 
 def _upsert(
@@ -181,37 +240,93 @@ class ClaudeExtractionPipeline:
         if not api_key:
             raise RuntimeError("Set ANTHROPIC_API_KEY before running.")
         self._client = AsyncAnthropic(api_key=api_key)
+        self._extractors = _load_extractors()
+        self._extractors_dirty = False
         spider.fresh_by_event: dict[str, list[dict]] = {}
         spider.total_in_tok = 0
         spider.total_out_tok = 0
         self._fields = ", ".join(TechEvent.model_fields.keys())
 
+    def _save_extractors(self):
+        EXTRACTORS_FILE.write_text(
+            yaml.safe_dump(self._extractors, sort_keys=True, allow_unicode=True)
+        )
+
     async def process_item(self, item):
         spider = self.crawler.spider
         name = item["event_name"]
         url  = item["url"]
-        html = _clean_html(item["html"])[:MAX_HTML_CHARS]
 
-        prompt = f"""Analyse the page content below from "{name}" ({url}) and extract all {YEAR} events.
+        # ── 1. Try local CSS selectors ────────────────────────────────────────
+        extractor = self._extractors.get(name)
+        if extractor:
+            local = _apply_extractor(item["html"], extractor)
+            if local and _extraction_valid(local):
+                validated: list[dict] = []
+                for entry in local:
+                    entry["series"] = name
+                    try:
+                        validated.append(TechEvent.model_validate(entry).model_dump())
+                    except ValidationError:
+                        pass
+                year_entries = [e for e in validated if _is_current_year(e)]
+                if year_entries:
+                    spider.fresh_by_event[name] = year_entries
+                    print(f"  {name}: {len(year_entries)} event(s) [local]")
+                    return item
 
-Page content:
-{html}
+        # ── 2. Fall back to Claude; request events + new selectors ────────────
+        html_clean = _clean_html(item["html"])[:MAX_HTML_CHARS]
 
-Return a JSON array only — no markdown, no commentary. One object per event occurrence.
-For recurring series (monthly/quarterly meetups), list EVERY occurrence separately.
-Include both past and upcoming {YEAR} events; exclude anything outside {YEAR}.
+        prompt = f"""Analyse the cleaned HTML below from "{name}" ({url}) and extract all {YEAR} events.
 
-Fields per object (null if unknown): {self._fields}
+Cleaned HTML (scripts and styles removed):
+{html_clean}
 
-Rules:
-- mode: "online" | "in-person" | "hybrid"
-- scope: "local meetup" | "national conference" | "international conference"
-- date: "YYYY-MM-DD" or "YYYY-MM-DD to YYYY-MM-DD"
-- ticket_status: "available" | "sold_out" | "not_opened" | null
-- cfp_deadline: "YYYY-MM-DD" or null
-- source_url: page that confirms the date/venue
+Return a JSON object with exactly two keys:
 
-Empty array [] if no {YEAR} events found.
+1. "events" — array of event objects for {YEAR}. One object per event occurrence.
+   For recurring series (monthly/quarterly meetups), list EVERY occurrence separately.
+   Include both past and upcoming {YEAR} events; exclude anything outside {YEAR}.
+   Fields per object (null if unknown): {self._fields}
+   Rules:
+   - mode: "online" | "in-person" | "hybrid"
+   - scope: "local meetup" | "national conference" | "international conference"
+   - date: "YYYY-MM-DD" or "YYYY-MM-DD to YYYY-MM-DD"
+   - ticket_status: "available" | "sold_out" | "not_opened" | null
+   - cfp_deadline: "YYYY-MM-DD" or null
+   - source_url: page that confirms the date/venue
+   Empty array [] if no {YEAR} events found.
+
+2. "selectors" — CSS selectors (parsel/Scrapy syntax) that would extract each field
+   directly from the HTML above, so future scrapes can skip the Claude call.
+   - Use "::text" for text nodes, "::attr(href)" for attributes.
+   - For fields requiring interpretation (mode, scope, description, ticket_status,
+     topic, series), set to null — they can't be reliably CSS-selected.
+   - If events appear as repeating list items, set "_container" to the CSS selector
+     for the repeating block; all other selectors are then relative to that block.
+   - Set any field to null if no reliable selector exists.
+
+Example response format:
+{{
+  "events": [{{"name": "...", "date": "{YEAR}-...", "venue": "...", ...}}],
+  "selectors": {{
+    "_container": null,
+    "name": "h1.event-title::text",
+    "date": "#event-date::text",
+    "venue": ".location span::text",
+    "event_website": "a.register::attr(href)",
+    "mode": null,
+    "country": ".country::text",
+    "scope": null,
+    "description": null,
+    "ticket_booking_link": "a.tickets::attr(href)",
+    "ticket_status": null,
+    "cfp_submission_link": "a.cfp::attr(href)",
+    "cfp_deadline": ".cfp-deadline::text",
+    "source_url": null
+  }}
+}}
 """
 
         response = await self._client.messages.create(
@@ -226,20 +341,36 @@ Empty array [] if no {YEAR} events found.
             (b.text for b in response.content if b.type == "text"), ""
         ).strip()
 
-        extracted = _extract_json_array(text)
+        extracted = _extract_json(text)
         if not extracted:
-            spider.logger.warning("%s: no JSON array in response", name)
+            spider.logger.warning("%s: no JSON in response", name)
             spider.fresh_by_event[name] = []
             return item
 
         try:
-            raw_entries = json.loads(extracted)
+            parsed = json.loads(extracted)
         except json.JSONDecodeError as exc:
             spider.logger.warning("%s: JSON parse error: %s", name, exc)
             spider.fresh_by_event[name] = []
             return item
 
-        validated: list[dict] = []
+        # Accept both new {events, selectors} format and plain array (fallback)
+        if isinstance(parsed, dict) and "events" in parsed:
+            raw_entries = parsed["events"]
+            new_selectors = parsed.get("selectors") or {}
+            if new_selectors:
+                container = new_selectors.pop("_container", None)
+                self._extractors[name] = {
+                    "container": container,
+                    "fields": {k: v for k, v in new_selectors.items()},
+                }
+                self._extractors_dirty = True
+        elif isinstance(parsed, list):
+            raw_entries = parsed
+        else:
+            raw_entries = []
+
+        validated = []
         for entry in raw_entries:
             try:
                 validated.append(TechEvent.model_validate(entry).model_dump())
@@ -251,8 +382,12 @@ Empty array [] if no {YEAR} events found.
             e["series"] = name
 
         spider.fresh_by_event[name] = year_entries
-        print(f"  {name}: {len(year_entries)} event(s)")
+        print(f"  {name}: {len(year_entries)} event(s) [claude]")
         return item
+
+    def close_spider(self):
+        if self._extractors_dirty:
+            self._save_extractors()
 
 
 class YamlWriterPipeline:
@@ -285,4 +420,5 @@ class YamlWriterPipeline:
 
         print(f"\nScraped {total} event(s) → wrote {len(merged)} to {OUTPUT_FILE}")
         print(f"New: {n_new}  Changed: {n_changed}  Unchanged: {n_unchanged}")
-        print(f"Tokens: {in_tok:,} in / {out_tok:,} out  |  Cost: ${cost:.4f}")
+        if in_tok or out_tok:
+            print(f"Tokens: {in_tok:,} in / {out_tok:,} out  |  Cost: ${cost:.4f}")
