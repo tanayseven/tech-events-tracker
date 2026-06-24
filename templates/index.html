@@ -403,6 +403,59 @@
     .btn-clear:hover { border-color: var(--danube); color: var(--danube); }
     .btn-clear:not(.visible) { display: none; }
 
+    /* ── Country modal ──────────────────────────────────────────── */
+    dialog#country-modal {
+      border: none;
+      border-radius: 14px;
+      padding: 0;
+      max-width: 440px;
+      width: calc(100% - 2rem);
+      box-shadow: 0 24px 64px rgba(0,0,0,0.28);
+      background: var(--card-bg);
+      color: var(--text);
+    }
+    dialog#country-modal::backdrop {
+      background: rgba(0,0,0,0.45);
+      backdrop-filter: blur(4px);
+    }
+    .modal-inner { padding: 1.75rem; }
+    .modal-inner h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .modal-subtitle {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+    .modal-choices {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    .modal-choice {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 1.25rem 0.75rem;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      background: var(--bg);
+      color: var(--text);
+      cursor: pointer;
+      font-family: inherit;
+      text-align: center;
+      transition: border-color 0.15s, background 0.15s;
+      width: 100%;
+    }
+    .modal-choice:hover { border-color: var(--danube); }
+    .modal-choice:focus-visible { outline: 2px solid var(--danube); outline-offset: 2px; }
+    .modal-flag { font-size: 2.2rem; line-height: 1; }
+    .modal-choice strong { font-size: 0.9rem; }
+    .modal-choice-hint { font-size: 0.75rem; color: var(--muted); }
+
     /* ── Empty state ─────────────────────────────────────────────── */
     .empty {
       text-align: center;
@@ -540,6 +593,12 @@
         <option value="{{ s }}">{{ s | capitalize }}</option>
         {% endfor %}
       </select>
+      <select id="filter-country" class="filter-select">
+        <option value="">🌍 All countries</option>
+        {% for c in all_events | map(attribute='country') | select | unique | sort %}
+        <option value="{{ c }}">{{ c }}</option>
+        {% endfor %}
+      </select>
     </div>
     <button id="btn-clear" class="btn-clear">Clear filters</button>
   </div>
@@ -558,6 +617,7 @@
          data-search="{{ search_text }}"
          data-mode="{{ event.mode or '' }}"
          data-scope="{{ event.scope or '' }}"
+         data-country="{{ event.country or '' }}"
          data-timing="{{ 'past' if is_past else 'upcoming' }}">
       <div class="card-body">
         <div class="card-name">
@@ -591,12 +651,14 @@
         (group | map(attribute='venue') | select | list) +
         (group | map(attribute='topic') | select | list) +
         (group | map(attribute='description') | select | list)) | join(' ') | lower %}
-    {% set group_modes  = group | map(attribute='mode')  | select | unique | list %}
-    {% set group_scopes = group | map(attribute='scope') | select | unique | list %}
+    {% set group_modes     = group | map(attribute='mode')    | select | unique | list %}
+    {% set group_scopes    = group | map(attribute='scope')   | select | unique | list %}
+    {% set group_countries = group | map(attribute='country') | select | unique | list %}
     <div class="series-card"
          data-search="{{ group_search }}"
          data-mode="{{ group_modes | join(',') }}"
-         data-scope="{{ group_scopes | join(',') }}">
+         data-scope="{{ group_scopes | join(',') }}"
+         data-country="{{ group_countries | join(',') }}">
       <div class="series-card-header">
         <h2>{{ series_name }}</h2>
         <span class="series-count">{{ group | length }} events</span>
@@ -644,12 +706,32 @@
   Made with ❤️ by <a href="https://github.com/tanayseven">Tanay PrabhuDesai</a> &mdash; {{ year }} Tech Events Tracker
 </footer>
 
+<dialog id="country-modal" aria-labelledby="modal-title">
+  <div class="modal-inner">
+    <h2 id="modal-title">Where are you looking for events?</h2>
+    <p class="modal-subtitle">We'll remember your preference. Change it any time with the country filter above.</p>
+    <div class="modal-choices">
+      <button class="modal-choice" id="modal-btn-local">
+        <span class="modal-flag" id="modal-flag">⏳</span>
+        <strong id="modal-country-name">Detecting…</strong>
+        <span class="modal-choice-hint">Events in my country</span>
+      </button>
+      <button class="modal-choice" id="modal-btn-global">
+        <span class="modal-flag">🌍</span>
+        <strong>Global</strong>
+        <span class="modal-choice-hint">All events worldwide</span>
+      </button>
+    </div>
+  </div>
+</dialog>
+
 <script>
 (function () {
   const search      = document.getElementById('search');
   const selTiming   = document.getElementById('filter-timing');
   const selMode     = document.getElementById('filter-mode');
   const selScope    = document.getElementById('filter-scope');
+  const selCountry  = document.getElementById('filter-country');
   const btnClear    = document.getElementById('btn-clear');
   const noResults   = document.getElementById('no-results');
   const summary     = document.getElementById('summary-count');
@@ -659,36 +741,40 @@
 
   function isDirty() {
     return search.value.trim() !== '' ||
-           selTiming.value !== '' ||
-           selMode.value   !== '' ||
-           selScope.value  !== '';
+           selTiming.value   !== '' ||
+           selMode.value     !== '' ||
+           selScope.value    !== '' ||
+           (selCountry && selCountry.value !== '');
   }
 
   function applyFilters() {
-    const q      = search.value.trim().toLowerCase();
-    const timing = selTiming.value;
-    const mode   = selMode.value;
-    const scope  = selScope.value;
+    const q       = search.value.trim().toLowerCase();
+    const timing  = selTiming.value;
+    const mode    = selMode.value;
+    const scope   = selScope.value;
+    const country = selCountry ? selCountry.value : '';
 
     let visible = 0;
 
     // Single-event cards
     singleCards.forEach(function (card) {
-      const show = (!q      || card.dataset.search.includes(q))
-                && (!timing || card.dataset.timing === timing)
-                && (!mode   || card.dataset.mode   === mode)
-                && (!scope  || card.dataset.scope  === scope);
+      const show = (!q       || card.dataset.search.includes(q))
+                && (!timing  || card.dataset.timing  === timing)
+                && (!mode    || card.dataset.mode    === mode)
+                && (!scope   || card.dataset.scope   === scope)
+                && (!country || card.dataset.country === country);
       card.style.display = show ? '' : 'none';
       if (show) visible++;
     });
 
     // Series group cards: filter rows by timing, hide card if nothing matches
     seriesCards.forEach(function (card) {
-      const matchSearch = !q     || card.dataset.search.includes(q);
-      const matchMode   = !mode  || card.dataset.mode.split(',').indexOf(mode)  !== -1;
-      const matchScope  = !scope || card.dataset.scope.split(',').indexOf(scope) !== -1;
+      const matchSearch  = !q       || card.dataset.search.includes(q);
+      const matchMode    = !mode    || card.dataset.mode.split(',').indexOf(mode)  !== -1;
+      const matchScope   = !scope   || card.dataset.scope.split(',').indexOf(scope) !== -1;
+      const matchCountry = !country || card.dataset.country.split(',').indexOf(country) !== -1;
 
-      if (!matchSearch || !matchMode || !matchScope) {
+      if (!matchSearch || !matchMode || !matchScope || !matchCountry) {
         card.style.display = 'none';
         return;
       }
@@ -721,14 +807,19 @@
     selTiming.value = '';
     selMode.value   = '';
     selScope.value  = '';
+    if (selCountry) selCountry.value = '';
     applyFilters();
   }
 
-  if (search)    search.addEventListener('input', applyFilters);
-  if (selTiming) selTiming.addEventListener('change', applyFilters);
-  if (selMode)   selMode.addEventListener('change', applyFilters);
-  if (selScope)  selScope.addEventListener('change', applyFilters);
-  if (btnClear)  btnClear.addEventListener('click', clearAll);
+  if (search)     search.addEventListener('input', applyFilters);
+  if (selTiming)  selTiming.addEventListener('change', applyFilters);
+  if (selMode)    selMode.addEventListener('change', applyFilters);
+  if (selScope)   selScope.addEventListener('change', applyFilters);
+  if (selCountry) selCountry.addEventListener('change', function () {
+    localStorage.setItem('countryPref', selCountry.value);
+    applyFilters();
+  });
+  if (btnClear)   btnClear.addEventListener('click', clearAll);
 
   // ── Theme toggle ──────────────────────────────────────────────
   var themeBtn = document.getElementById('theme-toggle');
@@ -739,6 +830,120 @@
       localStorage.setItem('theme', next);
     });
   }
+
+  // ── Country detection, flag emojis, and modal ─────────────────
+  (function () {
+    // ISO 3166-1 alpha-2 → flag emoji
+    function flagEmoji(cc) {
+      if (!cc || cc.length !== 2) return '🌍';
+      return String.fromCodePoint(
+        0x1F1E6 + cc.toUpperCase().charCodeAt(0) - 65,
+        0x1F1E6 + cc.toUpperCase().charCodeAt(1) - 65
+      );
+    }
+
+    // Detect country code via browser locale, then IANA timezone fallback
+    function detectCountryCode() {
+      try {
+        var loc = new Intl.Locale(navigator.language);
+        if (loc.region && loc.region.length === 2) return loc.region.toUpperCase();
+      } catch (e) {}
+      var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      var TZ = {
+        'Asia/Kolkata':'IN','Asia/Calcutta':'IN','Asia/Colombo':'LK',
+        'Asia/Bangkok':'TH','Asia/Tokyo':'JP','Asia/Seoul':'KR',
+        'Asia/Shanghai':'CN','Asia/Singapore':'SG','Asia/Dubai':'AE',
+        'Asia/Karachi':'PK','Asia/Dhaka':'BD','Asia/Kathmandu':'NP',
+        'Europe/London':'GB','Europe/Dublin':'IE','Europe/Paris':'FR',
+        'Europe/Berlin':'DE','Europe/Rome':'IT','Europe/Madrid':'ES',
+        'Europe/Amsterdam':'NL','Europe/Stockholm':'SE','Europe/Oslo':'NO',
+        'Europe/Helsinki':'FI','Europe/Warsaw':'PL','Europe/Zurich':'CH',
+        'America/New_York':'US','America/Chicago':'US','America/Denver':'US',
+        'America/Los_Angeles':'US','America/Toronto':'CA','America/Vancouver':'CA',
+        'Australia/Sydney':'AU','Australia/Melbourne':'AU','Pacific/Auckland':'NZ',
+        'Africa/Lagos':'NG','Africa/Nairobi':'KE','Africa/Johannesburg':'ZA',
+        'America/Sao_Paulo':'BR','America/Buenos_Aires':'AR','America/Mexico_City':'MX',
+      };
+      return TZ[tz] || null;
+    }
+
+    // Country name from code via Intl API
+    function countryNameOf(cc) {
+      try { return new Intl.DisplayNames(['en'], { type: 'region' }).of(cc); } catch (e) { return cc; }
+    }
+
+    // Country name → ISO code map for decorating the dropdown options
+    var NAME_TO_CODE = {
+      'India':'IN','Thailand':'TH','Italy':'IT','Japan':'JP','South Korea':'KR',
+      'Singapore':'SG','China':'CN','Germany':'DE','France':'FR','Spain':'ES',
+      'United Kingdom':'GB','Ireland':'IE','Netherlands':'NL','Sweden':'SE',
+      'Norway':'NO','Finland':'FI','Poland':'PL','Switzerland':'CH','Austria':'AT',
+      'United States':'US','Canada':'CA','Australia':'AU','New Zealand':'NZ',
+      'Brazil':'BR','Argentina':'AR','Mexico':'MX','Nigeria':'NG','Kenya':'KE',
+      'South Africa':'ZA','United Arab Emirates':'AE','Pakistan':'PK',
+      'Bangladesh':'BD','Sri Lanka':'LK','Nepal':'NP','Indonesia':'ID',
+      'Malaysia':'MY','Philippines':'PH','Vietnam':'VN','Taiwan':'TW',
+    };
+
+    // Prepend flag emoji to each country option in the dropdown
+    if (selCountry) {
+      Array.from(selCountry.options).forEach(function (opt) {
+        if (!opt.value) return;
+        var code = NAME_TO_CODE[opt.value];
+        if (code) opt.text = flagEmoji(code) + ' ' + opt.value;
+      });
+    }
+
+    // Restore saved country preference (no modal on return visits)
+    var savedPref = localStorage.getItem('countryPref');
+    if (savedPref !== null) {
+      if (selCountry) { selCountry.value = savedPref; applyFilters(); }
+      return; // skip modal
+    }
+
+    // First visit: show modal
+    var modal      = document.getElementById('country-modal');
+    var btnLocal   = document.getElementById('modal-btn-local');
+    var btnGlobal  = document.getElementById('modal-btn-global');
+    var flagEl     = document.getElementById('modal-flag');
+    var nameEl     = document.getElementById('modal-country-name');
+
+    var cc   = detectCountryCode();
+    var name = cc ? countryNameOf(cc) : null;
+
+    if (flagEl) flagEl.textContent = cc ? flagEmoji(cc) : '🌍';
+    if (nameEl) nameEl.textContent = name || 'My country';
+
+    function chooseCountry(value) {
+      if (modal) modal.close();
+      if (selCountry) {
+        selCountry.value = value;
+        applyFilters();
+      }
+      localStorage.setItem('countryPref', value);
+    }
+
+    if (btnLocal) btnLocal.addEventListener('click', function () {
+      // Match detected country name to a dropdown option
+      var match = '';
+      if (name && selCountry) {
+        Array.from(selCountry.options).forEach(function (opt) {
+          if (opt.value && opt.value.toLowerCase() === name.toLowerCase()) match = opt.value;
+        });
+      }
+      chooseCountry(match);
+    });
+
+    if (btnGlobal) btnGlobal.addEventListener('click', function () { chooseCountry(''); });
+
+    // Close on backdrop click → default to global
+    if (modal) {
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal) chooseCountry('');
+      });
+      modal.showModal();
+    }
+  })();
 })();
 </script>
 
