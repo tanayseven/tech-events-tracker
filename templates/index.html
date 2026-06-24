@@ -413,6 +413,11 @@
       box-shadow: 0 24px 64px rgba(0,0,0,0.28);
       background: var(--card-bg);
       color: var(--text);
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0;
     }
     dialog#country-modal::backdrop {
       background: rgba(0,0,0,0.45);
@@ -842,12 +847,8 @@
       );
     }
 
-    // Detect country code via browser locale, then IANA timezone fallback
+    // Detect country code from the browser's current IANA timezone
     function detectCountryCode() {
-      try {
-        var loc = new Intl.Locale(navigator.language);
-        if (loc.region && loc.region.length === 2) return loc.region.toUpperCase();
-      } catch (e) {}
       var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
       var TZ = {
         'Asia/Kolkata':'IN','Asia/Calcutta':'IN','Asia/Colombo':'LK',
