@@ -1,9 +1,13 @@
 """
 Scrapy item pipelines.
 
-ClaudeExtractionPipeline  — tries stored CSS selectors first; falls back to
-                             Claude when selectors are missing or stale, and
-                             updates extractors.yaml with new selectors.
+ClaudeExtractionPipeline  — three-stage extraction per page:
+                             1. stored XPath selectors (local, free),
+                             2. Claude on the fetched HTML (regenerates XPath),
+                             3. Claude with web_search/web_fetch when the page is
+                                dead/empty/moved — finds the live page, extracts,
+                                and can auto-correct the URL in events_list.yaml.
+                             Updates extractors.yaml with fresh XPath selectors.
 YamlWriterPipeline        — after all items are processed, upserts results into
                              event/<year>.yaml.
 """
@@ -24,11 +28,19 @@ from pydantic import BaseModel, ValidationError
 YEAR = dt.datetime.now().year
 OUTPUT_FILE = Path(f"event/{YEAR}.yaml")
 EXTRACTORS_FILE = Path("extractors.yaml")
+EVENTS_LIST_FILE = Path("events_list.yaml")
 MAX_HTML_CHARS = 80_000
 
 MODEL = "claude-sonnet-4-6"
 _COST_PER_M_INPUT  = 3.00
 _COST_PER_M_OUTPUT = 15.00
+
+# Server-tool variants supported by claude-sonnet-4-6 (dynamic filtering built in).
+_WEB_TOOLS = [
+    {"type": "web_search_20260209", "name": "web_search"},
+    {"type": "web_fetch_20260209", "name": "web_fetch"},
+]
+_MAX_TURN_CONTINUATIONS = 4  # server-tool loops may return stop_reason="pause_turn"
 
 
 # ── Schema ────────────────────────────────────────────────────────────────────
@@ -120,11 +132,24 @@ def _load_extractors() -> dict:
     return yaml.safe_load(EXTRACTORS_FILE.read_text()) or {}
 
 
+def _retemplatize(discovered: str, original: str) -> str:
+    """
+    Re-insert a `{year}` template into a freshly discovered URL if the original
+    events_list.yaml entry used one, so the entry keeps working next year.
+    Replaces the current 4-digit year in the discovered URL with `{year}`.
+    """
+    if "{year}" in original:
+        return discovered.replace(str(YEAR), "{year}")
+    return discovered
+
+
 def _apply_extractor(html: str, extractor: dict) -> list[dict] | None:
     """
-    Apply stored CSS selectors to raw HTML.
+    Apply stored XPath selectors to raw HTML.
     Returns a list of dicts (possibly with null values), or None if extraction
     produced nothing useful (no nodes matched the container, or all fields null).
+    A stale CSS-format extractor simply matches nothing here and returns None,
+    so the caller falls through to Claude and the cache is rewritten as XPath.
     """
     try:
         from parsel import Selector
@@ -133,20 +158,27 @@ def _apply_extractor(html: str, extractor: dict) -> list[dict] | None:
 
     sel = Selector(text=html)
     field_selectors: dict = extractor.get("fields", {})
-    container_css: str | None = extractor.get("container")
+    container_xpath: str | None = extractor.get("container")
 
     def _extract_node(node) -> dict:
         row: dict = {}
-        for field, css in field_selectors.items():
-            if not css:
+        for field, xpath in field_selectors.items():
+            if not xpath:
                 row[field] = None
                 continue
-            value = node.css(css).get()
+            try:
+                value = node.xpath(xpath).get()
+            except ValueError:
+                value = None  # malformed XPath — treat as a miss
             row[field] = value.strip() if value else None
         return row
 
-    if container_css:
-        nodes = sel.css(container_css)
+    try:
+        nodes = sel.xpath(container_xpath) if container_xpath else None
+    except ValueError:
+        return None
+
+    if container_xpath:
         if not nodes:
             return None
         return [_extract_node(n) for n in nodes]
@@ -242,9 +274,11 @@ class ClaudeExtractionPipeline:
         self._client = AsyncAnthropic(api_key=api_key)
         self._extractors = _load_extractors()
         self._extractors_dirty = False
+        self._url_updates: dict[str, str] = {}  # name -> corrected events_list URL
         spider.fresh_by_event: dict[str, list[dict]] = {}
         spider.total_in_tok = 0
         spider.total_out_tok = 0
+        spider.total_searches = 0
         self._fields = ", ".join(TechEvent.model_fields.keys())
 
     def _save_extractors(self):
@@ -298,32 +332,33 @@ Return a JSON object with exactly two keys:
    - source_url: page that confirms the date/venue
    Empty array [] if no {YEAR} events found.
 
-2. "selectors" — CSS selectors (parsel/Scrapy syntax) that would extract each field
+2. "selectors" — XPath expressions (parsel/lxml syntax) that would extract each field
    directly from the HTML above, so future scrapes can skip the Claude call.
-   - Use "::text" for text nodes, "::attr(href)" for attributes.
+   - End each XPath in "/text()" for text nodes or "/@href" (etc.) for attributes.
    - For fields requiring interpretation (mode, scope, description, ticket_status,
-     topic, series), set to null — they can't be reliably CSS-selected.
-   - If events appear as repeating list items, set "_container" to the CSS selector
-     for the repeating block; all other selectors are then relative to that block.
-   - Set any field to null if no reliable selector exists.
+     topic, series), set to null — they can't be reliably XPath-selected.
+   - If events appear as repeating list items, set "_container" to an absolute XPath
+     for the repeating block; all other selectors are then RELATIVE (start with ".//")
+     and evaluated against each matched block.
+   - Set any field to null if no reliable XPath exists.
 
 Example response format:
 {{
   "events": [{{"name": "...", "date": "{YEAR}-...", "venue": "...", ...}}],
   "selectors": {{
     "_container": null,
-    "name": "h1.event-title::text",
-    "date": "#event-date::text",
-    "venue": ".location span::text",
-    "event_website": "a.register::attr(href)",
+    "name": "//h1[@class='event-title']/text()",
+    "date": "//*[@id='event-date']/text()",
+    "venue": "//*[@class='location']//span/text()",
+    "event_website": "//a[@class='register']/@href",
     "mode": null,
-    "country": ".country::text",
+    "country": "//*[@class='country']/text()",
     "scope": null,
     "description": null,
-    "ticket_booking_link": "a.tickets::attr(href)",
+    "ticket_booking_link": "//a[@class='tickets']/@href",
     "ticket_status": null,
-    "cfp_submission_link": "a.cfp::attr(href)",
-    "cfp_deadline": ".cfp-deadline::text",
+    "cfp_submission_link": "//a[@class='cfp']/@href",
+    "cfp_deadline": "//*[@class='cfp-deadline']/text()",
     "source_url": null
   }}
 }}
@@ -381,13 +416,133 @@ Example response format:
         for e in year_entries:
             e["series"] = name
 
-        spider.fresh_by_event[name] = year_entries
-        print(f"  {name}: {len(year_entries)} event(s) [claude]")
+        if year_entries:
+            spider.fresh_by_event[name] = year_entries
+            print(f"  {name}: {len(year_entries)} event(s) [claude]")
+            return item
+
+        # ── 3. Fetched page is dead/empty/moved — search the web for the live page.
+        web_entries = await self._web_search_extract(name, url, spider)
+        spider.fresh_by_event[name] = web_entries
+        label = "web-search" if web_entries else "claude"
+        print(f"  {name}: {len(web_entries)} event(s) [{label}]")
         return item
+
+    async def _web_search_extract(self, name, url, spider) -> list[dict]:
+        """
+        Stage 3: the known page produced no events. Let Claude search the web for
+        the official {name} {YEAR} page, fetch it, and extract events. If it reports
+        a different canonical URL, queue an events_list.yaml correction so future
+        runs fetch the right page (keeping the XPath cache hot).
+        """
+        prompt = f"""The known page for "{name}" ({url}) is unreachable, empty, or has no {YEAR} event data.
+
+Use web_search and web_fetch to find the OFFICIAL "{name}" {YEAR} event page, then extract every {YEAR} event.
+
+Return a JSON object with exactly two keys:
+
+1. "events" — array of event objects for {YEAR}. One object per event occurrence.
+   For recurring series (monthly/quarterly meetups), list EVERY occurrence separately.
+   Include both past and upcoming {YEAR} events; exclude anything outside {YEAR}.
+   Fields per object (null if unknown): {self._fields}
+   Rules:
+   - mode: "online" | "in-person" | "hybrid"
+   - scope: "local meetup" | "national conference" | "international conference"
+   - date: "YYYY-MM-DD" or "YYYY-MM-DD to YYYY-MM-DD"
+   - ticket_status: "available" | "sold_out" | "not_opened" | null
+   - cfp_deadline: "YYYY-MM-DD" or null
+   - source_url: page that confirms the date/venue
+   Empty array [] if no {YEAR} events found anywhere.
+
+2. "canonical_url" — the official event homepage URL you used, or null if you could
+   not find one. Only differ from "{url}" if the event has genuinely moved.
+
+Respond with ONLY the JSON object.
+"""
+
+        user_msg = {"role": "user", "content": prompt}
+        messages = [user_msg]
+        response = None
+        container_id: str | None = None
+        try:
+            for _ in range(_MAX_TURN_CONTINUATIONS):
+                kwargs = dict(model=MODEL, max_tokens=2000, tools=_WEB_TOOLS, messages=messages)
+                # The _20260209 web tools run code execution under the hood; when
+                # resuming a paused turn the same container must be reused.
+                if container_id:
+                    kwargs["container"] = container_id
+                response = await self._client.messages.create(**kwargs)
+                spider.total_in_tok  += response.usage.input_tokens
+                spider.total_out_tok += response.usage.output_tokens
+                spider.total_searches += sum(
+                    1 for b in response.content
+                    if b.type == "server_tool_use" and b.name == "web_search"
+                )
+                container = getattr(response, "container", None)
+                if container is not None:
+                    container_id = container.id
+                if response.stop_reason != "pause_turn":
+                    break
+                # Server-tool loop hit its iteration cap — re-send to resume.
+                messages = [user_msg, {"role": "assistant", "content": response.content}]
+        except Exception as exc:
+            spider.logger.warning("%s: web-search fallback failed: %s", name, exc)
+            return []
+
+        if response is None:
+            return []
+
+        text = "".join(
+            b.text for b in response.content if b.type == "text"
+        ).strip()
+
+        extracted = _extract_json(text)
+        if not extracted:
+            return []
+        try:
+            parsed = json.loads(extracted)
+        except json.JSONDecodeError:
+            return []
+        if not isinstance(parsed, dict):
+            return []
+
+        canonical = parsed.get("canonical_url")
+        if canonical and canonical != url:
+            self._url_updates[name] = canonical
+
+        validated = []
+        for entry in parsed.get("events") or []:
+            try:
+                validated.append(TechEvent.model_validate(entry).model_dump())
+            except ValidationError:
+                pass
+        year_entries = [e for e in validated if _is_current_year(e)]
+        for e in year_entries:
+            e["series"] = name
+        return year_entries
+
+    def _apply_url_updates(self):
+        """Rewrite corrected URLs back into events_list.yaml (batched, on close)."""
+        if not self._url_updates or not EVENTS_LIST_FILE.exists():
+            return
+        entries = yaml.safe_load(EVENTS_LIST_FILE.read_text()) or []
+        changed = False
+        for entry in entries:
+            name = entry.get("name")
+            if name in self._url_updates:
+                new_url = _retemplatize(self._url_updates[name], entry.get("url", ""))
+                if new_url != entry.get("url"):
+                    entry["url"] = new_url
+                    changed = True
+        if changed:
+            EVENTS_LIST_FILE.write_text(
+                yaml.safe_dump(entries, sort_keys=False, allow_unicode=True)
+            )
 
     def close_spider(self):
         if self._extractors_dirty:
             self._save_extractors()
+        self._apply_url_updates()
 
 
 class YamlWriterPipeline:
@@ -398,10 +553,11 @@ class YamlWriterPipeline:
         return pipeline
 
     def close_spider(self):
-        spider  = self.crawler.spider
-        fresh   = getattr(spider, "fresh_by_event", {})
-        in_tok  = getattr(spider, "total_in_tok", 0)
-        out_tok = getattr(spider, "total_out_tok", 0)
+        spider   = self.crawler.spider
+        fresh    = getattr(spider, "fresh_by_event", {})
+        in_tok   = getattr(spider, "total_in_tok", 0)
+        out_tok  = getattr(spider, "total_out_tok", 0)
+        searches = getattr(spider, "total_searches", 0)
 
         if not fresh:
             return
@@ -421,4 +577,6 @@ class YamlWriterPipeline:
         print(f"\nScraped {total} event(s) → wrote {len(merged)} to {OUTPUT_FILE}")
         print(f"New: {n_new}  Changed: {n_changed}  Unchanged: {n_unchanged}")
         if in_tok or out_tok:
-            print(f"Tokens: {in_tok:,} in / {out_tok:,} out  |  Cost: ${cost:.4f}")
+            print(f"Tokens: {in_tok:,} in / {out_tok:,} out  |  Cost: ${cost:.4f} (excl. web search)")
+        if searches:
+            print(f"Web searches: {searches} (billed separately, per query)")

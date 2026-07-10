@@ -1,0 +1,1488 @@
+ASIACRYPT:
+  container: null
+  fields:
+    cfp_deadline: //h6[@class='dateTitle'][following-sibling::p[contains(text(),'Submission
+      deadline')][1]]/text()
+    cfp_submission_link: //a[contains(@href,'papersubmission.php')]/@href
+    country: null
+    date: //h3[@class='headerInfoTop']/text()
+    description: //main//p[contains(text(),'Asiacrypt 2026')]/text()
+    event_website: //link[@rel='canonical']/@href
+    mode: null
+    name: //h1[@class='headerTitle']/text()
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    topic: null
+    venue: //h3[@class='headerInfoBottom']/text()
+AWS Summit India:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: null
+    description: null
+    event_website: null
+    mode: null
+    name: null
+    scope: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    venue: null
+AWS re:Invent:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: //p[@data-rg-n='SubheadingText' and contains(text(),'Nov.')]/text()
+    description: null
+    event_website: //a[@data-testid='nav-item-logo-link']/@href
+    mode: null
+    name: null
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: //a[@data-testid='create-account-button']/@href
+    ticket_status: null
+    topic: null
+    venue: //p[@data-rg-n='SubheadingText' and contains(text(),'Las Vegas')]/text()
+Agile India:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: null
+    description: null
+    event_website: null
+    mode: null
+    name: null
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    topic: null
+    venue: null
+All Things Open:
+  container: //a[contains(@class,'event-item')]
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: .//span[@class='full-date']/text()
+    description: null
+    event_website: ./@href
+    mode: null
+    name: .//span[@class='event-title']/text()
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: ./@href
+    ticket_status: null
+    topic: null
+    venue: null
+BSides:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: null
+    description: null
+    event_website: null
+    mode: null
+    name: null
+    scope: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    venue: null
+CES:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: null
+    description: null
+    event_website: //a[@aria-label='CES']/@href
+    mode: null
+    name: null
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: //a[contains(@data-track-data,'Sign up now')]/@href
+    ticket_status: null
+    topic: null
+    venue: null
+CIDR:
+  container: //table[2]//tr[td[normalize-space(text())='2026']]
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: .//td[1]/p/text()
+    description: null
+    event_website: .//td[4]//a/@href
+    mode: null
+    name: null
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    topic: null
+    venue: null
+COMSNETS:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: null
+    description: null
+    event_website: //a[contains(@href,'/archive/2026')]/@href
+    mode: null
+    name: null
+    scope: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    venue: null
+CRYPTO:
+  container: null
+  fields:
+    cfp_deadline: //div[@class='customCardRow row'][.//p[contains(text(),'Submission
+      deadline')]]//h6[@class='dateTitle col-5 col-md-6 col-lg-4']/text()
+    cfp_submission_link: //a[contains(@href,'papersubmission.php')]/@href
+    country: null
+    date: //div[@class='headerInfo']//h3[@class='headerInfoTop']/text()
+    description: //main//p[1]/text()
+    event_website: //link[@rel='canonical']/@href
+    mode: null
+    name: //h1[@class='headerTitle']/text()
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: //a[contains(@href,'registration.php')]/@href
+    ticket_status: null
+    topic: null
+    venue: //div[@class='headerInfo']//h3[@class='headerInfoBottom']/text()
+CppNorth:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: //p[contains(text(), 'May') and contains(text(), '2026')]/text()
+    description: null
+    event_website: //a[contains(@href, 'ndctoronto.com')]/@href
+    mode: null
+    name: //p[@class and contains(., 'NDC Toronto')]/text()
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: //a[contains(@href, 'ndctoronto.com')]/@href
+    ticket_status: null
+    topic: null
+    venue: //p[contains(text(), 'Westin Harbour Castle')]/text()
+Cypher:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: //span[contains(@class,'tracking-wide') and contains(@class,'flex')]//text()
+    description: //h1/text()
+    event_website: null
+    mode: null
+    name: //img[@alt]/@alt
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: //a[@href='/tickets']/@href
+    ticket_status: null
+    topic: null
+    venue: //span[contains(@class,'tracking-wide') and contains(@class,'flex')]//text()
+Data + AI Summit:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: //span[contains(@class,'font-mono') and contains(text(),'June')]//text()
+    description: null
+    event_website: //a[@aria-label='Data + AI Summit home']/@href
+    mode: null
+    name: //a[@aria-label='Data + AI Summit home']/@href
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: //a[@aria-label='Register for Data + AI Summit']/@href
+    ticket_status: null
+    topic: null
+    venue: //span[contains(@class,'font-mono') and contains(text(),'San Francisco')]/text()
+DebConf:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: //li[@class='PhraseTwo']/a[contains(text(),'2026')]/text()
+    description: //h2[contains(text(),'2026')]/following-sibling::p[1]/text()
+    event_website: //li[@class='debconf-website']/a/@href
+    mode: null
+    name: //li[@class='debconf-website']//strong/text()
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    topic: null
+    venue: //li[@class='PhraseTwo']/a[not(contains(text(),'July'))]/text()
+Design Automation Conference:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: null
+    description: null
+    event_website: //a[@href='/2026']/@href
+    mode: null
+    name: //a[@href='/2026']//img/@alt
+    scope: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    venue: null
+DeveloperWeek:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: //a[contains(@href,'apply-to-speak')]/@href
+    country: null
+    date: //div[contains(@class,'hero-text')]//h3/text()
+    description: null
+    event_website: //a[@id='logo']/@href
+    mode: null
+    name: //h1[@class='hide']/text()
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: //a[@class='link_text'][.//span[text()='REGISTER']]/@href
+    ticket_status: null
+    topic: null
+    venue: //div[contains(@class,'agenda')]//h5/text()
+DockerCon:
+  container: //li[contains(@class,'wp-block-post') and contains(@class,'event')]
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: .//span[contains(@class,'eyebrow-right')]/text()
+    description: .//p[contains(@class,'body-copy')]/text()
+    event_website: .//a[contains(@class,'wp-block-ponyo-carlos')]/@href
+    mode: null
+    name: .//h4[contains(@class,'wp-block-ponyo-heading')]/text()
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: .//a[contains(@class,'wp-block-ponyo-carlos')]/@href
+    ticket_status: null
+    topic: null
+    venue: null
+Droidcon Bengaluru:
+  container: //div[contains(@class,'wixui-repeater__item') and contains(@id,'comp-mkvj3hfw12__')]
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: .//div[contains(@class,'comp-mkvj3hg315')]//p//span/text()
+    description: null
+    event_website: .//a[contains(@class,'wixui-button')]/@href
+    mode: null
+    name: .//div[contains(@class,'comp-mkvj3hfz8')]//p/text()
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: .//a[contains(@class,'wixui-button')]/@href
+    ticket_status: null
+    topic: null
+    venue: .//div[contains(@class,'comp-mkvj3hg22')]//p/text()
+EFY Expo:
+  container: //section[contains(@class,'elementor-inner-section')]
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: .//h2[contains(@class,'elementor-heading-title')][2]/text()
+    description: null
+    event_website: .//a[contains(@href,'efyexpo.com') or contains(@href,'indiaelectronicsweek.com')]/@href
+    mode: null
+    name: .//h2[contains(@class,'elementor-heading-title')][1]/text()
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    topic: null
+    venue: .//h2[contains(@class,'elementor-heading-title')][3]/text()
+EUROCRYPT:
+  container: //article[@id='impDates']//div[contains(@class,'customCardRow')]
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: //a[contains(@href,'papersubmission')]/@href
+    country: null
+    date: .//h6[contains(@class,'dateTitle')]/text()
+    description: .//p[contains(@class,'col-7')]/text()
+    event_website: null
+    mode: null
+    name: null
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    venue: //main//p[contains(text(),'Eindhoven')]/text()
+Electronica:
+  container: //ul[li/div[contains(@class,'menu__level-1')]]
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: .//div[contains(@class,'menu__level-1')]/a/span[contains(@class,'date-label')]/text()
+    description: null
+    event_website: .//div[contains(@class,'menu__level-1')]/a/@href
+    mode: null
+    name: .//div[contains(@class,'menu__level-1')]/a/span[1]/text()
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: //a[contains(@data-trk-click-name,'Buy your ticket') or contains(@title,'Tickets')]/@href
+    ticket_status: null
+    topic: null
+    venue: null
+Electronica India:
+  container: //div[contains(@class,'event-slide-wrap')]
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: .//div[contains(@class,'event-overline')]/text()
+    description: null
+    event_website: .//a[contains(@class,'button-filled')]/@href
+    mode: null
+    name: .//div[contains(@class,'event-overline')]/text()
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: .//a[contains(@data-trk-click-name,'Visitor registration')
+      or contains(@data-trk-click-name,'visitor')]/@href
+    ticket_status: null
+    topic: null
+    venue: .//div[contains(@class,'likeh3')]/text()
+Embedded Linux Conference:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: null
+    description: null
+    event_website: //a[contains(@class,'event-home-link')]/@href
+    mode: null
+    name: //h1[contains(@class,'content-wrapper')]//span/text()
+    scope: null
+    source_url: //link[@rel='canonical']/@href
+    ticket_booking_link: //a[contains(@class,'wp-block-button__link') and contains(translate(text(),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'register')]/@href
+    ticket_status: null
+    venue: null
+Embedded World:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: //p[@data-testid='jss-text' and contains(text(),'Nuremberg')]/text()
+    date: null
+    description: null
+    event_website: null
+    mode: null
+    name: //h2[@id='conference-programme']/text()
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: //a[@href='/en/visitor']/@href
+    ticket_status: null
+    topic: null
+    venue: null
+EuroPython:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: //p[@class='hero-schedule']/text()
+    description: //p[@class='hero-intro']/text()
+    event_website: //a[@class='nav-logo']/@href
+    mode: null
+    name: //h1[@class='hero-heading']/@aria-label
+    scope: null
+    source_url: null
+    ticket_booking_link: //a[@class='nav-cta']/@href
+    ticket_status: null
+    venue: //ul[@class='ice-venue-details']/li[1]/text()
+FOSDEM:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: //ul[@class='location-list']/li[last()]/text()
+    date: //div[@class='frame']/strong/text()
+    description: null
+    event_website: //h1[@class='logo']/a/@href
+    mode: null
+    name: //h1[@class='logo']/a/text()
+    scope: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    venue: //ul[@class='location-list']/li/text()
+Frontend Nation:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: //a[contains(@href,'forms.gle')]/@href
+    country: null
+    date: null
+    description: //p[contains(@class,'text-light-gray') and contains(.,'Two days of
+      talks')]/text()
+    event_website: null
+    mode: null
+    name: //title/text()
+    scope: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    venue: null
+Google Cloud Next:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: null
+    description: null
+    event_website: null
+    mode: null
+    name: null
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    topic: null
+    venue: null
+Google DevFest India:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: null
+    description: null
+    event_website: null
+    mode: null
+    name: null
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    topic: null
+    venue: null
+Google I/O:
+  container: //div[@class='keynote-card']
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: null
+    description: null
+    event_website: .//a[contains(@class,'cta-primary')]/@href
+    mode: null
+    name: .//h3/text()
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    topic: null
+    venue: null
+GopherCon:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: //*[contains(@class,'element-5549211')]//p[2]//span/text()
+    description: //*[contains(@class,'element-33904819')]//p/span/text()
+    event_website: //script[@id='bootstrap-data-event']/text()
+    mode: null
+    name: //script[@id='bootstrap-data-event']/text()
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    topic: null
+    venue: //*[contains(@class,'element-5549211')]//p[1]//span/text()
+GopherCon India:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: //a[contains(@href,'papercall.io')]/@href
+    country: null
+    date: //time/@datetime
+    description: //section[contains(@class,'section-lg')]//p/text()
+    event_website: null
+    mode: null
+    name: //h2[@class='content__title']/text()
+    scope: null
+    source_url: null
+    ticket_booking_link: //a[contains(@href,'townscript.com')]/@href
+    ticket_status: null
+    venue: //div[@class='unit-body'][preceding-sibling::div//use[contains(@xlink:href,'earth-globe')]]//p/text()
+GrafanaCON:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: //script[@type='application/ld+json']/text()
+    date: //script[@type='application/ld+json']/text()
+    description: null
+    event_website: //script[@type='application/ld+json']/text()
+    mode: null
+    name: //script[@type='application/ld+json']/text()
+    scope: null
+    series: null
+    source_url: //link[@rel='canonical']/@href
+    ticket_booking_link: //a[contains(@href,'/events/grafanacon')]/@href
+    ticket_status: null
+    topic: null
+    venue: //script[@type='application/ld+json']/text()
+Great International Developer Summit:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: null
+    description: null
+    event_website: null
+    mode: null
+    name: null
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    topic: null
+    venue: null
+ICLR:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: //a[contains(@href,'CallForPapers')]/@href
+    country: //div[contains(@class,'badge-custom')]//span[contains(@class,'fw-semibold')
+      and contains(text(),'Rio')]/text()
+    date: //div[contains(@class,'badge-custom')]//span[contains(@class,'fw-semibold')
+      and contains(text(),'April')]/text()
+    description: //p[contains(@class,'fs-5')]/text()
+    event_website: //a[contains(@href,'/virtual/2026/index.html')]/@href
+    mode: null
+    name: //h1[contains(@class,'display-4')]/text()
+    scope: null
+    source_url: //link[@rel='canonical']/@href
+    ticket_booking_link: //a[contains(@href,'Register2')]/@href
+    ticket_status: null
+    venue: //li[contains(.,'Riocentro')]//text()
+ICML:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: //a[contains(@href,'CallForPapers')]/@href
+    country: //span[@class='hero-loc']/text()
+    date: //span[@class='hero-date']/text()
+    description: null
+    event_website: //a[contains(@href,'/Conferences/2026') and contains(@class,'dropdown-item')]/@href
+    mode: null
+    name: //h1[contains(@class,'display-4')]/text()
+    scope: null
+    source_url: //a[contains(@href,'/accounts/login')]/@href
+    ticket_booking_link: //a[contains(@href,'Register')]/@href
+    ticket_status: null
+    venue: //li[contains(.,'COEX')]/p/text()
+IEEE INFOCOM:
+  container: null
+  fields:
+    cfp_deadline: //div[@class='item'][.//strong[contains(text(),'Paper Submission
+      Deadline')]]//div[@class='date']/text()
+    cfp_submission_link: //a[contains(@href,'submission-guidelines-main-conference')]/@href
+    country: null
+    date: //span[@class='date-display-range']/text()
+    description: null
+    event_website: //a[contains(@href,'infocom2026.ieee-infocom.org')]/@href
+    mode: null
+    name: //h1/div[@class='field field--name-label field__item']/text()
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: //a[contains(@href,'/registration')]/@href
+    ticket_status: null
+    topic: null
+    venue: //div[contains(@class,'intro')]//h3[@class='fw-normal']/text()
+India DevOps Show:
+  container: //ul[contains(@class,'sub-menu')]/li[contains(@class,'menu-item')]
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: //span[contains(@class,'elementor-button-text')][contains(text(),'2026')]/text()
+    description: null
+    event_website: .//a[contains(@class,'hfe-sub-menu-item')]/@href
+    mode: null
+    name: .//a[contains(@class,'hfe-sub-menu-item')]/text()
+    scope: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    venue: null
+India FOSS:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: null
+    description: null
+    event_website: null
+    mode: null
+    name: null
+    scope: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    venue: null
+India Game Developer Conference:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: //a[contains(@href,'/speakers/')][1]/@href
+    country: null
+    date: //h5[contains(@class,'elementor-heading-title') and contains(text(),'2026')]/text()
+    description: //h5[contains(@class,'elementor-heading-title') and contains(text(),'attendees')]/text()
+    event_website: //a[@class='hfe-menu-item' and @href='https://indiagdc.com/']//@href
+    mode: null
+    name: //h1[contains(@class,'elementor-heading-title')]/text()
+    scope: null
+    source_url: null
+    ticket_booking_link: //a[contains(@href,'/register/')][1]/@href
+    ticket_status: null
+    venue: //h5[contains(@class,'elementor-heading-title') and contains(text(),'Centre')]/text()
+JSConf:
+  container: //div[@class='conf']
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: null
+    description: null
+    event_website: .//a/@href
+    mode: null
+    name: .//p/text()
+    scope: null
+    series: null
+    source_url: .//a/@href
+    ticket_booking_link: null
+    ticket_status: null
+    topic: null
+    venue: .//p/text()
+JSFoo:
+  container: //ul[contains(@class,'upcoming')]/li
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: null
+    description: .//span[contains(@class,'js-truncate')]/text()
+    event_website: .//a[contains(@class,'card--upcoming')]/@href
+    mode: null
+    name: .//a[contains(@class,'card--upcoming')]/@aria-label
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    topic: null
+    venue: .//div[contains(@class,'card__body__location')]//text()
+JavaLand:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: null
+    description: //div[contains(@class,'news-badge__content')]//p/text()
+    event_website: //a[contains(@href,'rueckblicke/javaland-2026')]/@href
+    mode: null
+    name: null
+    scope: null
+    source_url: null
+    ticket_booking_link: //a[contains(@href,'meine.doag.org/events/javaland/shop')]/@href
+    ticket_status: null
+    venue: null
+JavaOne:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: //div[@class='hdg-xxsm']/text()
+    description: //section[contains(@class,'sc07v1')]//p/text()
+    event_website: null
+    mode: null
+    name: //h1[@class='hdg-xl']/text()
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    topic: null
+    venue: //script[@type='application/ld+json']/text()
+KDD:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: //a[contains(text(),'Submit Your CFP')]/@href
+    country: null
+    date: //div[@class='col_one_third col_last']//h4[contains(., 'KDD 2026')]/following-sibling::text()
+    description: null
+    event_website: //a[contains(@href,'kdd2026.kdd.org')]/@href
+    mode: null
+    name: //div[@class='col_one_third col_last']//h4/a/text()
+    scope: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    venue: //ul[contains(@id,'primary-menu')]//a[contains(text(),'KDD 2026')]/div/text()
+KotlinConf:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: //p[contains(@class,'_rs-h3_')]//text()
+    date: //p[contains(@class,'_rs-h3_')]//text()
+    description: //p[contains(@class,'_rs-subtitle-1_') and contains(text(),'attendees')]/text()
+    event_website: null
+    mode: null
+    name: //h1[contains(@class,'visually-hidden')]/text()
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    topic: null
+    venue: //p[contains(@class,'_rs-h3_')]//text()
+KubeCon + CloudNativeCon:
+  container: //div[contains(@class,'events-section')]//div[contains(@class,'event-item')]
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: .//.//span[contains(@class,'event-item__date')]/text()
+    description: null
+    event_website: .//a[contains(@class,'event-item__content') or ancestor::div[contains(@class,'event-item')]]/@href
+    mode: null
+    name: .//a/@title
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    topic: null
+    venue: .//.//span[contains(@class,'event-item__city')]/text()
+KubeCon + CloudNativeCon India:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: //h2[contains(@class,'wp-block-heading')]//strong/text()
+    description: null
+    event_website: //a[@class='event-home-link']/@href
+    mode: null
+    name: //figure[contains(@class,'wp-block-image')]//img[@class='wp-image-271813']/@alt
+    scope: null
+    series: null
+    source_url: //link[@rel='canonical']/@href
+    ticket_booking_link: //li[contains(@class,'page-item-270938')]//a/@href
+    ticket_status: null
+    topic: null
+    venue: //h3[contains(@class,'wp-block-heading') and contains(@class,'is-style-section-heading')]//strong/text()
+LambdaConf:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: //*[contains(@class,'schedule-tag')]//*[contains(@class,'text-span-5')]/text()
+    description: //*[contains(@class,'text-block-4')]/text()
+    event_website: //a[contains(@class,'nav-logo-link')]/@href
+    mode: null
+    name: //h1[contains(@class,'heading-hero-home')]/text()
+    scope: null
+    series: //span[contains(@class,'text-span-14')]/text()
+    source_url: null
+    ticket_booking_link: //a[contains(@href,'eventbrite.com')]/@href
+    ticket_status: null
+    venue: //*[contains(@class,'hero-location-box')]//div[not(@aria-hidden)]/text()
+Linux Plumbers Conference:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: null
+    description: null
+    event_website: null
+    mode: null
+    name: //title/text()
+    scope: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    venue: null
+MLOps World:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: //a[contains(@href,'call-for-speakers')]/@href
+    country: null
+    date: //h1[contains(@class,'elementor-heading-title') and contains(text(),'November')]/text()
+    description: null
+    event_website: //a[contains(@href,'mlopsworld.com')]/@href
+    mode: null
+    name: //h1[contains(@class,'elementor-heading-title')]/text()
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: //a[contains(@href,'eventbrite') and contains(., 'Early Bird')]/@href
+    ticket_status: null
+    topic: null
+    venue: //h1[contains(@class,'elementor-heading-title') and contains(text(),'Etter-Harbin')]/text()
+MachineCon:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: //h2[contains(@class,'elementor-heading-title') and contains(text(),'June
+      2026')]/text()
+    description: //h2[contains(@class,'elementor-heading-title') and contains(text(),'residential
+      summit')]/text()
+    event_website: //a[contains(text(),'MachineCon')]/@href
+    mode: null
+    name: //h2[contains(@class,'elementor-heading-title')]//a[contains(text(),'MachineCon')]/text()
+    scope: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    venue: //h2[contains(@class,'elementor-heading-title') and contains(text(),'June
+      2026')]/text()
+Maker Faire:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: //a[contains(@href,'call-for-makers')]/@href
+    country: null
+    date: //div[contains(@class,'elementor-widget-text-editor')]//p[contains(text(),'September')]/text()
+    description: null
+    event_website: //a[contains(@href,'makerfaire.com/bay-area') and contains(@class,'elementor-button')]/@href
+    mode: null
+    name: null
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: //a[contains(@href,'bay-area/tickets')]/@href
+    ticket_status: null
+    topic: null
+    venue: //p[@class='elementor-heading-title'][contains(text(),'maker faire bay
+      area')]/text()
+Microsoft Build:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: null
+    description: null
+    event_website: null
+    mode: null
+    name: null
+    scope: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    venue: null
+Microsoft Ignite:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: null
+    description: null
+    event_website: null
+    mode: null
+    name: null
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    topic: null
+    venue: null
+NeurIPS:
+  container: null
+  fields:
+    cfp_deadline: //div[contains(@class,'date-card')]//div[contains(@class,'date-time')]/span/text()
+    cfp_submission_link: //a[contains(@href,'CallForPapers')]/@href
+    country: null
+    date: //p[contains(.,'Main:') or contains(.,'Satellites:')]//span[contains(@class,'hero-date')]/text()
+    description: //p[contains(@class,'fs-5')]/text()
+    event_website: //a[contains(@href,'/Conferences/2026') and contains(@class,'dropdown-item')]/@href
+    mode: null
+    name: //h1[contains(@class,'display-4')]/text()
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    topic: null
+    venue: //span[contains(@class,'hero-loc')]/text()
+Nullcon:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: //a[contains(@href,'/cfp/')]/@href
+    country: null
+    date: //p[contains(@class,'hero-event')][1]/text()
+    description: null
+    event_website: //div[contains(@class,'footer-col')]//a[contains(@href,'/event/')]/@href
+    mode: null
+    name: //h1[contains(@class,'hero-title')]//text()
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: //a[contains(@href,'registration')]/@href
+    ticket_status: null
+    topic: null
+    venue: //p[contains(@class,'hero-event')][2]/text()
+ODSC:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: //*[contains(@class,'be-countdown')]/@data-time
+    description: null
+    event_website: //a[contains(@href,'odsc.ai') or contains(@href,'summit.ai')]/@href
+    mode: null
+    name: //h1[contains(text(),'ODSC') or contains(text(),'AIX') or contains(text(),'Keynote')]/text()
+    scope: null
+    source_url: null
+    ticket_booking_link: //a[contains(@aria-label,'REGISTER') or contains(@aria-label,'Register')
+      or contains(@aria-label,'JOIN')]/@href
+    ticket_status: null
+    topic: null
+    venue: //*[contains(@class,'tatsu-text-inner')]//h4[contains(text(),'BOSTON')]/text()
+Open Source India:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: //a[contains(@href,'FAIpQLSfp2kMcjE4DyRNOsRbhOBXUhlCpAGO1H896ToPIc19OG3K5sg')]/@href
+    country: //h2[contains(@class,'elementor-heading-title')][contains(text(),'India')]/text()
+    date: //h2[contains(@class,'elementor-heading-title')][contains(text(),'Oct')]/text()
+    description: //div[contains(@class,'elementor-widget-text-editor')]//p/text()
+    event_website: //a[contains(@href,'opensourceindia.in')]/@href
+    mode: null
+    name: //h2[contains(@class,'elementor-heading-title')][contains(text(),'Edition')]/text()
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: //a[contains(@href,'register.opensourceindia.in')]/@href
+    ticket_status: null
+    topic: null
+    venue: //h2[contains(@class,'elementor-heading-title')][contains(text(),'Bengaluru')]/text()
+Open Source Summit India:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: //div[@class='wp-block-column is-layout-flow wp-block-column-is-layout-flow']//h2[@class='wp-block-heading
+      is-style-section-heading']/strong/text()
+    description: null
+    event_website: //a[@class='event-home-link']/@href
+    mode: null
+    name: //h1[@class='show-for-sr']/text()
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: //li[@class='page_item page-item-287706']/a/@href
+    ticket_status: null
+    topic: null
+    venue: //div[@class='wp-block-column is-layout-flow wp-block-column-is-layout-flow']//h3[@class='wp-block-heading
+      is-style-section-heading']/strong/text()
+Open Source Summit North America:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: //div[contains(@class,'wp-block-column')]//h2[contains(@class,'section-heading')][2]/text()
+    description: null
+    event_website: null
+    mode: null
+    name: //h1[contains(@class,'show-for-sr')]/text()
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    topic: null
+    venue: //div[contains(@class,'wp-block-column')]//h3[contains(@class,'section-heading')]/text()
+PlatformCon:
+  container: //a[contains(@class,'framer-J36FX') and contains(@class,'framer-e43lcs')]
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: .//div[contains(@class,'framer-1kgdh0h')]//h5[contains(@class,'framer-text')]/text()
+    description: null
+    event_website: ./@href
+    mode: null
+    name: null
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: ./@href
+    ticket_status: null
+    topic: null
+    venue: null
+PyCon US:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: //div[contains(@class,'conference-hero')]//p[@class='location']/text()
+    date: null
+    description: //div[contains(@class,'conference-hero')]//div[@class='conference-details']/p[1]/text()
+    event_website: //div[contains(@class,'conference-hero')]//a[contains(text(),'Visit
+      Website')]/@href
+    mode: null
+    name: //div[contains(@class,'conference-hero')]//h3/text()
+    scope: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    venue: null
+PyConF Hyderabad:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: null
+    description: //meta[@name='description']/@content
+    event_website: //link[@rel='canonical']/@href
+    mode: null
+    name: //title/text()
+    scope: null
+    source_url: //link[@rel='canonical']/@href
+    ticket_booking_link: null
+    ticket_status: null
+    venue: null
+QCon:
+  container: //div[contains(@class,'dark_banner')]//div[contains(@class,'min-w-[290px]')]
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: .//span[contains(@class,'font-mono')]/text()
+    description: null
+    event_website: .//a[contains(@class,'bg-red-500')]/@href
+    mode: null
+    name: .//h4[contains(@class,'text-xl')]/text()
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: .//a[contains(@class,'bg-red-500')]/@href
+    ticket_status: null
+    topic: null
+    venue: null
+React India:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: //a[contains(@href,'/cfp')]/@href
+    country: //div[contains(@class,'font-bold') and contains(text(),'Goa')]/text()
+    date: //time[@datetime]/@datetime
+    description: null
+    event_website: //a[contains(@aria-label,'React India 2026')]/@href
+    mode: null
+    name: //h1[contains(@class,'font-extrabold')]//span[contains(text(),'React India')]/text()
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: //a[contains(@href,'tickets')]/@href
+    ticket_status: null
+    topic: null
+    venue: //article[contains(.,'Planet Hollywood')]//p/text()
+React Summit:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: null
+    description: null
+    event_website: //link[@rel='canonical']/@href
+    mode: null
+    name: //script[contains(text(),'emsEvent')]/text()
+    scope: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    venue: null
+ReactFoo:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: null
+    description: null
+    event_website: null
+    mode: null
+    name: null
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    topic: null
+    venue: null
+Rootconf:
+  container: //ul[contains(@class,'upcoming')]//li[contains(@class,'grid__col-xs-12')]
+  fields:
+    cfp_deadline: .//div[@aria-label]/@aria-label
+    cfp_submission_link: .//a[contains(@class,'card--upcoming')]/@href
+    country: null
+    date: .//p[contains(@class,'calendar__weekdays__dates__date--active')]/@data-event-date
+    description: .//span[contains(@class,'js-truncate')]/text()
+    event_website: .//a[contains(@class,'card--upcoming')]/@href
+    mode: null
+    name: .//a[contains(@class,'card--upcoming')]/@aria-label
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    topic: null
+    venue: .//div[contains(@class,'card__body__location')]//text()
+RubyConf India:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: null
+    description: null
+    event_website: null
+    mode: null
+    name: null
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    topic: null
+    venue: null
+Rust India:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: //a[contains(@href,'cfp-rust-india-conference')]/@href
+    country: null
+    date: //header//a[@class='site-header__brand']//span[@class='brand-copy']/span/text()
+    description: //section[contains(@class,'home-hero')]//p[@class='home-hero__lede']/text()
+    event_website: //header//a[@class='site-header__brand']/@href
+    mode: null
+    name: //section[contains(@class,'home-hero')]//p[@class='section-label']/text()
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: //a[contains(@class,'home-alert__cta')]/@href
+    ticket_status: null
+    topic: null
+    venue: //div[@class='home-alert__copy']/p/text()
+RustConf:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: //h5[contains(text(),'September')]/text()
+    description: //div[contains(@class,'wpb_text_column')]//p[contains(text(),'RustConf
+      is turning')]/text()
+    event_website: //a[@id='logo']/@href
+    mode: null
+    name: //img[@class='stnd skip-lazy default-logo dark-version']/@alt
+    scope: null
+    source_url: null
+    ticket_booking_link: //div[@id='myModal']//iframe/@src
+    ticket_status: null
+    venue: //h5[contains(text(),'Montreal')]/text()
+SIGCOMM:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: null
+    description: null
+    event_website: null
+    mode: null
+    name: null
+    scope: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    venue: null
+SIGMOD:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: null
+    description: null
+    event_website: //ul/li/a[contains(@href,'2026.sigmod.org')]/@href
+    mode: null
+    name: //ul/li/a[contains(@href,'2026.sigmod.org')]/text()
+    scope: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    venue: null
+SOSP:
+  container: //tr[.//td/font[normalize-space(text())='2026']]
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: .//td/font[normalize-space(text())='2026']/following-sibling::font[1]/text()
+    description: .//td[5]//a/text()
+    event_website: .//td[5]//a/@href
+    mode: null
+    name: null
+    scope: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    venue: .//td[4]/font/text()
+SREcon:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: //div[contains(@class,'field-column-wysiwyg')]//a[contains(@href,'call-for-participation')]/@href
+    country: null
+    date: //div[contains(@class,'field-column-wysiwyg')]//p[contains(text(),'2026')]/text()
+    description: null
+    event_website: //ul[contains(@class,'tb-megamenu-subnav')]//a[contains(@href,'srecon26')]/@href
+    mode: null
+    name: //a[contains(@href,'srecon26')]/text()
+    scope: null
+    source_url: null
+    ticket_booking_link: //div[contains(@class,'field-column-wysiwyg')]//a[contains(@href,'registration-information')]/@href
+    ticket_status: null
+    venue: //div[contains(@class,'field-column-wysiwyg')]//p[contains(text(),'Dublin')]/text()
+Strange Loop:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: null
+    description: null
+    event_website: null
+    mode: null
+    name: //h1[@class='intro-title']/text()
+    scope: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    venue: //div[@class='intro-meta']//h3[2]/text()
+Supercomputing Conference:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: //p[strong[contains(text(),'SCinet')]]/text()[normalize-space()]
+    description: null
+    event_website: //link[@rel='canonical']/@href
+    mode: null
+    name: //p[strong[contains(text(),'SCinet')]]/strong/text()
+    scope: null
+    series: null
+    source_url: //link[@rel='canonical']/@href
+    ticket_booking_link: //a[contains(@href,'registration')]/@href
+    ticket_status: null
+    topic: null
+    venue: //meta[@property='og:description']/@content
+Techfest IIT Bombay:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: null
+    description: null
+    event_website: null
+    mode: null
+    name: null
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    topic: null
+    venue: null
+Techkriti IIT Kanpur:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: null
+    description: //meta[@name='description']/@content
+    event_website: null
+    mode: null
+    name: //title/text()
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    topic: null
+    venue: null
+USENIX Security Symposium:
+  container: null
+  fields:
+    cfp_deadline: //div[contains(@class,'field-name-field-deadline-text')]//div[@class='field-item
+      odd']/text()
+    cfp_submission_link: //a[contains(@href,'call-for-papers')]/@href
+    country: null
+    date: //div[contains(@class,'field-name-field-date-text')]//div[@class='field-item
+      odd']/text()
+    description: null
+    event_website: //a[contains(@class,'header-menu-logo-link')]/@href
+    mode: null
+    name: //h1[@id='page-title']/text()
+    scope: null
+    source_url: null
+    ticket_booking_link: //a[contains(@href,'registration/form')]/@href
+    ticket_status: null
+    venue: //div[contains(@class,'field-name-field-address-text')]//div[@class='field-item
+      odd']/text()
+VLDB:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: null
+    description: null
+    event_website: //div[@class='collapsed']//a[contains(@href,'2026')]/@href
+    mode: null
+    name: //div[@class='collapsed']//a[contains(@href,'2026')]/text()
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: null
+    ticket_status: null
+    topic: null
+    venue: //div[@class='collapsed']//a[contains(@href,'vldb.org/2026')]/text()
+Vue.js Amsterdam:
+  container: null
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: //ul[@class='details']//li[1]/text()
+    description: null
+    event_website: //a[contains(@href,'tickettailor')]/@href
+    mode: null
+    name: //title/text()
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: //a[contains(@href,'tickettailor')]/@href
+    ticket_status: null
+    topic: null
+    venue: //p[contains(@class,'font-semibold')]/text()
+WWDC:
+  container: //ul[contains(@class,'card-set') and contains(@class,'item-container')]/li[contains(@class,'card-container')]
+  fields:
+    cfp_deadline: null
+    cfp_submission_link: null
+    country: null
+    date: null
+    description: .//p[contains(@class,'caption')]//text()
+    event_website: .//a[contains(@class,'button')]/@href
+    mode: null
+    name: .//span[@class='media-gallery-genre']/text()
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: .//a[contains(@class,'button')]/@href
+    ticket_status: null
+    topic: null
+    venue: null
+c0c0n:
+  container: null
+  fields:
+    cfp_deadline: //div[@class='date-box'][.//p[contains(text(),'CFP Closing')]]//h4/text()
+    cfp_submission_link: //a[@href='cfp' and contains(@class,'theme-btn-main')]/@href
+    country: null
+    date: //p[@class='hero-date']/text()
+    description: null
+    event_website: //a[contains(@class,'theme-btn-main') and @href='cfp']/@href
+    mode: null
+    name: //div[@class='preloader-heading']//div[@class='load-text']/span/text()
+    scope: null
+    series: null
+    source_url: null
+    ticket_booking_link: //a[@href='register' and contains(@class,'theme-btn-main')]/@href
+    ticket_status: null
+    topic: null
+    venue: //div[@class='hero-location']/text()
