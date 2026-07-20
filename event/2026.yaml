@@ -1,73 +1,3 @@
-- name: Open Source Summit India
-  series: Open Source Summit India
-  mode: null
-  venue: Mumbai, India
-  country: null
-  topic: null
-  description: null
-  scope: null
-  date: 16-17 June
-  event_website: https://events.linuxfoundation.org/open-source-summit-india/
-  ticket_booking_link: https://events.linuxfoundation.org/open-source-summit-india/register/
-  ticket_status: null
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: null
-- name: GOPHERCON INDIA
-  series: GopherCon India
-  mode: null
-  venue: null
-  country: null
-  topic: null
-  description: "GopherCon India is the premier Go programming language conference\
-    \ in India, brought to you by the \n                            passionate Go\
-    \ Language Community and the Emerging Technology Trust (ETT). As a non-profit\
-    \ organization, \n                            ETT is committed to fostering technology\
-    \ communities through conferences such as DeccanRubyConf, \n                 \
-    \           DevOpsDaysIndia, DroidJamIndia, RubyConfIndia, and GopherConIndia."
-  scope: null
-  date: '2026-11-22'
-  event_website: null
-  ticket_booking_link: https://www.townscript.com/e/GopherCon-india-2026
-  ticket_status: null
-  cfp_submission_link: https://www.papercall.io/gophercon-india-2026
-  cfp_deadline: null
-  source_url: null
-- name: KotlinConf 2026
-  series: KotlinConf
-  mode: in-person
-  venue: Munich
-  country: Germany
-  topic: Kotlin programming language
-  description: KotlinConf 2026 was a great success thanks to 100 valued speakers presenting
-    108 sessions, 2200 attendees from all over the world, 17 amazing partners and
-    44 volunteers. The event included an Opening Keynote and numerous sessions on
-    Kotlin.
-  scope: international conference
-  date: 2026-05-20 to 2026-05-22
-  event_website: https://kotlinconf.com
-  ticket_booking_link: null
-  ticket_status: null
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://kotlinconf.com
-- name: India Game Developer Conference (IGDC) 2026
-  series: India Game Developer Conference
-  mode: in-person
-  venue: Chennai Trade Centre
-  country: India
-  topic: Game development, game industry, awards, networking, expo
-  description: 18th edition of India's biggest and oldest game developer conference.
-    2 days, 10,000+ attendees, sessions, awards, and networking. Includes India Game
-    Awards, I/P Connect, Expo, Indie, and BYOG sub-events.
-  scope: national conference
-  date: 2026-10-28 to 2026-10-29
-  event_website: https://indiagdc.com/
-  ticket_booking_link: https://indiagdc.com/register/
-  ticket_status: available
-  cfp_submission_link: https://indiagdc.com/speakers/
-  cfp_deadline: null
-  source_url: https://indiagdc.com/
 - name: PyConf Hyderabad 2026
   series: PyConF Hyderabad
   mode: in-person
@@ -84,64 +14,6 @@
   cfp_submission_link: null
   cfp_deadline: null
   source_url: https://2026.pyconfhyd.org
-- name: ICML 2026 – Forty-Third International Conference on Machine Learning
-  series: ICML
-  mode: in-person
-  venue: COEX Convention & Exhibition Center
-  country: South Korea
-  topic: Machine Learning, Artificial Intelligence
-  description: 'The premier gathering of professionals dedicated to the advancement
-    of machine learning. ICML is globally renowned for presenting and publishing cutting-edge
-    research on all aspects of machine learning used in closely related areas like
-    artificial intelligence, statistics and data science, as well as important application
-    areas such as machine vision, computational biology, speech recognition, and robotics.
-    Schedule: July 6 – Expo/Tutorial Day; July 7–9 – Main Conference; July 10–11 –
-    Workshops.'
-  scope: international conference
-  date: 2026-07-06 to 2026-07-11
-  event_website: https://icml.cc/Conferences/2026
-  ticket_booking_link: https://icml.cc/Register/view-registration
-  ticket_status: sold_out
-  cfp_submission_link: https://icml.cc/Conferences/2026/CallForPapers
-  cfp_deadline: null
-  source_url: https://icml.cc/virtual/2026/77975
-- name: ICLR 2026 — The Fourteenth International Conference on Learning Representations
-  series: ICLR
-  mode: in-person
-  venue: Riocentro Convention and Event Center
-  country: Brazil
-  topic: Deep learning, representation learning, artificial intelligence
-  description: The Fourteenth International Conference on Learning Representations
-    (ICLR 2026), held at the Riocentro Convention and Event Center in Rio de Janeiro,
-    Brazil. The conference covers deep learning, feature learning, metric learning,
-    reinforcement learning, and applications in vision, speech, NLP, robotics, and
-    more.
-  scope: international conference
-  date: 2026-04-23 to 2026-04-27
-  event_website: https://iclr.cc/virtual/2026/index.html
-  ticket_booking_link: https://iclr.cc/Register2
-  ticket_status: sold_out
-  cfp_submission_link: https://iclr.cc/Conferences/2026/CallForPapers
-  cfp_deadline: null
-  source_url: https://iclr.cc/Conferences/2026
-- name: React India 2026
-  series: React India
-  mode: in-person
-  venue: Planet Hollywood Beach Resort, Goa
-  country: India
-  topic: React, Web, Developer Experience
-  description: The Final Edition of React India — India's premier React conference.
-    Three days of cutting-edge talks, hands-on workshops, and networking with 1,000+
-    developers on the Indian coast. Oct 29 is workshop day; Oct 30–31 are conference
-    days.
-  scope: international conference
-  date: 2026-10-29 to 2026-10-31
-  event_website: https://www.reactindia.io/
-  ticket_booking_link: https://www.reactindia.io/conferences/tickets
-  ticket_status: available
-  cfp_submission_link: https://www.reactindia.io/cfp
-  cfp_deadline: null
-  source_url: https://www.reactindia.io/
 - name: Techkriti '26
   series: Techkriti IIT Kanpur
   mode: in-person
@@ -192,42 +64,6 @@
   cfp_submission_link: null
   cfp_deadline: null
   source_url: https://kdd.org/
-- name: RustConf 2026
-  series: RustConf
-  mode: hybrid
-  venue: Montreal, Canada
-  country: Canada
-  topic: Rust programming language
-  description: RustConf is turning 10! Join us to see what the Rust community is building,
-    connect with people and teams thinking deeply about the language, and dig into
-    the topics defining the next decade of computing. Features keynotes, sessions,
-    lightning talks, workshops, networking, and open collaboration (unconference).
-  scope: international conference
-  date: 2026-09-08 to 2026-09-11
-  event_website: https://rustconf.com
-  ticket_booking_link: https://rustconf.regfox.com/rustconf2026
-  ticket_status: available
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://rustconf.com
-- name: IEEE INFOCOM 2026
-  series: IEEE INFOCOM
-  mode: in-person
-  venue: Tokyo, Japan
-  country: Japan
-  topic: Computer networking, communications, network systems, distributed computing
-  description: IEEE INFOCOM 2026 is a top-ranked international conference on networking.
-    It includes a main technical program, workshops, a keynote speech, panels, a student
-    poster session, and demo/poster sessions. Researchers present and exchange significant
-    and innovative contributions in the field of networking and closely related areas.
-  scope: international conference
-  date: 2026-05-18 to 2026-05-21
-  event_website: https://infocom2026.ieee-infocom.org
-  ticket_booking_link: https://infocom2026.ieee-infocom.org/registration
-  ticket_status: available
-  cfp_submission_link: https://infocom2026.ieee-infocom.org/submission-guidelines-main-conference
-  cfp_deadline: '2025-07-31'
-  source_url: https://infocom2026.ieee-infocom.org
 - name: Open Source India 2026
   series: Open Source India
   mode: in-person
@@ -248,22 +84,6 @@
   cfp_submission_link: https://docs.google.com/forms/d/e/1FAIpQLSfp2kMcjE4DyRNOsRbhOBXUhlCpAGO1H896ToPIc19OG3K5sg/viewform
   cfp_deadline: null
   source_url: https://www.opensourceindia.in/
-- name: MachineCon GCC Summit 2026
-  series: MachineCon
-  mode: in-person
-  venue: Alila Diwa Goa
-  country: India
-  topic: GCC (Global Capability Centres) leadership, AI, analytics
-  description: Built as a residential summit in Goa, MachineCon is the most powerful
-    GCC leaders' conference where real discussions drive outcomes.
-  scope: national conference
-  date: 2026-06-19 to 2026-06-21
-  event_website: https://machinecon.analyticsindiamag.com/
-  ticket_booking_link: null
-  ticket_status: null
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://machinecon.analyticsindiamag.com/
 - name: Google I/O 2026
   series: Google I/O
   mode: online
@@ -332,24 +152,6 @@
   cfp_submission_link: null
   cfp_deadline: null
   source_url: https://pycon.org
-- name: Maker Faire Bay Area 2026
-  series: Maker Faire
-  mode: in-person
-  venue: Bay Area, California
-  country: USA
-  topic: Making, Technology, Craft, Science, Engineering, Art
-  description: Maker Faire started in the Bay Area in 2006 and quickly grew into a
-    global cultural movement — a joyful celebration of creativity, curiosity, and
-    hands-on fun. This September 25–27, come back to the flagship where it all started.
-    Build, play, experiment, and be part of the movement that keeps making the future.
-  scope: international conference
-  date: 2026-09-25 to 2026-09-27
-  event_website: https://makerfaire.com/bay-area
-  ticket_booking_link: https://makerfaire.com/bay-area/tickets/
-  ticket_status: available
-  cfp_submission_link: https://makerfaire.com/bay-area/call-for-makers/
-  cfp_deadline: null
-  source_url: https://makerfaire.com
 - name: 7th Annual MLOps World | GenAI Conference & Expo 2026
   series: MLOps World
   mode: hybrid
@@ -369,6 +171,2313 @@
   cfp_submission_link: https://mlopsworld.com/call-for-speakers/
   cfp_deadline: null
   source_url: https://mlopsworld.com
+- name: React Summit 2026
+  series: React Summit
+  mode: hybrid
+  venue: KromhoutHal, Gedempt Hamerkanaal 231, Amsterdam, 1021 KP
+  country: Netherlands
+  topic: React, frontend development, full-stack engineering, AI in web development
+  description: React Summit is an annual conference about the React ecosystem, modern
+    web development, and the growing impact of AI on it, gathering thousands of Front-end
+    and Full-stack engineers from around the world. Join in Amsterdam, or take part
+    in an interactive Remote experience with hybrid speaker Q&A, discussion rooms,
+    and online practical workshops.
+  scope: international conference
+  date: 2026-06-12 to 2026-06-16
+  event_website: https://reactsummit.com
+  ticket_booking_link: https://ti.to/gitnation/react-summit-2026
+  ticket_status: available
+  cfp_submission_link: https://gitnation.com/events/react-summit-2026/cfp
+  cfp_deadline: '2026-03-02'
+  source_url: https://reactsummit.com
+- name: JS Open Source Awards at React Summit 2026
+  series: React Summit
+  mode: in-person
+  venue: KromhoutHal, Gedempt Hamerkanaal 231, Amsterdam, 1021 KP
+  country: Netherlands
+  topic: JavaScript open source projects
+  description: Pre-conference awards ceremony looking at open source projects or initiatives
+    with an open and transparent culture, open for collaboration and contributions.
+    The main goal is to shed light on great projects that weren't enough noticed in
+    a competitive environment.
+  scope: international conference
+  date: '2026-06-11'
+  event_website: https://osawards.com/javascript/
+  ticket_booking_link: https://ti.to/gitnation/react-summit-2026
+  ticket_status: available
+  cfp_submission_link: https://osawards.com/javascript/
+  cfp_deadline: null
+  source_url: https://reactsummit.com
+- name: EFY Expo Gujarat 2026
+  series: EFY Expo
+  mode: in-person
+  venue: Helipad Exhibition Center, Gandhinagar
+  country: India
+  topic: Electronics and IoT / New Product Development and Manufacturing
+  description: Multi-city highly-focused B2B expo with the mission to simplify 'Go
+    To Market' for electronics and IoT firms. Brings together exhibitors providing
+    solutions for New Product Development, Prototyping and Manufacturing.
+  scope: national conference
+  date: 2026-12-03 to 2026-12-05
+  event_website: https://gujarat.efyexpo.com
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://www.efyexpo.com/
+- name: 32nd ACM Symposium on Operating Systems Principles (SOSP 2026)
+  series: SOSP
+  mode: in-person
+  venue: Prague, Czechia
+  country: Czechia
+  topic: Operating Systems
+  description: The ACM Symposium on Operating Systems Principles (SOSP) is a conference
+    that brings together developers and researchers from academia and industry to
+    advance the science and technology in operating systems. The 32nd edition takes
+    place in Prague, Czechia, September 29 – October 2, 2026.
+  scope: international conference
+  date: 2026-09-29 to 2026-10-02
+  event_website: http://www.sosp.org/2026
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://sosp.org
+- name: SIGMOD/PODS 2026 Conference
+  series: SIGMOD
+  mode: null
+  venue: null
+  country: null
+  topic: Database management systems and data management technology
+  description: The annual ACM SIGMOD/PODS conference, one of the most important and
+    selective conferences in the field of database management and data management
+    technology.
+  scope: international conference
+  date: null
+  event_website: https://2026.sigmod.org/
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://sigmod.org
+- name: VLDB 2026
+  series: VLDB
+  mode: in-person
+  venue: Boston
+  country: United States
+  topic: Databases and related fields
+  description: The 2026 edition of the VLDB international conference on Very Large
+    Data Bases, held in Boston.
+  scope: international conference
+  date: '2026'
+  event_website: https://vldb.org/2026/
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://vldb.org
+- name: COMSNETS 2026
+  series: COMSNETS
+  mode: in-person
+  venue: null
+  country: India
+  topic: Communication Systems & Networks
+  description: 18th International Conference on COMmunication Systems & NETworkS.
+    Highlights referenced include keynotes, workshops, and networking sessions.
+  scope: international conference
+  date: null
+  event_website: https://www.comsnets.org/archive/2026/
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://www.comsnets.org/
+- name: SREcon26 Americas
+  series: SREcon
+  mode: in-person
+  venue: null
+  country: USA
+  topic: Site Reliability Engineering
+  description: SREcon26 Americas — listed under the 'Past' navigation menu, indicating
+    it has already occurred in 2026. No specific dates or venue details are provided
+    in the HTML.
+  scope: international conference
+  date: null
+  event_website: https://www.usenix.org/conference/srecon26americas
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://www.usenix.org/conference/srecon
+- name: SREcon26 Europe/Middle East/Africa
+  series: SREcon
+  mode: in-person
+  venue: Dublin, Ireland
+  country: Ireland
+  topic: Site Reliability Engineering
+  description: SREcon is a gathering of engineers who care deeply about site reliability,
+    systems engineering, and working with complex distributed systems at scale. Register
+    Now! Early Bird Registration deadline is Monday, 24 August, 2026.
+  scope: international conference
+  date: 2026-10-13 to 2026-10-15
+  event_website: https://www.usenix.org/conference/srecon26emea
+  ticket_booking_link: https://www.usenix.org/conference/srecon26emea/registration-information
+  ticket_status: available
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://www.usenix.org/conference/srecon
+- name: CES 2026
+  series: CES
+  mode: in-person
+  venue: Las Vegas (multiple venues including LVCC)
+  country: USA
+  topic: Consumer Technology, AI, Vehicle Tech, Digital Health, Content & Entertainment
+  description: CES 2026 is the world's most influential technology event, bringing
+    together exhibitors, attendees, media, and speakers to explore the latest innovations
+    across AI, mobility, digital health, and more. The event includes conference sessions,
+    exhibition halls, Eureka Park, C Space, CES Foundry, Creator Space, and the Digital
+    Health Summit.
+  scope: international conference
+  date: 2026-01-06 to 2026-01-09
+  event_website: https://www.ces.tech
+  ticket_booking_link: https://www.ces.tech/attend/registration-notification/
+  ticket_status: not_opened
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://www.ces.tech
+- name: Frontend Nation 2026
+  series: Frontend Nation
+  mode: online
+  venue: null
+  country: null
+  topic: Web Development & AI (React, Vue.js, Angular, AI and beyond)
+  description: Two days of talks, live panels, and workshops on what's hot in tech
+    - from React, Vue.js, and Angular to AI and beyond. 40+ speakers, 1,000s of developers.
+    Access all 50+ talks via replay. Powered by Amazon Web Services.
+  scope: international conference
+  date: null
+  event_website: https://frontendnation.com
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: https://forms.gle/Xi6AnqaQ2nFCddUv8
+  cfp_deadline: null
+  source_url: https://frontendnation.com
+- name: EuroPython 2026 – Tutorials & Summits
+  series: EuroPython
+  mode: in-person
+  venue: ICE Kraków Congress Centre, Marii Konopnickiej 17, 30-302 Kraków
+  country: Poland
+  topic: Python
+  description: Full-day deep dives with an expert in a small group. Far more hands-on
+    than a talk. Sold separately. Also includes various summits (Language Summit,
+    Rust Summit, Packaging Summit, Organisers Summit).
+  scope: international conference
+  date: 2026-07-13 to 2026-07-14
+  event_website: https://ep2026.europython.eu
+  ticket_booking_link: https://ep2026.europython.eu/tickets
+  ticket_status: available
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://ep2026.europython.eu
+- name: EuroPython 2026 – Sprints Weekend
+  series: EuroPython
+  mode: in-person
+  venue: Kraków, Poland (venue to be announced)
+  country: Poland
+  topic: Python
+  description: Contribute to real Python projects alongside the people who maintain
+    them. Beginners welcome!
+  scope: international conference
+  date: 2026-07-18 to 2026-07-19
+  event_website: https://ep2026.europython.eu/sprints
+  ticket_booking_link: https://ep2026.europython.eu/tickets
+  ticket_status: available
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://ep2026.europython.eu
+- name: EuroSciPy 2026
+  series: EuroPython
+  mode: in-person
+  venue: Kraków, Poland
+  country: Poland
+  topic: Scientific Python
+  description: EuroSciPy conference co-located/overlapping with EuroPython 2026 in
+    Kraków.
+  scope: international conference
+  date: 2026-07-18 to 2026-07-23
+  event_website: null
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://ep2026.europython.eu
+- name: CIDR 2026
+  series: CIDR
+  mode: in-person
+  venue: null
+  country: null
+  topic: Innovative data systems research, systems architecture, database systems
+  description: The Conference on Innovative Data Systems Research (CIDR) gathers researchers
+    and practitioners from both academia and industry to discuss the latest innovative
+    and visionary ideas in the field. CIDR emphasizes the systems architecture perspective,
+    encouraging papers about innovative and risky data management system architecture
+    ideas, systems-building experience and insight, resourceful experimental studies,
+    and provocative position statements.
+  scope: international conference
+  date: '2026'
+  event_website: https://www.cidrdb.org/cidr2026/index.html
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://www.cidrdb.org/
+- name: JavaLand 2026
+  series: JavaLand
+  mode: in-person
+  venue: Europa-Park Rust
+  country: Germany
+  topic: Java / Software Development
+  description: Der Europa-Park in Rust begrüßte bei überwiegend sonnigem Frühlingswetter
+    vom 10. bis 12. März erstmals die Java-Community zur JavaLand. Community-Konferenz
+    mit Sessions, Workshops und Begegnungen mit Gleichgesinnten.
+  scope: international conference
+  date: 2026-03-10 to 2026-03-12
+  event_website: https://www.javaland.eu/de/rueckblicke/javaland-2026/
+  ticket_booking_link: https://meine.doag.org/events/javaland/shop/
+  ticket_status: available
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://www.javaland.eu/de/home/
+- name: DAC 2026 (63rd Design Automation Conference)
+  series: Design Automation Conference
+  mode: in-person
+  venue: null
+  country: null
+  topic: Design automation, EDA, chips to systems
+  description: The 63rd Design Automation Conference (DAC 2026) is the premier conference
+    covering design and automation of electronic systems. It features a technical
+    program, exhibitions, and industry partnership opportunities.
+  scope: international conference
+  date: '2026'
+  event_website: https://dac.com/2026
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://dac.com/2026
+- name: Microsoft Build 2026
+  series: Microsoft Build
+  mode: hybrid
+  venue: Digital Event
+  country: null
+  topic: Developer technologies, AI, cloud, software development
+  description: Microsoft Build is Microsoft's annual developer conference covering
+    AI, cloud, developer tools, and platform technologies. The 2026 edition runs as
+    a hybrid (digital + in-person) event.
+  scope: international conference
+  date: 2026-06-02 to 2026-06-03
+  event_website: https://build.microsoft.com/en-US/home
+  ticket_booking_link: https://register.build.microsoft.com/flow/microsoft/build26/welcome/page/welcome
+  ticket_status: available
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://build.microsoft.com/en-US/home
+- name: embedded world Exhibition&Conference 2026
+  series: Embedded World
+  mode: in-person
+  venue: Messe Nuremberg
+  country: Germany
+  topic: Embedded systems, components, modules, operating systems, hardware and software
+    design, M2M communication, IoT
+  description: The embedded world Exhibition&Conference 2026 (#ew26) is the global
+    platform and place to meet for the entire embedded community, including leading
+    experts, key players and industry associations. It offers insight into embedded
+    systems from components and modules to operating systems, hardware and software
+    design, M2M communication, services, and complex system design. The event includes
+    the embedded world Conference, electronic displays Conference, exhibitor forums,
+    expert panels, guided tours, student day, women4ew networking event, embedded
+    award, and start-up City.
+  scope: international conference
+  date: 2026-03-11 to 2026-03-13
+  event_website: https://www.embedded-world.de/en
+  ticket_booking_link: /en/visitor
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://www.embedded-world.de/en
+- name: WWDC26 Recaps
+  series: WWDC
+  mode: hybrid
+  venue: null
+  country: null
+  topic: Apple platform updates from WWDC26
+  description: Explore the biggest updates from WWDC26, in person or online.
+  scope: international conference
+  date: '2026'
+  event_website: https://developer.apple.com/events/view/upcoming-events?search=WWDC26
+  ticket_booking_link: https://developer.apple.com/events/view/upcoming-events?search=WWDC26
+  ticket_status: available
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://developer.apple.com/
+- name: Microsoft Ignite 2026 – Pre-Event / Registration Opens
+  series: Microsoft Ignite
+  mode: hybrid
+  venue: null
+  country: null
+  topic: Microsoft Technology / Cloud / AI
+  description: Phase Launch registration period begins for Microsoft Ignite 2026.
+  scope: international conference
+  date: '2026-06-23'
+  event_website: https://ignite.microsoft.com/en-US/home
+  ticket_booking_link: null
+  ticket_status: available
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://ignite.microsoft.com/en-US/home
+- name: RubyConf India 2026
+  series: RubyConf India
+  mode: in-person
+  venue: Novotel Hyderabad Airport, Hyderabad, Telangana, India
+  country: India
+  topic: Ruby language, Ruby on Rails, frameworks, and tools
+  description: RubyConf India 2026 is a 1-day, single-track conference focused on
+    Ruby Language, Framework, and Tools. The entire conference is conducted in English,
+    bringing together Ruby enthusiasts from across the globe. It is a global event
+    complementing other RubyConf events worldwide, featuring technical talks, a Language
+    Roast segment, flash talks, and networking.
+  scope: international conference
+  date: '2026-11-21'
+  event_website: https://rubyconf.in/
+  ticket_booking_link: https://www.townscript.com/e/rubyconf-india-2026
+  ticket_status: available
+  cfp_submission_link: https://www.papercall.io/rubyconf-india-2026
+  cfp_deadline: null
+  source_url: https://rubyconf.in/
+- name: Linux Plumbers Conference 2026
+  series: Linux Plumbers Conference
+  mode: hybrid
+  venue: Prague Congress Centre, 5. kvetna 1640/65, Nusle 140 21 Prague 4
+  country: Czechia
+  topic: Linux kernel and systems plumbing — core kernel subsystems, init systems,
+    core libraries, toolchains, windowing systems, management tools, device support,
+    testing, and more
+  description: The Linux Plumbers Conference is the premier event for developers working
+    at all levels of the plumbing layer and beyond. The event is hybrid (in-person
+    and remote), though presenters are strongly encouraged to attend in person. Remote
+    presentations are allowed strictly on an emergency basis.
+  scope: international conference
+  date: 2026-10-05 to 2026-10-07
+  event_website: https://lpc.events/event/20/
+  ticket_booking_link: null
+  ticket_status: not_opened
+  cfp_submission_link: https://lpc.events/event/20/abstracts/
+  cfp_deadline: '2026-08-07'
+  source_url: https://lpc.events/event/20/page/266-lpc-2026-overview
+- name: DevFest on Campus 2026
+  series: Google DevFest India
+  mode: in-person
+  venue: SRM University, Potheri, Kattankulathur, Tamil Nadu 603203
+  country: India
+  topic: Google technologies, AI, Android, Cloud, Flutter
+  description: DevFest on Campus is a two-day event that connects developers, innovators
+    and industry leaders to learn and get inspired. It focuses on giving students
+    access to opportunities and exposure through expert talks, hands-on workshops
+    and collaborative sessions. Organized by GDG on Campus SRM Institute of Science
+    & Technology – Kattankulathur, India.
+  scope: local meetup
+  date: 2026-04-09 to 2026-04-10
+  event_website: https://devfest.gdgsrm.com
+  ticket_booking_link: https://devfest.gdgsrm.com
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://gdg.community.dev/events/details/google-gdg-on-campus-srm-institute-of-science-technology-kattankulathur-india-presents-devfest-on-campus-2026/
+- name: JSConf España 2026
+  series: JSConf
+  mode: in-person
+  venue: La Nave
+  country: Spain
+  topic: JavaScript
+  description: The most important JavaScript conference in Spain, featuring talks,
+    workshops, a hackathon, and networking activities for developers from Spain and
+    internationally. The 2026 edition has concluded; recordings are available on YouTube.
+  scope: international conference
+  date: '2026-03-14'
+  event_website: https://www.jsconf.es/
+  ticket_booking_link: https://www.tickettailor.com/events/midudev/1981059
+  ticket_status: sold_out
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://www.jsconf.es/
+- name: JSConf México 2026
+  series: JSConf
+  mode: in-person
+  venue: Jardín Americana
+  country: Mexico
+  topic: JavaScript
+  description: A community-driven JavaScript conference in Guadalajara covering AI
+    & JavaScript (Agents, WebGPU, LLMs in the browser), modern architectures (local-first,
+    Edge Computing, Server Components), performance, security, engineering culture,
+    and beyond-the-browser JS (Wasm, Node/Deno/Bun, Hardware JS).
+  scope: international conference
+  date: 2026-10-29 to 2026-10-30
+  event_website: https://www.jsconf.mx/
+  ticket_booking_link: https://tickets.jsconf.mx
+  ticket_status: available
+  cfp_submission_link: https://pretalx.com/jsconf-mx-2026/cfp
+  cfp_deadline: '2026-04-30'
+  source_url: https://www.jsconf.mx/
+- name: AWS Summit Bengaluru 2026 – Innovators Edition
+  series: AWS Summit India
+  mode: in-person
+  venue: KTPO Exhibition Center, Whitefield, Bengaluru
+  country: India
+  topic: Cloud computing, generative AI, agentic AI, digital transformation
+  description: The Innovators Edition of AWS Summit Bengaluru 2026, designed specifically
+    for business leaders and decision-makers. Keynotes, breakout sessions, and real-world
+    success stories on agentic AI, generative AI, data, security, and cloud technologies.
+    On-demand viewing available via AWS Summit India Online.
+  scope: national conference
+  date: '2026-04-22'
+  event_website: https://aws.amazon.com/events/summits/bengaluru/innovators/
+  ticket_booking_link: https://summits-india.virtual.awsevents.com
+  ticket_status: sold_out
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://aws.amazon.com/events/summits/bengaluru/innovators/
+- name: AWS Summit Bengaluru 2026 – Technical Edition
+  series: AWS Summit India
+  mode: in-person
+  venue: KTPO Exhibition Center, Whitefield, Bengaluru
+  country: India
+  topic: Cloud computing, Amazon Bedrock, Amazon Nova, agentic AI, serverless, ML
+  description: The Technical Edition of AWS Summit Bengaluru 2026, dedicated to builders,
+    developers, and technical practitioners. Hands-on workshops and technical sessions
+    on AWS services including Amazon Nova, Amazon Bedrock AgentCore, and Kiro IDE.
+    On-demand viewing available via AWS Summit India Online.
+  scope: national conference
+  date: '2026-04-23'
+  event_website: https://aws.amazon.com/events/summits/bengaluru/technical/
+  ticket_booking_link: https://summits-india.virtual.awsevents.com
+  ticket_status: sold_out
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://aws.amazon.com/events/summits/bengaluru/technical/
+- name: AWS Summit Mumbai 2026
+  series: AWS Summit India
+  mode: in-person
+  venue: Jio World Convention Centre, Mumbai
+  country: India
+  topic: Cloud computing, agentic AI, generative AI, serverless, industry transformation
+  description: AWS Summit Mumbai 2026 is a one-day technology conference featuring
+    keynotes, 50+ sessions, an AWS Village, Developer Community Zone, Startup Zone,
+    and the 8-Bit Agents Activation. Event has concluded; on-demand viewing available
+    via AWS Summit India Online.
+  scope: national conference
+  date: '2026-05-28'
+  event_website: https://aws.amazon.com/events/summits/mumbai/
+  ticket_booking_link: https://summits-india.virtual.awsevents.com
+  ticket_status: sold_out
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://aws.amazon.com/events/summits/mumbai/
+- name: AWS Summit India Online 2026
+  series: AWS Summit India
+  mode: online
+  venue: null
+  country: India
+  topic: Cloud computing, generative AI, agentic AI, serverless computing, cloud innovation
+  description: AWS Summit India Online is a free virtual event featuring 50+ sessions,
+    keynotes from AWS Summit Bengaluru and AWS Summit Mumbai, live Q&A with AWS experts,
+    interactive workshops, and customer showcases. Covers agentic AI, serverless computing,
+    and cloud innovation. On-demand content available after June 3, 2026.
+  scope: national conference
+  date: '2026-06-03'
+  event_website: https://aws.amazon.com/events/summits/india/
+  ticket_booking_link: https://summits-india.virtual.awsevents.com
+  ticket_status: available
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://aws.amazon.com/events/summits/india/
+- name: Embedded Linux Conference North America 2026
+  series: Embedded Linux Conference
+  mode: in-person
+  venue: Minneapolis Convention Center, 1301 Second Ave S, Minneapolis, MN 55403
+  country: United States
+  topic: Embedded Linux, open source embedded systems, kernel development, industrial/automotive/IoT
+  description: Co-located with Open Source Summit North America 2026. Premier technical
+    forum for the embedded Linux community, gathering developers, maintainers, and
+    industry experts for deep technical collaboration, hands-on learning, and knowledge
+    sharing to advance the future of embedded systems.
+  scope: international conference
+  date: 2026-05-18 to 2026-05-20
+  event_website: https://events.linuxfoundation.org/embedded-linux-conference-north-america/
+  ticket_booking_link: https://events.linuxfoundation.org/open-source-summit-north-america/register/
+  ticket_status: available
+  cfp_submission_link: https://sessionize.com/open-source-summit-north-america-2026/
+  cfp_deadline: '2026-02-16'
+  source_url: https://events.linuxfoundation.org/embedded-linux-conference-north-america/
+- name: Embedded Linux Conference Europe 2026
+  series: Embedded Linux Conference
+  mode: in-person
+  venue: Prague Congress Centre, 5. kvetna 1640/65, Nusle 140 21 Prague 4
+  country: Czechia
+  topic: Embedded Linux, open source embedded systems, kernel development, industrial/automotive/IoT
+  description: Co-located with Open Source Summit Europe 2026. Premier technical forum
+    for the embedded Linux community in Europe, gathering developers, maintainers,
+    and industry experts for deep technical collaboration, hands-on learning, and
+    knowledge sharing.
+  scope: international conference
+  date: 2026-10-07 to 2026-10-09
+  event_website: https://events.linuxfoundation.org/embedded-linux-conference-europe/
+  ticket_booking_link: https://register.linuxfoundation.org/oss-eu-2026
+  ticket_status: available
+  cfp_submission_link: https://sessionize.com/open-source-summit-europe26/
+  cfp_deadline: '2026-06-24'
+  source_url: https://events.linuxfoundation.org/embedded-linux-conference-europe/
+- name: Embedded Linux Conference Asia 2026
+  series: Embedded Linux Conference
+  mode: in-person
+  venue: Toranomon Hills Mori Tower 5th Floor, 1-23-3 Toranomon, Minato-ku, Tokyo
+    105-6305
+  country: Japan
+  topic: Embedded Linux, open source embedded systems, automotive Linux, kernel development,
+    industrial/IoT
+  description: Co-located with Open Source Summit Japan 2026 and Automotive Linux
+    Summit 2026. Premier technical forum for the embedded Linux community in Asia,
+    gathering developers, maintainers, and industry experts for deep technical collaboration,
+    hands-on learning, and knowledge sharing.
+  scope: international conference
+  date: 2026-12-07 to 2026-12-09
+  event_website: https://events.linuxfoundation.org/embedded-linux-conference-asia/
+  ticket_booking_link: https://register.linuxfoundation.org/OSS-Japan-ALS-ELC-2026
+  ticket_status: available
+  cfp_submission_link: https://sessionize.com/oss-als-elc-japan-26
+  cfp_deadline: '2026-08-24'
+  source_url: https://events.linuxfoundation.org/embedded-linux-conference-asia/
+- name: Great International Developer Summit (GIDS) 2026
+  series: Great International Developer Summit
+  mode: in-person
+  venue: J N Tata Auditorium, National Science Seminar Complex, CV Raman Rd, Malleshwaram,
+    Bengaluru, Karnataka 560012
+  country: India
+  topic: Software architecture, AI-assisted development, distributed systems, DevOps,
+    data engineering, frontend, backend, testing, reliability, engineering leadership
+  description: The 19th annual edition of Asia's largest and longest-running polyglot
+    software developer summit and expo. Four days of technical talks, conversations,
+    and experiences featuring practitioners from across the technology spectrum. Organized
+    by Saltmarch Media.
+  scope: international conference
+  date: 2026-04-21 to 2026-04-24
+  event_website: https://developersummit.com/
+  ticket_booking_link: https://www.townscript.com/e/gids2026
+  ticket_status: null
+  cfp_submission_link: https://form.jotform.com/devsummit/gids-2026-cfp
+  cfp_deadline: null
+  source_url: https://developersummit.com/faq
+- name: Great International AI Native Summit (GAINS) 2026
+  series: Great International Developer Summit
+  mode: in-person
+  venue: NIMHANS Convention Centre, Hosur Main Road, Lakkasandra, Hombegowda Nagar,
+    Bengaluru, Karnataka
+  country: India
+  topic: AI engineering, agentic AI, coding agents, AI-assisted development, orchestration,
+    evaluation, observability, AI governance, security, reliability
+  description: India's first engineering-first AI Engineering Conference by Saltmarch
+    Media (makers of GIDS), for engineers building and operating intelligent systems
+    in the age of AI. Two days of technical sessions, case studies, and networking.
+  scope: international conference
+  date: 2026-12-09 to 2026-12-10
+  event_website: https://ainativesummit.com/
+  ticket_booking_link: https://www.townscript.com/e/gains-2026
+  ticket_status: available
+  cfp_submission_link: https://form.jotform.com/saltmarch/gains2026cfp
+  cfp_deadline: null
+  source_url: https://ainativesummit.com/
+- name: PyCon US 2026
+  series: PyCon US
+  mode: in-person
+  venue: Long Beach, California
+  country: United States
+  topic: Python programming
+  description: PyCon US 2026 will be held in Long Beach, California. The international
+    community conference for the Python programming language.
+  scope: international conference
+  date: null
+  event_website: https://pycon.org
+  ticket_booking_link: null
+  ticket_status: not_opened
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://pycon.org
+- name: SIGCOMM 2026
+  series: SIGCOMM
+  mode: in-person
+  venue: Denver, Colorado
+  country: USA
+  topic: Computer and data communication networks, network architecture, protocols,
+    measurement, operations, cloud and edge systems, security and privacy, AI-driven
+    networking
+  description: ACM SIGCOMM's flagship annual conference where experts present cutting-edge
+    research, discuss trends, and collaborate on advancing the science, engineering,
+    and societal understanding of computer and data communication networks.
+  scope: international conference
+  date: null
+  event_website: null
+  ticket_booking_link: null
+  ticket_status: not_opened
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://www.sigcomm.org
+- name: CIDR 2026
+  series: CIDR
+  mode: in-person
+  venue: null
+  country: null
+  topic: Innovative data systems research, systems architecture, data management
+  description: The 2026 edition of the Conference on Innovative Data Systems Research
+    (CIDR), a venue for presenting innovative data systems architectures and visionary
+    ideas in the field, gathering researchers and practitioners from academia and
+    industry.
+  scope: international conference
+  date: null
+  event_website: https://www.cidrdb.org/cidr2026/index.html
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://www.cidrdb.org/
+- name: Frontend Nation 2026
+  series: Frontend Nation
+  mode: online
+  venue: null
+  country: null
+  topic: Web Development & AI (React, Vue.js, Angular, Laravel, AI, and more)
+  description: Two days of talks, live panels, and workshops on what's hot in tech
+    - from React, Vue.js, and Angular to AI and beyond. The largest free online frontend
+    developer event, featuring 40+ speakers, hands-on coding challenges (Forge Day),
+    workshops, and community panels.
+  scope: international conference
+  date: 2026-06-03 to 2026-06-04
+  event_website: https://frontendnation.com/
+  ticket_booking_link: https://frontendnation.com/
+  ticket_status: available
+  cfp_submission_link: https://forms.gle/Xi6AnqaQ2nFCddUv8
+  cfp_deadline: null
+  source_url: https://frontendnation.com/
+- name: 63rd Design Automation Conference (DAC 2026)
+  series: Design Automation Conference
+  mode: in-person
+  venue: Long Beach, CA
+  country: USA
+  topic: AI, Design, EDA, Security, Systems, Quantum, Chiplets
+  description: DAC 2026 is the 63rd annual Design Automation Conference featuring
+    keynotes, research and engineering tracks, workshops, tutorials, exhibitions,
+    hackathons, Ph.D. forum, poster gladiator sessions, and more. Record year in submissions
+    with 55% of program covering AI & Design, 26.34% increase in Research Track submissions,
+    and 26% growth in Engineering Track submissions.
+  scope: international conference
+  date: 2026-07-26 to 2026-07-29
+  event_website: https://dac.com/2026
+  ticket_booking_link: null
+  ticket_status: available
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://dac.com/2026
+- name: embedded world Exhibition & Conference 2026
+  series: Embedded World
+  mode: in-person
+  venue: NürnbergMesse GmbH, Messezentrum 1, 90471 Nürnberg
+  country: Germany
+  topic: Embedded systems, hardware, software, IoT, M2M, electronic displays
+  description: Global platform and place to meet for the entire embedded community,
+    including leading experts, key players and industry associations. Covers embedded
+    systems from components and modules to operating systems, hardware and software
+    design, M2M communication, services, and complex system design. Includes embedded
+    world Conference, electronic displays Conference, exhibitor forums, expert panels,
+    guided tours, student day, women4ew networking event, embedded award, and start-up
+    City.
+  scope: international conference
+  date: 2026-03-10 to 2026-03-12
+  event_website: https://www.embedded-world.de/en
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://www.embedded-world.de/en
+- name: CppCon 2026
+  series: CppCon
+  mode: in-person
+  venue: Gaylord Rockies
+  country: USA
+  topic: C++ programming language
+  description: Annual week-long C++ conference featuring 5+ days of content across
+    five stages, 100+ sessions, 5 keynotes including a special Language Designers
+    Keynote Panel with Bjarne Stroustrup, Guido van Rossum, and Mads Torgersen, eight
+    focus tracks (Back to Basics, Business & Career, Embedded, GameDev, Robotics &
+    AI, Scientific Computing, Software Design, Tooling & Ecosystem), plus panels,
+    bonus sessions, and lightning talks. Sessions are onsite-only and will be recorded
+    and posted to YouTube afterward.
+  scope: international conference
+  date: 2026-09-12 to 2026-09-18
+  event_website: https://cppcon.org
+  ticket_booking_link: https://cppcon.org/registration
+  ticket_status: available
+  cfp_submission_link: https://cppcon.org/submissions
+  cfp_deadline: '2026-05-17'
+  source_url: https://cppcon.org
+- name: 'CppCon 2026 Field Trip: Dinosaur Center & Morrison, CO'
+  series: CppCon
+  mode: in-person
+  venue: Morrison, Colorado (Dinosaur Ridge Museum / Red Rocks area)
+  country: USA
+  topic: C++ community / social event
+  description: CppCon 2026 field trip to Morrison, Colorado, a town on the edge of
+    the Rockies famous for Red Rocks. Attendees can visit the Dinosaur Ridge Museum
+    and enjoy the scenery and town. Sponsored by the North Denver Metro C++ Meetup.
+  scope: international conference
+  date: '2026-09-13'
+  event_website: https://cppcon.org/field-trip
+  ticket_booking_link: https://cppcon.org/field-trip
+  ticket_status: available
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://cppcon.org
+- name: DEF CON 34
+  series: DEF CON
+  mode: in-person
+  venue: Las Vegas Convention Center (LVCC) West Hall
+  country: United States
+  topic: Hacking, Cybersecurity
+  description: DEF CON 34 with theme 'Agency', featuring talks, villages, contests,
+    CTF, badge hacking, music, workshops, demo labs, and trainings. Electronic badge
+    year with a special SAO-compatible platform.
+  scope: international conference
+  date: 2026-08-06 to 2026-08-09
+  event_website: https://defcon.org/html/defcon-34/dc-34-index.html
+  ticket_booking_link: https://shop.defcon.org
+  ticket_status: available
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://defcon.org
+- name: DEF CON Singapore
+  series: DEF CON
+  mode: in-person
+  venue: Marina Bay Sands
+  country: Singapore
+  topic: Hacking, Cybersecurity
+  description: DEF CON Singapore held at Marina Bay Sands in Singapore.
+  scope: international conference
+  date: 2026-04-28 to 2026-04-30
+  event_website: null
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://defcon.org
+- name: DEF CON Middle East
+  series: DEF CON
+  mode: in-person
+  venue: null
+  country: Bahrain
+  topic: Hacking, Cybersecurity
+  description: DEF CON Middle East returning to Bahrain following a successful 2025
+    event. Full DEF CON experience brought to Bahrain and the region.
+  scope: international conference
+  date: 2026-11-11 to 2026-11-12
+  event_website: null
+  ticket_booking_link: null
+  ticket_status: not_opened
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://defcon.org
+- name: DEF CON Training Middle East
+  series: DEF CON
+  mode: in-person
+  venue: null
+  country: Bahrain
+  topic: Cybersecurity Training
+  description: Two-day and three-day DEF CON training courses held ahead of DEF CON
+    Middle East in Bahrain.
+  scope: international conference
+  date: 2026-11-08 to 2026-11-10
+  event_website: https://training.defcon.org
+  ticket_booking_link: null
+  ticket_status: not_opened
+  cfp_submission_link: https://training.defcon.org
+  cfp_deadline: '2026-05-09'
+  source_url: https://defcon.org
+- name: DEF CON 34 CTF Qualifier Round
+  series: DEF CON
+  mode: online
+  venue: null
+  country: null
+  topic: Capture The Flag, Cybersecurity Competition
+  description: DEF CON 34 CTF Qualifier Round organized by the new CTF organizers
+    Benevolent Bureau of Birds (BBB). First opportunity to sample what the Birds have
+    in store.
+  scope: international conference
+  date: 2026-05-22 to 2026-05-24
+  event_website: https://bbbirds.org/
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://defcon.org
+- name: EuroPython 2026 - Speaker Orientation / Mentorship
+  series: EuroPython
+  mode: online
+  venue: null
+  country: null
+  topic: Speaker development, stage presence, audience engagement
+  description: Speaker Orientation to build confidence, improve stage presence, and
+    learn how to engage your audience. Open to first-time and returning speakers.
+  scope: international conference
+  date: '2026-06-03'
+  event_website: https://ep2026.europython.eu/speaker-mentorship
+  ticket_booking_link: null
+  ticket_status: available
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://ep2026.europython.eu
+- name: IndiaFOSS 2026
+  series: India FOSS
+  mode: in-person
+  venue: NIMHANS Convention Centre
+  country: India
+  topic: Free and Open Source Software — including FOSS products, communities, technology
+    policy, funding & sustainability, open data, open hardware, open science, free/libre
+    AI, open design, and FOSS for academia/society
+  description: The 6th edition of the Digital Commons Festival by the FOSS United
+    community. One of the largest gatherings for India's Free and Open Source Software
+    communities, featuring talks, panel discussions, lightning talks, workshops &
+    demos, open space, devrooms, and project booths.
+  scope: national conference
+  date: 2026-09-26 to 2026-09-27
+  event_website: https://fossunited.org/indiafoss/2026
+  ticket_booking_link: https://fossunited.org/indiafoss/tickets
+  ticket_status: available
+  cfp_submission_link: https://fossunited.org/indiafoss/talks
+  cfp_deadline: '2026-06-15'
+  source_url: https://fossunited.org/indiafoss/2026
+- name: Maintainer Summit
+  series: India FOSS
+  mode: in-person
+  venue: Samagata Foundation, Church Street, Bengaluru
+  country: India
+  topic: Open-source and open-commons maintainer perspectives — sustainability, grants,
+    burnout, community; unconference-style
+  description: 'A dedicated pre-event for open-source and open-commons maintainers
+    to get together and discuss their perspectives before IndiaFOSS 2026. Unconference-style:
+    schedule is decided by attendees at the venue. Maintainers-only event.'
+  scope: national conference
+  date: '2026-09-25'
+  event_website: https://fossunited.org/c/indiafoss/maintainer-summit
+  ticket_booking_link: https://fossunited.org/c/indiafoss/maintainer-summit/rsvp
+  ticket_status: available
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://fossunited.org/c/indiafoss/maintainer-summit
+- name: 18th edition - India’s biggest and oldest game developer conference
+  series: India Game Developer Conference
+  mode: null
+  venue: Chennai Trade Centre
+  country: null
+  topic: null
+  description: 2 days • 10,000+ attendees • Sessions, awards, and networking
+  scope: null
+  date: 28th - 29th Oct 2026,
+  event_website: https://indiagdc.com/
+  ticket_booking_link: /register/
+  ticket_status: null
+  cfp_submission_link: https://indiagdc.com/speakers/
+  cfp_deadline: null
+  source_url: null
+- name: GOPHERCON INDIA
+  series: GopherCon India
+  mode: null
+  venue: null
+  country: null
+  topic: null
+  description: "GopherCon India is the premier Go programming language conference\
+    \ in India, brought to you by the \n                            passionate Go\
+    \ Language Community and the Emerging Technology Trust (ETT). As a non-profit\
+    \ organization, \n                            ETT is committed to fostering technology\
+    \ communities through conferences such as DeccanRubyConf, \n                 \
+    \           DevOpsDaysIndia, DroidJamIndia, RubyConfIndia, and GopherConIndia."
+  scope: null
+  date: '2026-11-22'
+  event_website: null
+  ticket_booking_link: https://www.townscript.com/e/GopherCon-india-2026
+  ticket_status: null
+  cfp_submission_link: https://www.papercall.io/gophercon-india-2026
+  cfp_deadline: null
+  source_url: null
+- name: Open Source Summit India
+  series: Open Source Summit India
+  mode: null
+  venue: Mumbai, India
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: 16-17 June
+  event_website: https://events.linuxfoundation.org/open-source-summit-india/
+  ticket_booking_link: https://events.linuxfoundation.org/open-source-summit-india/register/
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: fosdem-2026
+  series: FOSDEM
+  mode: null
+  venue: ULB
+  country: Belgium
+  topic: null
+  description: null
+  scope: null
+  date: 31 January & 1 February 2026
+  event_website: /2026/
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: KotlinConf 2026
+  series: KotlinConf
+  mode: null
+  venue: Munich, Germany
+  country: Munich, Germany
+  topic: null
+  description: KotlinConf 2026 was a great success thanks to 100 valued speakers presenting
+    108 sessions 2200 attendees from all over the world, 17 amazing partners and 44
+    volunteers.
+  scope: null
+  date: Munich, Germany
+  event_website: null
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: null
+  series: KubeCon + CloudNativeCon India
+  mode: null
+  venue: Mumbai, India
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: 18-19 June
+  event_website: https://events.linuxfoundation.org/kubecon-cloudnativecon-india/
+  ticket_booking_link: https://events.linuxfoundation.org/kubecon-cloudnativecon-india/register/
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://events.linuxfoundation.org/kubecon-cloudnativecon-india/
+- name: c
+  series: c0c0n
+  mode: null
+  venue: Grand Hyatt, Bolgatty, Kochi, Kerala
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: October 06-13, 2026
+  event_website: cfp
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: cfp
+  cfp_deadline: 10 May 2026
+  source_url: null
+- name: null
+  series: Maker Faire
+  mode: null
+  venue: null
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: This September 25–27, come back to the flagship where it all started. Build,
+    play, experiment, and be part of the movement that keeps making the future.
+  event_website: https://makerfaire.com/bay-area
+  ticket_booking_link: https://makerfaire.com/bay-area/tickets/
+  ticket_status: null
+  cfp_submission_link: https://makerfaire.com/bay-area/call-for-makers/
+  cfp_deadline: null
+  source_url: null
+- name: IEEE INFOCOM 2026
+  series: IEEE INFOCOM
+  mode: null
+  venue: Tokyo, Japan
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: 18 - 21 May 2026
+  event_website: https://infocom2026.ieee-infocom.org/submission-guidelines-main-conference
+  ticket_booking_link: /registration
+  ticket_status: null
+  cfp_submission_link: /submission-guidelines-main-conference
+  cfp_deadline: 31 Jul 2025
+  source_url: null
+- name: ''
+  series: LambdaConf
+  mode: null
+  venue: New York Area
+  country: null
+  topic: null
+  description: A final, limited-access private finale.
+  scope: null
+  date: May 18-19
+  event_website: /
+  ticket_booking_link: https://www.eventbrite.com/e/lambdaconf-2026-a-private-farewell-event-tickets-1993536321803?aff=oddtdtcreator&keep_tld=true
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: MachineCon GCC
+  series: MachineCon
+  mode: null
+  venue: 19th-21st June 2026, Alila Diwa Goa
+  country: null
+  topic: null
+  description: Built as a residential summit in Goa,
+  scope: null
+  date: 19th-21st June 2026, Alila Diwa Goa
+  event_website: https://machinecon.analyticsindiamag.com/
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Event\",\n  \"\
+    name\": \"GrafanaCON 2026\",\n  \"startDate\": \"2026-04-20T00:00:00\",\n  \"\
+    endDate\": \"2026-04-22T00:00:00\",\n  \"description\": \"Join us in Barcelona\
+    \ on April 20-22, 2026 for GrafanaCON, our biggest community event of the year.\"\
+    ,\n  \"location\": {\n    \"@type\": \"Place\",\n    \"name\": \"Palau de Congressos\
+    \ de Catalunya\",\n    \"address\": {\n      \"@type\": \"PostalAddress\",\n \
+    \     \"address\": \"Av. Diagonal, 661\",\n      \"addressLocality\": \"Barcelona\"\
+    ,\n      \"addressRegion\": \"Les Corts\",\n      \"addressCountry\": \"Spain\"\
+    \n    }\n  },\n  \"url\": \"https://grafana.com/events/grafanacon\"\n}"
+  series: GrafanaCON
+  mode: null
+  venue: "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Event\",\n  \"\
+    name\": \"GrafanaCON 2026\",\n  \"startDate\": \"2026-04-20T00:00:00\",\n  \"\
+    endDate\": \"2026-04-22T00:00:00\",\n  \"description\": \"Join us in Barcelona\
+    \ on April 20-22, 2026 for GrafanaCON, our biggest community event of the year.\"\
+    ,\n  \"location\": {\n    \"@type\": \"Place\",\n    \"name\": \"Palau de Congressos\
+    \ de Catalunya\",\n    \"address\": {\n      \"@type\": \"PostalAddress\",\n \
+    \     \"address\": \"Av. Diagonal, 661\",\n      \"addressLocality\": \"Barcelona\"\
+    ,\n      \"addressRegion\": \"Les Corts\",\n      \"addressCountry\": \"Spain\"\
+    \n    }\n  },\n  \"url\": \"https://grafana.com/events/grafanacon\"\n}"
+  country: "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Event\",\n\
+    \  \"name\": \"GrafanaCON 2026\",\n  \"startDate\": \"2026-04-20T00:00:00\",\n\
+    \  \"endDate\": \"2026-04-22T00:00:00\",\n  \"description\": \"Join us in Barcelona\
+    \ on April 20-22, 2026 for GrafanaCON, our biggest community event of the year.\"\
+    ,\n  \"location\": {\n    \"@type\": \"Place\",\n    \"name\": \"Palau de Congressos\
+    \ de Catalunya\",\n    \"address\": {\n      \"@type\": \"PostalAddress\",\n \
+    \     \"address\": \"Av. Diagonal, 661\",\n      \"addressLocality\": \"Barcelona\"\
+    ,\n      \"addressRegion\": \"Les Corts\",\n      \"addressCountry\": \"Spain\"\
+    \n    }\n  },\n  \"url\": \"https://grafana.com/events/grafanacon\"\n}"
+  topic: null
+  description: null
+  scope: null
+  date: "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Event\",\n  \"\
+    name\": \"GrafanaCON 2026\",\n  \"startDate\": \"2026-04-20T00:00:00\",\n  \"\
+    endDate\": \"2026-04-22T00:00:00\",\n  \"description\": \"Join us in Barcelona\
+    \ on April 20-22, 2026 for GrafanaCON, our biggest community event of the year.\"\
+    ,\n  \"location\": {\n    \"@type\": \"Place\",\n    \"name\": \"Palau de Congressos\
+    \ de Catalunya\",\n    \"address\": {\n      \"@type\": \"PostalAddress\",\n \
+    \     \"address\": \"Av. Diagonal, 661\",\n      \"addressLocality\": \"Barcelona\"\
+    ,\n      \"addressRegion\": \"Les Corts\",\n      \"addressCountry\": \"Spain\"\
+    \n    }\n  },\n  \"url\": \"https://grafana.com/events/grafanacon\"\n}"
+  event_website: "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Event\"\
+    ,\n  \"name\": \"GrafanaCON 2026\",\n  \"startDate\": \"2026-04-20T00:00:00\"\
+    ,\n  \"endDate\": \"2026-04-22T00:00:00\",\n  \"description\": \"Join us in Barcelona\
+    \ on April 20-22, 2026 for GrafanaCON, our biggest community event of the year.\"\
+    ,\n  \"location\": {\n    \"@type\": \"Place\",\n    \"name\": \"Palau de Congressos\
+    \ de Catalunya\",\n    \"address\": {\n      \"@type\": \"PostalAddress\",\n \
+    \     \"address\": \"Av. Diagonal, 661\",\n      \"addressLocality\": \"Barcelona\"\
+    ,\n      \"addressRegion\": \"Les Corts\",\n      \"addressCountry\": \"Spain\"\
+    \n    }\n  },\n  \"url\": \"https://grafana.com/events/grafanacon\"\n}"
+  ticket_booking_link: /events/grafanacon/
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://grafana.com/events/grafanacon/
+- name: ICLR 2026
+  series: ICLR
+  mode: null
+  venue: To report crimes and stolen property - this location speaks English, Spanish
+    and French - open 24/7
+  country: Rio de Janeiro, Brazil
+  topic: null
+  description: The Fourteenth International Conference on Learning Representations
+  scope: null
+  date: April 23rd - 27th, 2026
+  event_website: /virtual/2026/index.html
+  ticket_booking_link: /Register2
+  ticket_status: null
+  cfp_submission_link: /Conferences/2026/CallForPapers
+  cfp_deadline: null
+  source_url: https://iclr.cc
+- name: React India 2026
+  series: React India
+  mode: null
+  venue: Experience a world-class conference at Planet Hollywood Beach Resort. Combine
+    professional development with a memorable getaway.
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: '2026-10-29'
+  event_website: /conferences/tickets
+  ticket_booking_link: /conferences/tickets
+  ticket_status: null
+  cfp_submission_link: /cfp
+  cfp_deadline: null
+  source_url: null
+- name: null
+  series: PlatformCon
+  mode: null
+  venue: null
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: 24 September 2026
+  event_website: https://platformconlive.fr/
+  ticket_booking_link: https://platformconlive.fr/
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: null
+  series: PlatformCon
+  mode: null
+  venue: null
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: 7 November 2026
+  event_website: https://saopaulo.platformcon.com/
+  ticket_booking_link: https://saopaulo.platformcon.com/
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: null
+  series: PlatformCon
+  mode: null
+  venue: null
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: 28 October 2026
+  event_website: https://sydney.platformcon.com/
+  ticket_booking_link: https://sydney.platformcon.com/
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: null
+  series: PlatformCon
+  mode: null
+  venue: null
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: February 2027
+  event_website: https://sanfrancisco.platformcon.com/
+  ticket_booking_link: https://sanfrancisco.platformcon.com/
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: RustConf 2026
+  series: RustConf
+  mode: null
+  venue: September 8-11 | Montreal + Online
+  country: null
+  topic: null
+  description: RustConf is turning 10! Join us to see what the Rust community is building,
+    connect with people and teams thinking deeply about the language, and dig into
+    the topics defining the next decade of computing.
+  scope: null
+  date: September 8-11 | Montreal + Online
+  event_website: https://rustconf.com
+  ticket_booking_link: https://rustconf.regfox.com/rustconf2026
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: ICML 2026
+  series: ICML
+  mode: null
+  venue: 'July 6–11, 2026 at the COEX Convention & Exhibition Center, Seoul, South
+    Korea (July 6: Expo/Tutorial Day; July 7–9: Main Conference; July 10–11: Workshops).'
+  country: Seoul, South Korea
+  topic: null
+  description: null
+  scope: null
+  date: July 6th - 11th, 2026
+  event_website: /Conferences/2026
+  ticket_booking_link: /Register2
+  ticket_status: null
+  cfp_submission_link: /Conferences/2026/CallForPapers
+  cfp_deadline: null
+  source_url: /accounts/login?nextp=/
+- name: InfoQ Certified AI Engineering Program
+  series: QCon
+  mode: null
+  venue: null
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: July 25, 2026
+  event_website: https://certification.qconferences.com/ai-engineering?utm_source=qconferences&utm_medium=referral&utm_campaign=upnext_onlinecohortaijuly26
+  ticket_booking_link: https://certification.qconferences.com/ai-engineering?utm_source=qconferences&utm_medium=referral&utm_campaign=upnext_onlinecohortaijuly26
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: Online InfoQ Architect Certification
+  series: QCon
+  mode: null
+  venue: null
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: August 13, 2026
+  event_website: https://certification.qconferences.com/architecture?utm_source=qconferences&utm_medium=referral&utm_campaign=upnext_onlinecohortarchitecture26
+  ticket_booking_link: https://certification.qconferences.com/architecture?utm_source=qconferences&utm_medium=referral&utm_campaign=upnext_onlinecohortarchitecture26
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: InfoQ AI Security & Privacy Engineering Program
+  series: QCon
+  mode: null
+  venue: null
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: August 26, 2026
+  event_website: https://certification.qconferences.com/ai-security-privacy?utm_source=qconferences&utm_medium=referral&utm_campaign=upnext_onlinecohortaisecurity26
+  ticket_booking_link: https://certification.qconferences.com/ai-security-privacy?utm_source=qconferences&utm_medium=referral&utm_campaign=upnext_onlinecohortaisecurity26
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: QCon San Francisco
+  series: QCon
+  mode: null
+  venue: null
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: November 16-20, 2026
+  event_website: https://qconsf.com/?utm_source=qconferences&utm_medium=referral&utm_campaign=upnext_qaconsf26
+  ticket_booking_link: https://qconsf.com/?utm_source=qconferences&utm_medium=referral&utm_campaign=upnext_qaconsf26
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: QCon London
+  series: QCon
+  mode: null
+  venue: null
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: April 13-16, 2027
+  event_website: https://qconlondon.com/?utm_source=qconferences&utm_medium=referral&utm_campaign=upnext_qlondon27
+  ticket_booking_link: https://qconlondon.com/?utm_source=qconferences&utm_medium=referral&utm_campaign=upnext_qlondon27
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: /dataaisummit
+  series: Data + AI Summit
+  mode: null
+  venue: null
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: June 15–18
+  event_website: /dataaisummit
+  ticket_booking_link: https://dataaisummit.databricks.com/flow/db/dais2026/landing/page/home
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: KubeCon + CloudNativeCon Japan 2026
+  series: KubeCon + CloudNativeCon
+  mode: null
+  venue: Yokohama, Japan
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: July 28-30, 2026
+  event_website: https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: null
+  series: KubeCon + CloudNativeCon
+  mode: null
+  venue: null
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: null
+  event_website: null
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: KubeCon + CloudNativeCon + OpenInfra Summit + PyTorch Conference China 2026
+  series: KubeCon + CloudNativeCon
+  mode: null
+  venue: Shanghai, China
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: September 7-9, 2026
+  event_website: https://www.lfopensource.cn/kubecon-cloudnativecon-openinfra-summit-pytorch-conference-china/
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: KubeCon + CloudNativeCon North America 2026
+  series: KubeCon + CloudNativeCon
+  mode: null
+  venue: Salt Lake City, United States
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: November 9-12, 2026
+  event_website: https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: Featured ODSC AI West 2026 Keynotes
+  series: ODSC
+  mode: null
+  venue: BOSTON
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: '2026-07-17 23:59:59'
+  event_website: https://odsc.ai/accelerator
+  ticket_booking_link: https://odsc.ai/west/#register
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: VueJS Amsterdam
+  series: Vue.js Amsterdam
+  mode: null
+  venue: Final Edition at Theater Amsterdam
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: 11-12 March 2027
+  event_website: https://www.tickettailor.com/checkout/view-event/id/8185859/chk/4d4b/
+  ticket_booking_link: https://www.tickettailor.com/checkout/view-event/id/8185859/chk/4d4b/
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: Nullcon
+  series: Nullcon
+  mode: null
+  venue: 'Venue: The Westin Grand, Berlin'
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: 'Training: 2nd - 4th November 2026 | Conference: 5th - 6th November 2026'
+  event_website: https://nullcon.net/event/nullcon-hyderabad-2026/
+  ticket_booking_link: https://nullcon.net/event/nullcon-berlin-2026/registration/
+  ticket_status: null
+  cfp_submission_link: https://nullcon.net/event/nullcon-berlin-2026/cfp/
+  cfp_deadline: null
+  source_url: null
+- name: '{&quot;cover-photo-set&quot;:{&quot;blur&quot;:&quot;https://res.cloudinary.com/bizzaboprod/image/upload/c_crop,g_custom,f_auto/w_1050,h_435,c_fit,fl_any_format,q_auto:best,e_blur:1300/fcuyhu7mcjmsrekzofho.jpg&quot;,&quot;large&quot;:&quot;https://res.cloudinary.com/bizzaboprod/image/upload/c_crop,g_custom,f_auto/w_1050,h_435,c_fit,fl_any_format,q_auto:best/fcuyhu7mcjmsrekzofho.jpg&quot;,&quot;medium&quot;:&quot;https://res.cloudinary.com/bizzaboprod/image/upload/c_crop,g_custom,f_auto/w_600,h_180,c_fit,fl_any_format,q_auto:best/fcuyhu7mcjmsrekzofho.jpg&quot;,&quot;small&quot;:&quot;https://res.cloudinary.com/bizzaboprod/image/upload/c_crop,g_custom,f_auto/w_560,h_220,c_fit,f_auto,q_auto:best/fcuyhu7mcjmsrekzofho.jpg&quot;},&quot;created&quot;:1767125635000,&quot;local-end-date&quot;:&quot;2026-08-06
+    18:00&quot;,&quot;end-date&quot;:1786064400000,&quot;header-logo-url&quot;:&quot;https://assets-ext.bizzabo.com/bizzaboprod/image/upload/q_auto,f_auto,c_scale,c_crop,g_custom/v1735851479/b87mbv0y7v6hhcenmv3o&quot;,&quot;id&quot;:802722,&quot;private&quot;:false,&quot;logo-set&quot;:{&quot;blur&quot;:&quot;https://assets-ext.bizzabo.com/bizzaboprod/image/upload/q_auto,f_auto,c_scale,c_crop,g_custom/v1735851479/b87mbv0y7v6hhcenmv3o&quot;,&quot;large&quot;:&quot;https://assets-ext.bizzabo.com/bizzaboprod/image/upload/q_auto,f_auto,c_scale,c_crop,g_custom/v1735851479/b87mbv0y7v6hhcenmv3o&quot;,&quot;medium&quot;:&quot;https://assets-ext.bizzabo.com/bizzaboprod/image/upload/q_auto,f_auto,c_scale,c_crop,g_custom/v1735851479/b87mbv0y7v6hhcenmv3o&quot;,&quot;small&quot;:&quot;https://assets-ext.bizzabo.com/bizzaboprod/image/upload/q_auto,f_auto,c_scale,c_crop,g_custom/v1735851479/b87mbv0y7v6hhcenmv3o&quot;},&quot;name&quot;:&quot;GopherCon
+    2026&quot;,&quot;privacy&quot;:&quot;public&quot;,&quot;splash-screen-duration&quot;:2500,&quot;splash-screen-interval&quot;:14400,&quot;splash-screen-set&quot;:{&quot;blur&quot;:&quot;https://res.cloudinary.com/bizzaboprod/image/upload/c_crop,g_custom,f_auto/w_1080,h_1920,c_fit,fl_any_format,q_auto:best,e_blur:1300/dkewnn8tph38irvu68mw.png&quot;,&quot;large&quot;:&quot;https://res.cloudinary.com/bizzaboprod/image/upload/c_crop,g_custom,f_auto/w_1080,h_1920,c_fit,fl_any_format,q_auto:best/dkewnn8tph38irvu68mw.png&quot;,&quot;medium&quot;:&quot;https://res.cloudinary.com/bizzaboprod/image/upload/c_crop,g_custom,f_auto/w_640,h_960,c_fit,fl_any_format,q_auto:best/dkewnn8tph38irvu68mw.png&quot;,&quot;small&quot;:&quot;https://res.cloudinary.com/bizzaboprod/image/upload/c_crop,g_custom,f_auto/w_480,h_800,c_fit,f_auto,q_auto:best/dkewnn8tph38irvu68mw.png&quot;},&quot;splash-screen-url&quot;:&quot;https://res.cloudinary.com/bizzaboprod/image/upload/c_crop,g_custom,f_auto/v1535155907/dkewnn8tph38irvu68mw.png&quot;,&quot;local-start-date&quot;:&quot;2026-08-03
+    12:00&quot;,&quot;start-date&quot;:1785783600000,&quot;support-email&quot;:&quot;info@gopheracademy.com&quot;,&quot;time-zone-id&quot;:&quot;US/Pacific&quot;,&quot;unique-name&quot;:802722,&quot;venue&quot;:{&quot;address-1&quot;:&quot;Olive
+    Wy&quot;,&quot;city&quot;:&quot;Seattle&quot;,&quot;country&quot;:&quot;US&quot;,&quot;display-address&quot;:&quot;9th
+    Avenue &amp; Olive Way, Seattle, WA, USA&quot;,&quot;latitude&quot;:47.6145309,&quot;longitude&quot;:-122.3329561,&quot;name&quot;:&quot;Seattle
+    Convention Center | Summit&quot;,&quot;state&quot;:&quot;WA&quot;},&quot;account-id&quot;:134118,&quot;agendaUrl&quot;:&quot;https://www.gophercon.com/agenda&quot;,&quot;associatedOnly&quot;:true,&quot;attendanceType&quot;:&quot;IN_PERSON&quot;,&quot;attendees-from-registration&quot;:false,&quot;build-community&quot;:false,&quot;communityUrl&quot;:&quot;https://www.gophercon.com/community&quot;,&quot;cover-photo-url&quot;:&quot;https://res.cloudinary.com/bizzaboprod/image/upload/c_crop,g_custom,f_auto/v1535155416/fcuyhu7mcjmsrekzofho.jpg&quot;,&quot;description&quot;:&quot;Join
+    us in Seattle, Washington from August 3rd - 6th at the Seattle Convention Center
+    | Summit! As the premier gathering of Go programming language enthusiasts, you
+    can expect some of the very best programming driven by our community, exceptional
+    pre-conference workshops taught by a few of the smartest people we know, and multiple
+    opportunities to network. Secure your pass today and we&#x27;ll see you in the
+    Emerald City!&quot;,&quot;download-app-links&quot;:false,&quot;aggregated-data&quot;:{&quot;allow-ticketing&quot;:true,&quot;enableMobileApp&quot;:false,&quot;push-notifications-left&quot;:0,&quot;rsvp-count&quot;:0,&quot;widget-watch-count&quot;:0},&quot;eventType&quot;:&quot;MSE&quot;,&quot;favicon-url&quot;:&quot;https://assets-ext.bizzabo.com/bizzaboprod/image/upload/q_auto,f_auto,c_scale,c_crop,g_custom/v1735932574/vape7kibu3gyp9ywuclt&quot;,&quot;features&quot;:{&quot;agenda&quot;:true,&quot;community&quot;:true,&quot;communityVersion&quot;:&quot;PEOPLE_V2&quot;,&quot;id&quot;:629366,&quot;matchmaking&quot;:false,&quot;partners&quot;:true,&quot;polls&quot;:false,&quot;scheduledMeetings&quot;:false,&quot;speakers&quot;:true,&quot;spontaneousMeetings&quot;:false,&quot;twitter&quot;:false},&quot;groupId&quot;:20189,&quot;hideDates&quot;:true,&quot;homepage-url&quot;:&quot;https://www.gophercon.com&quot;,&quot;invite-guests&quot;:false,&quot;isArchived&quot;:false,&quot;isTemplate&quot;:false,&quot;joinCommunityOnRegistration&quot;:false,&quot;keywords&quot;:&quot;gophercon&quot;,&quot;landing-page-url&quot;:&quot;https://www.gophercon.com&quot;,&quot;onlyEventDomain&quot;:true,&quot;poll-count&quot;:0,&quot;productType&quot;:&quot;bizzabo&quot;,&quot;registrationType&quot;:&quot;paid&quot;,&quot;registrationsUrl&quot;:&quot;https://www.gophercon.com&quot;,&quot;seoEnabled&quot;:true,&quot;shouldCloneAgenda&quot;:false,&quot;status&quot;:&quot;published&quot;,&quot;tier-configuration&quot;:[{&quot;color&quot;:&quot;B1B4BF&quot;,&quot;label&quot;:&quot;Platinum&quot;,&quot;tier&quot;:1},{&quot;color&quot;:&quot;ffdf28&quot;,&quot;label&quot;:&quot;Gold&quot;,&quot;tier&quot;:2},{&quot;color&quot;:&quot;c0c0c0&quot;,&quot;label&quot;:&quot;Silver&quot;,&quot;tier&quot;:3},{&quot;color&quot;:&quot;8c7853&quot;,&quot;label&quot;:&quot;Bronze&quot;,&quot;tier&quot;:4},{&quot;color&quot;:&quot;a1d5e3&quot;,&quot;label&quot;:&quot;Media
+    Partner&quot;,&quot;tier&quot;:5},{&quot;color&quot;:&quot;f3c1a0&quot;,&quot;label&quot;:&quot;Press&quot;,&quot;tier&quot;:6},{&quot;color&quot;:&quot;aedda6&quot;,&quot;label&quot;:&quot;Startup
+    Alley&quot;,&quot;tier&quot;:7}],&quot;trackingPixel&quot;:{&quot;googleAnalyticsId&quot;:&quot;UA-40886074-1&quot;,&quot;googleTagManagerId&quot;:&quot;GTM-WMWMB5K&quot;},&quot;twitter-handle&quot;:&quot;gophercon&quot;,&quot;twitter-hashtag&quot;:&quot;gophercon&quot;,&quot;websiteType&quot;:&quot;whitelabel&quot;,&quot;welcome-message&quot;:&quot;&lt;p
+    style=\&quot;margin: 0px 0px 10px; font-size: 14px; box-sizing: border-box;\&quot;&gt;Network
+    with your Go friends old and new on the GopherCon Community site.&lt;/p&gt;&quot;,&quot;whitelabelPath&quot;:&quot;/&quot;,&quot;whitelabelUrl&quot;:&quot;www.gophercon.com&quot;,&quot;whitelabel-web&quot;:false,&quot;whitelabelWidgetEnabled&quot;:false,&quot;linkToAppiOS&quot;:&quot;https://itunes.apple.com/us/app/bizzabo/id408705047?Is=1&amp;mt=8&quot;,&quot;linkToAppAndroid&quot;:&quot;https://play.google.com/store/apps/details?id=com.bizzabo.client&quot;,&quot;iso-start-date&quot;:&quot;2026-08-03T12:00:00-07:00&quot;,&quot;iso-end-date&quot;:&quot;2026-08-06T18:00:00-07:00&quot;,&quot;seoImage&quot;:&quot;https://assets-ext.bizzabo.com/bizzaboprod/image/upload/q_auto,f_auto,c_scale,c_crop,g_custom/v1735851479/b87mbv0y7v6hhcenmv3o&quot;,&quot;schemaEventStatus&quot;:&quot;https://schema.org/EventScheduled&quot;,&quot;accountName&quot;:&quot;GopherCon
+    2026&quot;}'
+  series: GopherCon
+  mode: null
+  venue: Seattle Convention Center | Summit
+  country: null
+  topic: null
+  description: The Go community shouted “Seattle!” from the treetops and we listened!
+    This year, we’re heading to the heart of the Pacific Northwest, where Seattle’s
+    waterfront charm meets a breathtaking backdrop of evergreens with Mt. Rainier
+    towering in the distance. With summer vibes, iconic sights, and plenty of Emerald
+    City magic, Seattle is the perfect place to convene.
+  scope: null
+  date: Monday, August 3 - Thursday, August 6, 2026
+  event_website: '{&quot;cover-photo-set&quot;:{&quot;blur&quot;:&quot;https://res.cloudinary.com/bizzaboprod/image/upload/c_crop,g_custom,f_auto/w_1050,h_435,c_fit,fl_any_format,q_auto:best,e_blur:1300/fcuyhu7mcjmsrekzofho.jpg&quot;,&quot;large&quot;:&quot;https://res.cloudinary.com/bizzaboprod/image/upload/c_crop,g_custom,f_auto/w_1050,h_435,c_fit,fl_any_format,q_auto:best/fcuyhu7mcjmsrekzofho.jpg&quot;,&quot;medium&quot;:&quot;https://res.cloudinary.com/bizzaboprod/image/upload/c_crop,g_custom,f_auto/w_600,h_180,c_fit,fl_any_format,q_auto:best/fcuyhu7mcjmsrekzofho.jpg&quot;,&quot;small&quot;:&quot;https://res.cloudinary.com/bizzaboprod/image/upload/c_crop,g_custom,f_auto/w_560,h_220,c_fit,f_auto,q_auto:best/fcuyhu7mcjmsrekzofho.jpg&quot;},&quot;created&quot;:1767125635000,&quot;local-end-date&quot;:&quot;2026-08-06
+    18:00&quot;,&quot;end-date&quot;:1786064400000,&quot;header-logo-url&quot;:&quot;https://assets-ext.bizzabo.com/bizzaboprod/image/upload/q_auto,f_auto,c_scale,c_crop,g_custom/v1735851479/b87mbv0y7v6hhcenmv3o&quot;,&quot;id&quot;:802722,&quot;private&quot;:false,&quot;logo-set&quot;:{&quot;blur&quot;:&quot;https://assets-ext.bizzabo.com/bizzaboprod/image/upload/q_auto,f_auto,c_scale,c_crop,g_custom/v1735851479/b87mbv0y7v6hhcenmv3o&quot;,&quot;large&quot;:&quot;https://assets-ext.bizzabo.com/bizzaboprod/image/upload/q_auto,f_auto,c_scale,c_crop,g_custom/v1735851479/b87mbv0y7v6hhcenmv3o&quot;,&quot;medium&quot;:&quot;https://assets-ext.bizzabo.com/bizzaboprod/image/upload/q_auto,f_auto,c_scale,c_crop,g_custom/v1735851479/b87mbv0y7v6hhcenmv3o&quot;,&quot;small&quot;:&quot;https://assets-ext.bizzabo.com/bizzaboprod/image/upload/q_auto,f_auto,c_scale,c_crop,g_custom/v1735851479/b87mbv0y7v6hhcenmv3o&quot;},&quot;name&quot;:&quot;GopherCon
+    2026&quot;,&quot;privacy&quot;:&quot;public&quot;,&quot;splash-screen-duration&quot;:2500,&quot;splash-screen-interval&quot;:14400,&quot;splash-screen-set&quot;:{&quot;blur&quot;:&quot;https://res.cloudinary.com/bizzaboprod/image/upload/c_crop,g_custom,f_auto/w_1080,h_1920,c_fit,fl_any_format,q_auto:best,e_blur:1300/dkewnn8tph38irvu68mw.png&quot;,&quot;large&quot;:&quot;https://res.cloudinary.com/bizzaboprod/image/upload/c_crop,g_custom,f_auto/w_1080,h_1920,c_fit,fl_any_format,q_auto:best/dkewnn8tph38irvu68mw.png&quot;,&quot;medium&quot;:&quot;https://res.cloudinary.com/bizzaboprod/image/upload/c_crop,g_custom,f_auto/w_640,h_960,c_fit,fl_any_format,q_auto:best/dkewnn8tph38irvu68mw.png&quot;,&quot;small&quot;:&quot;https://res.cloudinary.com/bizzaboprod/image/upload/c_crop,g_custom,f_auto/w_480,h_800,c_fit,f_auto,q_auto:best/dkewnn8tph38irvu68mw.png&quot;},&quot;splash-screen-url&quot;:&quot;https://res.cloudinary.com/bizzaboprod/image/upload/c_crop,g_custom,f_auto/v1535155907/dkewnn8tph38irvu68mw.png&quot;,&quot;local-start-date&quot;:&quot;2026-08-03
+    12:00&quot;,&quot;start-date&quot;:1785783600000,&quot;support-email&quot;:&quot;info@gopheracademy.com&quot;,&quot;time-zone-id&quot;:&quot;US/Pacific&quot;,&quot;unique-name&quot;:802722,&quot;venue&quot;:{&quot;address-1&quot;:&quot;Olive
+    Wy&quot;,&quot;city&quot;:&quot;Seattle&quot;,&quot;country&quot;:&quot;US&quot;,&quot;display-address&quot;:&quot;9th
+    Avenue &amp; Olive Way, Seattle, WA, USA&quot;,&quot;latitude&quot;:47.6145309,&quot;longitude&quot;:-122.3329561,&quot;name&quot;:&quot;Seattle
+    Convention Center | Summit&quot;,&quot;state&quot;:&quot;WA&quot;},&quot;account-id&quot;:134118,&quot;agendaUrl&quot;:&quot;https://www.gophercon.com/agenda&quot;,&quot;associatedOnly&quot;:true,&quot;attendanceType&quot;:&quot;IN_PERSON&quot;,&quot;attendees-from-registration&quot;:false,&quot;build-community&quot;:false,&quot;communityUrl&quot;:&quot;https://www.gophercon.com/community&quot;,&quot;cover-photo-url&quot;:&quot;https://res.cloudinary.com/bizzaboprod/image/upload/c_crop,g_custom,f_auto/v1535155416/fcuyhu7mcjmsrekzofho.jpg&quot;,&quot;description&quot;:&quot;Join
+    us in Seattle, Washington from August 3rd - 6th at the Seattle Convention Center
+    | Summit! As the premier gathering of Go programming language enthusiasts, you
+    can expect some of the very best programming driven by our community, exceptional
+    pre-conference workshops taught by a few of the smartest people we know, and multiple
+    opportunities to network. Secure your pass today and we&#x27;ll see you in the
+    Emerald City!&quot;,&quot;download-app-links&quot;:false,&quot;aggregated-data&quot;:{&quot;allow-ticketing&quot;:true,&quot;enableMobileApp&quot;:false,&quot;push-notifications-left&quot;:0,&quot;rsvp-count&quot;:0,&quot;widget-watch-count&quot;:0},&quot;eventType&quot;:&quot;MSE&quot;,&quot;favicon-url&quot;:&quot;https://assets-ext.bizzabo.com/bizzaboprod/image/upload/q_auto,f_auto,c_scale,c_crop,g_custom/v1735932574/vape7kibu3gyp9ywuclt&quot;,&quot;features&quot;:{&quot;agenda&quot;:true,&quot;community&quot;:true,&quot;communityVersion&quot;:&quot;PEOPLE_V2&quot;,&quot;id&quot;:629366,&quot;matchmaking&quot;:false,&quot;partners&quot;:true,&quot;polls&quot;:false,&quot;scheduledMeetings&quot;:false,&quot;speakers&quot;:true,&quot;spontaneousMeetings&quot;:false,&quot;twitter&quot;:false},&quot;groupId&quot;:20189,&quot;hideDates&quot;:true,&quot;homepage-url&quot;:&quot;https://www.gophercon.com&quot;,&quot;invite-guests&quot;:false,&quot;isArchived&quot;:false,&quot;isTemplate&quot;:false,&quot;joinCommunityOnRegistration&quot;:false,&quot;keywords&quot;:&quot;gophercon&quot;,&quot;landing-page-url&quot;:&quot;https://www.gophercon.com&quot;,&quot;onlyEventDomain&quot;:true,&quot;poll-count&quot;:0,&quot;productType&quot;:&quot;bizzabo&quot;,&quot;registrationType&quot;:&quot;paid&quot;,&quot;registrationsUrl&quot;:&quot;https://www.gophercon.com&quot;,&quot;seoEnabled&quot;:true,&quot;shouldCloneAgenda&quot;:false,&quot;status&quot;:&quot;published&quot;,&quot;tier-configuration&quot;:[{&quot;color&quot;:&quot;B1B4BF&quot;,&quot;label&quot;:&quot;Platinum&quot;,&quot;tier&quot;:1},{&quot;color&quot;:&quot;ffdf28&quot;,&quot;label&quot;:&quot;Gold&quot;,&quot;tier&quot;:2},{&quot;color&quot;:&quot;c0c0c0&quot;,&quot;label&quot;:&quot;Silver&quot;,&quot;tier&quot;:3},{&quot;color&quot;:&quot;8c7853&quot;,&quot;label&quot;:&quot;Bronze&quot;,&quot;tier&quot;:4},{&quot;color&quot;:&quot;a1d5e3&quot;,&quot;label&quot;:&quot;Media
+    Partner&quot;,&quot;tier&quot;:5},{&quot;color&quot;:&quot;f3c1a0&quot;,&quot;label&quot;:&quot;Press&quot;,&quot;tier&quot;:6},{&quot;color&quot;:&quot;aedda6&quot;,&quot;label&quot;:&quot;Startup
+    Alley&quot;,&quot;tier&quot;:7}],&quot;trackingPixel&quot;:{&quot;googleAnalyticsId&quot;:&quot;UA-40886074-1&quot;,&quot;googleTagManagerId&quot;:&quot;GTM-WMWMB5K&quot;},&quot;twitter-handle&quot;:&quot;gophercon&quot;,&quot;twitter-hashtag&quot;:&quot;gophercon&quot;,&quot;websiteType&quot;:&quot;whitelabel&quot;,&quot;welcome-message&quot;:&quot;&lt;p
+    style=\&quot;margin: 0px 0px 10px; font-size: 14px; box-sizing: border-box;\&quot;&gt;Network
+    with your Go friends old and new on the GopherCon Community site.&lt;/p&gt;&quot;,&quot;whitelabelPath&quot;:&quot;/&quot;,&quot;whitelabelUrl&quot;:&quot;www.gophercon.com&quot;,&quot;whitelabel-web&quot;:false,&quot;whitelabelWidgetEnabled&quot;:false,&quot;linkToAppiOS&quot;:&quot;https://itunes.apple.com/us/app/bizzabo/id408705047?Is=1&amp;mt=8&quot;,&quot;linkToAppAndroid&quot;:&quot;https://play.google.com/store/apps/details?id=com.bizzabo.client&quot;,&quot;iso-start-date&quot;:&quot;2026-08-03T12:00:00-07:00&quot;,&quot;iso-end-date&quot;:&quot;2026-08-06T18:00:00-07:00&quot;,&quot;seoImage&quot;:&quot;https://assets-ext.bizzabo.com/bizzaboprod/image/upload/q_auto,f_auto,c_scale,c_crop,g_custom/v1735851479/b87mbv0y7v6hhcenmv3o&quot;,&quot;schemaEventStatus&quot;:&quot;https://schema.org/EventScheduled&quot;,&quot;accountName&quot;:&quot;GopherCon
+    2026&quot;}'
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: Join us at NDC Toronto 2026!
+  series: CppNorth
+  mode: null
+  venue: May 5-8, 2026 • The Westin Harbour Castle, Toronto
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: May 5-8, 2026 • The Westin Harbour Castle, Toronto
+  event_website: https://ndctoronto.com
+  ticket_booking_link: https://ndctoronto.com
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: Cypher 2026
+  series: Cypher
+  mode: null
+  venue: Oct 7–9, 2026 · Bengaluru
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: Oct 7–9, 2026 · Bengaluru
+  event_website: null
+  ticket_booking_link: /tickets
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: Cybersecurity, data security and regulations
+  series: Rootconf
+  mode: null
+  venue: ''
+  country: null
+  topic: null
+  description: How much do you know? Take the quiz.
+  scope: null
+  date: null
+  event_website: /rootconf/cybersecurity-quiz/
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: /rootconf/cybersecurity-quiz/
+  cfp_deadline: null
+  source_url: null
+- name: Platform Engineering meet-up - July 25
+  series: Rootconf
+  mode: null
+  venue: ''
+  country: null
+  topic: null
+  description: Real systems. Real engineers. Real lessons.
+  scope: null
+  date: '2026-07-25'
+  event_website: /rootconf/platform-engineering-meet-up-july-25/
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: /rootconf/platform-engineering-meet-up-july-25/
+  cfp_deadline: 25 Jul 2026, Bangalore
+  source_url: null
+- name: droidCon USA
+  series: Droidcon Bengaluru
+  mode: null
+  venue: Orange County Convention Center
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: July 16, 2026
+  event_website: https://usa.droidcon.com/
+  ticket_booking_link: https://usa.droidcon.com/
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: droidCon Berlin @ next.app devCon
+  series: Droidcon Bengaluru
+  mode: null
+  venue: City Cube Berlin
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: October 7, 2026
+  event_website: https://www.nextappcon.com/droidcon
+  ticket_booking_link: https://www.nextappcon.com/droidcon
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: droidCon Lisbon
+  series: Droidcon Bengaluru
+  mode: null
+  venue: Fórum Cultural de Alcochete
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: October 20, 2026
+  event_website: https://www.lisbon.droidcon.com/
+  ticket_booking_link: https://www.lisbon.droidcon.com/
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: droidCon Uganda
+  series: Droidcon Bengaluru
+  mode: null
+  venue: National ICT Innovation Hub
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: October 30, 2026
+  event_website: https://uganda.droidcon.com/
+  ticket_booking_link: https://uganda.droidcon.com/
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: droidCon Kenya
+  series: Droidcon Bengaluru
+  mode: null
+  venue: TBD
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: November 5, 2026
+  event_website: https://droidcon.co.ke/
+  ticket_booking_link: https://droidcon.co.ke/
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: droidCon India
+  series: Droidcon Bengaluru
+  mode: null
+  venue: Conrad Hotel Bengaluru
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: November 20, 2026
+  event_website: https://india.droidcon.com/
+  ticket_booking_link: https://india.droidcon.com/
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: flutterCon India
+  series: Droidcon Bengaluru
+  mode: null
+  venue: Conrad Hotel Bengaluru
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: November 21, 2026
+  event_website: https://india.fluttercon.dev/
+  ticket_booking_link: https://india.fluttercon.dev/
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: droidCon Bangladesh
+  series: Droidcon Bengaluru
+  mode: null
+  venue: Independent University, Bangladesh (IUB)
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: December 4, 2026
+  event_website: https://www.facebook.com/droidconBD/
+  ticket_booking_link: https://www.facebook.com/droidconBD/
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: droidCon London
+  series: Droidcon Bengaluru
+  mode: null
+  venue: Business Design Centre
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: December 10, 2026
+  event_website: https://london.droidcon.com/
+  ticket_booking_link: https://london.droidcon.com/
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: electronica 2026
+  series: Electronica
+  mode: null
+  venue: null
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: Nov. 10–13, 2026
+  event_website: /en/trade-fair/
+  ticket_booking_link: /en/trade-fair/tickets/
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: electronica Automotive Conference
+  series: Electronica
+  mode: null
+  venue: null
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: Nov. 9, 2026
+  event_website: /en/automotive-conference/
+  ticket_booking_link: /en/trade-fair/tickets/
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: Industry Portal
+  series: Electronica
+  mode: null
+  venue: null
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: null
+  event_website: /en/industry-portal/
+  ticket_booking_link: /en/trade-fair/tickets/
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: India
+  series: Electronica
+  mode: null
+  venue: null
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: Sept. 16–18, 2026
+  event_website: /en/india/
+  ticket_booking_link: /en/trade-fair/tickets/
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: China
+  series: Electronica
+  mode: null
+  venue: null
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: Apr. 14–16, 2027
+  event_website: /en/china/
+  ticket_booking_link: /en/trade-fair/tickets/
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: null
+  series: EUROCRYPT
+  mode: null
+  venue: "Eurocrypt 2027 will take place in\n      Eindhoven, the Netherlands    \
+    \  on April 11-15, 2027.\n      Eurocrypt 2027 is organized by"
+  country: null
+  topic: null
+  description: Submission deadline at 23:59 anywhere on Earth (AoE)
+  scope: null
+  date: Sep 17, 2026
+  event_website: null
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: papersubmission.php
+  cfp_deadline: null
+  source_url: null
+- name: null
+  series: EUROCRYPT
+  mode: null
+  venue: "Eurocrypt 2027 will take place in\n      Eindhoven, the Netherlands    \
+    \  on April 11-15, 2027.\n      Eurocrypt 2027 is organized by"
+  country: null
+  topic: null
+  description: Early rejection notifications & start of rebuttal period
+  scope: null
+  date: Nov 30, 2026
+  event_website: null
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: papersubmission.php
+  cfp_deadline: null
+  source_url: null
+- name: null
+  series: EUROCRYPT
+  mode: null
+  venue: "Eurocrypt 2027 will take place in\n      Eindhoven, the Netherlands    \
+    \  on April 11-15, 2027.\n      Eurocrypt 2027 is organized by"
+  country: null
+  topic: null
+  description: Rebuttal period ends
+  scope: null
+  date: Dec 5, 2026
+  event_website: null
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: papersubmission.php
+  cfp_deadline: null
+  source_url: null
+- name: null
+  series: EUROCRYPT
+  mode: null
+  venue: "Eurocrypt 2027 will take place in\n      Eindhoven, the Netherlands    \
+    \  on April 11-15, 2027.\n      Eurocrypt 2027 is organized by"
+  country: null
+  topic: null
+  description: Final notification
+  scope: null
+  date: Jan 18, 2027
+  event_website: null
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: papersubmission.php
+  cfp_deadline: null
+  source_url: null
+- name: null
+  series: EUROCRYPT
+  mode: null
+  venue: "Eurocrypt 2027 will take place in\n      Eindhoven, the Netherlands    \
+    \  on April 11-15, 2027.\n      Eurocrypt 2027 is organized by"
+  country: null
+  topic: null
+  description: Camera-ready version due
+  scope: null
+  date: Feb 8, 2027
+  event_website: null
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: papersubmission.php
+  cfp_deadline: null
+  source_url: null
+- name: null
+  series: EUROCRYPT
+  mode: null
+  venue: "Eurocrypt 2027 will take place in\n      Eindhoven, the Netherlands    \
+    \  on April 11-15, 2027.\n      Eurocrypt 2027 is organized by"
+  country: null
+  topic: null
+  description: Conference begins
+  scope: null
+  date: April 11, 2027
+  event_website: null
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: papersubmission.php
+  cfp_deadline: null
+  source_url: null
+- name: electronica India 2026 — September 16–18
+  series: Electronica India
+  mode: null
+  venue: Bengaluru (BIEC)
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: electronica India 2026 — September 16–18
+  event_website: https://electronica-india.com/en/trade-fair/exhibitors/application-prices/
+  ticket_booking_link: https://mmiconnect.in/ep-blr-2026/visitor/registration?source=ewebsite&medium=ewebsite
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: electronica India 2026 — April 8–10
+  series: Electronica India
+  mode: null
+  venue: Greater Noida (IEML)
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: electronica India 2026 — April 8–10
+  event_website: https://electronica-india.com/en/trade-fair/press/press-releases/detail/final-report-2026.html
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: August RTP Meetup
+  series: All Things Open
+  mode: null
+  venue: null
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: August 5th @ 6:00 PM
+  event_website: /events/august-rtp-meetup-3
+  ticket_booking_link: /events/august-rtp-meetup-3
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: All Things Open 2026
+  series: All Things Open
+  mode: null
+  venue: null
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: October 19th
+  event_website: /events/all-things-open-2026
+  ticket_booking_link: /events/all-things-open-2026
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: null
+  series: AWS re:Invent
+  mode: null
+  venue: Join us Nov. 30 to Dec. 4 in Las Vegas. Save $1,200 with early bird pricing.
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: Join us Nov. 30 to Dec. 4 in Las Vegas. Save $1,200 with early bird pricing.
+  event_website: /events/reinvent/
+  ticket_booking_link: https://registration.awsevents.com/flow/awsevents/reinvent2026/reg
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: Asiacrypt 2026
+  series: ASIACRYPT
+  mode: null
+  venue: Hong Kong, China
+  country: null
+  topic: null
+  description: "Asiacrypt 2026 will take place in\n      Hong Kong, China      on\
+    \ December 7-11, 2026.\n      Asiacrypt 2026 is organized by"
+  scope: null
+  date: December 7-11, 2026
+  event_website: null
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: /2026/papersubmission.php
+  cfp_deadline: null
+  source_url: null
+- name: DeveloperWeek 2027
+  series: DeveloperWeek
+  mode: null
+  venue: February 9-11, 2027 · Santa Clara Convention Center, CA
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: February 9-11, 2027 · Santa Clara, CA
+  event_website: https://www.developerweek.com
+  ticket_booking_link: https://www.developerweek.com/register/
+  ticket_status: null
+  cfp_submission_link: https://www.developerweek.com/speakers/apply-to-speak/
+  cfp_deadline: null
+  source_url: null
+- name: Crypto 2026
+  series: CRYPTO
+  mode: null
+  venue: Santa Barbara, USA
+  country: null
+  topic: null
+  description: "Crypto 2026 is the 46th Annual International Cryptology Conference.\n\
+    \      It will take place in\n      Santa Barbara, California, USA      on August\
+    \ 17-20, 2026,\n      with"
+  scope: null
+  date: August 17-20, 2026
+  event_website: null
+  ticket_booking_link: /2026/registration.php
+  ticket_status: null
+  cfp_submission_link: /2026/papersubmission.php
+  cfp_deadline: Feb 12, 2026
+  source_url: null
+- name: 'From Training to Production: Securing AI Systems with Docker'
+  series: DockerCon
+  mode: null
+  venue: null
+  country: null
+  topic: null
+  description: An exclusive follow-up for Secure AI Systems Days attendees. Take what
+    you learned in the room and put it into real, audit-ready production with Docker
+    Hardened Images and Docker Sandboxes.
+  scope: null
+  date: Jul 23, 2026
+  event_website: https://www.docker.com/events/from-training-to-production-securing-ai-systems-webinar/
+  ticket_booking_link: https://www.docker.com/events/from-training-to-production-securing-ai-systems-webinar/
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: Running LLM Agents Safely
+  series: DockerCon
+  mode: null
+  venue: null
+  country: null
+  topic: null
+  description: 'Join us for this virtual webinar hosted by Data Science Dojo. This
+    hands-on webinar explores one of the most practical and widely applicable approaches
+    to LLM agent security: running LLM agents inside isolated Docker Sandboxes. Rather
+    than focusing solely on theory, the session will guide participants through building
+    a secure runtime environment where agents can…'
+  scope: null
+  date: Jul 29, 2026
+  event_website: https://datasciencedojo.com/event/running-llm-agent-docker-sandboxes/
+  ticket_booking_link: https://datasciencedojo.com/event/running-llm-agent-docker-sandboxes/
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: DebConf26
+  series: DebConf
+  mode: null
+  venue: Santa Fe, Argentina
+  country: null
+  topic: null
+  description: "DebConf26 will take place in Santa Fe, Argentina.\n          Please\
+    \ visit the"
+  scope: null
+  date: 20 - 25 July 2026
+  event_website: https://debconf26.debconf.org
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: 'JavaOne 2026: THE Java Conference'
+  series: JavaOne
+  mode: null
+  venue: '{
+
+    "@context": "https://schema.org",
+
+    "@type": "Event",
+
+    "name": "JavaOne",
+
+    "description": "JavaOne is back! Mark your calendars for March 17–19, 2026, as
+    the ultimate developer conference returns to Redwood Shores.",
+
+    "startDate": "2026-03-17",
+
+    "endDate": "2026-03-19",
+
+    "eventStatus": "https://schema.org/EventScheduled",
+
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+
+    "location": {
+
+    "@type": "Place",
+
+    "name": "Oracle Conference Center",
+
+    "address": {
+
+    "@type": "PostalAddress",
+
+    "streetAddress": "350 Oracle Pkwy",
+
+    "addressLocality": "Redwood City",
+
+    "addressRegion": "CA",
+
+    "postalCode": "94065",
+
+    "addressCountry": "US"
+
+    }
+
+    }
+
+    }'
+  country: null
+  topic: null
+  description: JavaOne is designed by the Java team, for Java developers. It’s where
+    the global Java community gathers to learn, connect, collaborate, and drive innovation.
+    Experience expert-led talks, hands-on labs, and real-world solutions across topics
+    like cloud, core Java, AI, and modern frameworks. Network with Oracle’s Java experts
+    and industry luminaries, discover tools and best practices, and advance your skills
+    and career.
+  scope: null
+  date: March 17-19, 2026 | Redwood City, CA
+  event_website: null
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: null
+- name: USENIX Security '26
+  series: USENIX Security Symposium
+  mode: null
+  venue: Baltimore, MD, USA
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: August 12–14, 2026
+  event_website: /conference/usenixsecurity26
+  ticket_booking_link: /conference/304482/registration/form
+  ticket_status: null
+  cfp_submission_link: /conference/usenixsecurity26/call-for-papers
+  cfp_deadline: 'Early Bird registration deadline: July 20, 2026'
+  source_url: null
+- name: SCinet Staging
+  series: Supercomputing Conference
+  mode: null
+  venue: During the week of SC, SCinet becomes the most powerful and advanced network
+    on Earth, connecting the SC community to the world.
+  country: null
+  topic: null
+  description: null
+  scope: null
+  date: Tue–Fri, 20–30 Oct 2026
+  event_website: https://sc26.supercomputing.org/scinet/
+  ticket_booking_link: https://sc26.supercomputing.org/media/media-registration/
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://sc26.supercomputing.org/scinet/
+- name: KotlinConf 2026
+  series: KotlinConf
+  mode: in-person
+  venue: Munich
+  country: Germany
+  topic: Kotlin programming language
+  description: KotlinConf 2026 was a great success thanks to 100 valued speakers presenting
+    108 sessions, 2200 attendees from all over the world, 17 amazing partners and
+    44 volunteers. The event included an Opening Keynote and numerous sessions on
+    Kotlin.
+  scope: international conference
+  date: 2026-05-20 to 2026-05-22
+  event_website: https://kotlinconf.com
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://kotlinconf.com
+- name: India Game Developer Conference (IGDC) 2026
+  series: India Game Developer Conference
+  mode: in-person
+  venue: Chennai Trade Centre
+  country: India
+  topic: Game development, game industry, awards, networking, expo
+  description: 18th edition of India's biggest and oldest game developer conference.
+    2 days, 10,000+ attendees, sessions, awards, and networking. Includes India Game
+    Awards, I/P Connect, Expo, Indie, and BYOG sub-events.
+  scope: national conference
+  date: 2026-10-28 to 2026-10-29
+  event_website: https://indiagdc.com/
+  ticket_booking_link: https://indiagdc.com/register/
+  ticket_status: available
+  cfp_submission_link: https://indiagdc.com/speakers/
+  cfp_deadline: null
+  source_url: https://indiagdc.com/
+- name: ICML 2026 – Forty-Third International Conference on Machine Learning
+  series: ICML
+  mode: in-person
+  venue: COEX Convention & Exhibition Center
+  country: South Korea
+  topic: Machine Learning, Artificial Intelligence
+  description: 'The premier gathering of professionals dedicated to the advancement
+    of machine learning. ICML is globally renowned for presenting and publishing cutting-edge
+    research on all aspects of machine learning used in closely related areas like
+    artificial intelligence, statistics and data science, as well as important application
+    areas such as machine vision, computational biology, speech recognition, and robotics.
+    Schedule: July 6 – Expo/Tutorial Day; July 7–9 – Main Conference; July 10–11 –
+    Workshops.'
+  scope: international conference
+  date: 2026-07-06 to 2026-07-11
+  event_website: https://icml.cc/Conferences/2026
+  ticket_booking_link: https://icml.cc/Register/view-registration
+  ticket_status: sold_out
+  cfp_submission_link: https://icml.cc/Conferences/2026/CallForPapers
+  cfp_deadline: null
+  source_url: https://icml.cc/virtual/2026/77975
+- name: ICLR 2026 — The Fourteenth International Conference on Learning Representations
+  series: ICLR
+  mode: in-person
+  venue: Riocentro Convention and Event Center
+  country: Brazil
+  topic: Deep learning, representation learning, artificial intelligence
+  description: The Fourteenth International Conference on Learning Representations
+    (ICLR 2026), held at the Riocentro Convention and Event Center in Rio de Janeiro,
+    Brazil. The conference covers deep learning, feature learning, metric learning,
+    reinforcement learning, and applications in vision, speech, NLP, robotics, and
+    more.
+  scope: international conference
+  date: 2026-04-23 to 2026-04-27
+  event_website: https://iclr.cc/virtual/2026/index.html
+  ticket_booking_link: https://iclr.cc/Register2
+  ticket_status: sold_out
+  cfp_submission_link: https://iclr.cc/Conferences/2026/CallForPapers
+  cfp_deadline: null
+  source_url: https://iclr.cc/Conferences/2026
+- name: React India 2026
+  series: React India
+  mode: in-person
+  venue: Planet Hollywood Beach Resort, Goa
+  country: India
+  topic: React, Web, Developer Experience
+  description: The Final Edition of React India — India's premier React conference.
+    Three days of cutting-edge talks, hands-on workshops, and networking with 1,000+
+    developers on the Indian coast. Oct 29 is workshop day; Oct 30–31 are conference
+    days.
+  scope: international conference
+  date: 2026-10-29 to 2026-10-31
+  event_website: https://www.reactindia.io/
+  ticket_booking_link: https://www.reactindia.io/conferences/tickets
+  ticket_status: available
+  cfp_submission_link: https://www.reactindia.io/cfp
+  cfp_deadline: null
+  source_url: https://www.reactindia.io/
+- name: RustConf 2026
+  series: RustConf
+  mode: hybrid
+  venue: Montreal, Canada
+  country: Canada
+  topic: Rust programming language
+  description: RustConf is turning 10! Join us to see what the Rust community is building,
+    connect with people and teams thinking deeply about the language, and dig into
+    the topics defining the next decade of computing. Features keynotes, sessions,
+    lightning talks, workshops, networking, and open collaboration (unconference).
+  scope: international conference
+  date: 2026-09-08 to 2026-09-11
+  event_website: https://rustconf.com
+  ticket_booking_link: https://rustconf.regfox.com/rustconf2026
+  ticket_status: available
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://rustconf.com
+- name: IEEE INFOCOM 2026
+  series: IEEE INFOCOM
+  mode: in-person
+  venue: Tokyo, Japan
+  country: Japan
+  topic: Computer networking, communications, network systems, distributed computing
+  description: IEEE INFOCOM 2026 is a top-ranked international conference on networking.
+    It includes a main technical program, workshops, a keynote speech, panels, a student
+    poster session, and demo/poster sessions. Researchers present and exchange significant
+    and innovative contributions in the field of networking and closely related areas.
+  scope: international conference
+  date: 2026-05-18 to 2026-05-21
+  event_website: https://infocom2026.ieee-infocom.org
+  ticket_booking_link: https://infocom2026.ieee-infocom.org/registration
+  ticket_status: available
+  cfp_submission_link: https://infocom2026.ieee-infocom.org/submission-guidelines-main-conference
+  cfp_deadline: '2025-07-31'
+  source_url: https://infocom2026.ieee-infocom.org
+- name: MachineCon GCC Summit 2026
+  series: MachineCon
+  mode: in-person
+  venue: Alila Diwa Goa
+  country: India
+  topic: GCC (Global Capability Centres) leadership, AI, analytics
+  description: Built as a residential summit in Goa, MachineCon is the most powerful
+    GCC leaders' conference where real discussions drive outcomes.
+  scope: national conference
+  date: 2026-06-19 to 2026-06-21
+  event_website: https://machinecon.analyticsindiamag.com/
+  ticket_booking_link: null
+  ticket_status: null
+  cfp_submission_link: null
+  cfp_deadline: null
+  source_url: https://machinecon.analyticsindiamag.com/
+- name: Maker Faire Bay Area 2026
+  series: Maker Faire
+  mode: in-person
+  venue: Bay Area, California
+  country: USA
+  topic: Making, Technology, Craft, Science, Engineering, Art
+  description: Maker Faire started in the Bay Area in 2006 and quickly grew into a
+    global cultural movement — a joyful celebration of creativity, curiosity, and
+    hands-on fun. This September 25–27, come back to the flagship where it all started.
+    Build, play, experiment, and be part of the movement that keeps making the future.
+  scope: international conference
+  date: 2026-09-25 to 2026-09-27
+  event_website: https://makerfaire.com/bay-area
+  ticket_booking_link: https://makerfaire.com/bay-area/tickets/
+  ticket_status: available
+  cfp_submission_link: https://makerfaire.com/bay-area/call-for-makers/
+  cfp_deadline: null
+  source_url: https://makerfaire.com
 - name: LambdaConf 2026 — Arrival
   series: LambdaConf
   mode: in-person
@@ -647,43 +2756,6 @@
   cfp_submission_link: null
   cfp_deadline: null
   source_url: https://odsc.com
-- name: React Summit 2026
-  series: React Summit
-  mode: hybrid
-  venue: KromhoutHal, Gedempt Hamerkanaal 231, Amsterdam, 1021 KP
-  country: Netherlands
-  topic: React, frontend development, full-stack engineering, AI in web development
-  description: React Summit is an annual conference about the React ecosystem, modern
-    web development, and the growing impact of AI on it, gathering thousands of Front-end
-    and Full-stack engineers from around the world. Join in Amsterdam, or take part
-    in an interactive Remote experience with hybrid speaker Q&A, discussion rooms,
-    and online practical workshops.
-  scope: international conference
-  date: 2026-06-12 to 2026-06-16
-  event_website: https://reactsummit.com
-  ticket_booking_link: https://ti.to/gitnation/react-summit-2026
-  ticket_status: available
-  cfp_submission_link: https://gitnation.com/events/react-summit-2026/cfp
-  cfp_deadline: '2026-03-02'
-  source_url: https://reactsummit.com
-- name: JS Open Source Awards at React Summit 2026
-  series: React Summit
-  mode: in-person
-  venue: KromhoutHal, Gedempt Hamerkanaal 231, Amsterdam, 1021 KP
-  country: Netherlands
-  topic: JavaScript open source projects
-  description: Pre-conference awards ceremony looking at open source projects or initiatives
-    with an open and transparent culture, open for collaboration and contributions.
-    The main goal is to shed light on great projects that weren't enough noticed in
-    a competitive environment.
-  scope: international conference
-  date: '2026-06-11'
-  event_website: https://osawards.com/javascript/
-  ticket_booking_link: https://ti.to/gitnation/react-summit-2026
-  ticket_status: available
-  cfp_submission_link: https://osawards.com/javascript/
-  cfp_deadline: null
-  source_url: https://reactsummit.com
 - name: PlatformCon 2026 Flagship Week
   series: PlatformCon
   mode: hybrid
@@ -852,58 +2924,6 @@
   cfp_submission_link: null
   cfp_deadline: null
   source_url: https://www.databricks.com/dataaisummit
-- name: EFY Expo Gujarat 2026
-  series: EFY Expo
-  mode: in-person
-  venue: Helipad Exhibition Center, Gandhinagar
-  country: India
-  topic: Electronics and IoT / New Product Development and Manufacturing
-  description: Multi-city highly-focused B2B expo with the mission to simplify 'Go
-    To Market' for electronics and IoT firms. Brings together exhibitors providing
-    solutions for New Product Development, Prototyping and Manufacturing.
-  scope: national conference
-  date: 2026-12-03 to 2026-12-05
-  event_website: https://gujarat.efyexpo.com
-  ticket_booking_link: null
-  ticket_status: null
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://www.efyexpo.com/
-- name: 32nd ACM Symposium on Operating Systems Principles (SOSP 2026)
-  series: SOSP
-  mode: in-person
-  venue: Prague, Czechia
-  country: Czechia
-  topic: Operating Systems
-  description: The ACM Symposium on Operating Systems Principles (SOSP) is a conference
-    that brings together developers and researchers from academia and industry to
-    advance the science and technology in operating systems. The 32nd edition takes
-    place in Prague, Czechia, September 29 – October 2, 2026.
-  scope: international conference
-  date: 2026-09-29 to 2026-10-02
-  event_website: http://www.sosp.org/2026
-  ticket_booking_link: null
-  ticket_status: null
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://sosp.org
-- name: SIGMOD/PODS 2026 Conference
-  series: SIGMOD
-  mode: null
-  venue: null
-  country: null
-  topic: Database management systems and data management technology
-  description: The annual ACM SIGMOD/PODS conference, one of the most important and
-    selective conferences in the field of database management and data management
-    technology.
-  scope: international conference
-  date: null
-  event_website: https://2026.sigmod.org/
-  ticket_booking_link: null
-  ticket_status: null
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://sigmod.org
 - name: GopherCon 2026
   series: GopherCon
   mode: in-person
@@ -958,38 +2978,6 @@
   cfp_submission_link: null
   cfp_deadline: null
   source_url: https://nullcon.net/
-- name: VLDB 2026
-  series: VLDB
-  mode: in-person
-  venue: Boston
-  country: United States
-  topic: Databases and related fields
-  description: The 2026 edition of the VLDB international conference on Very Large
-    Data Bases, held in Boston.
-  scope: international conference
-  date: '2026'
-  event_website: https://vldb.org/2026/
-  ticket_booking_link: null
-  ticket_status: null
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://vldb.org
-- name: COMSNETS 2026
-  series: COMSNETS
-  mode: in-person
-  venue: null
-  country: India
-  topic: Communication Systems & Networks
-  description: 18th International Conference on COMmunication Systems & NETworkS.
-    Highlights referenced include keynotes, workshops, and networking sessions.
-  scope: international conference
-  date: null
-  event_website: https://www.comsnets.org/archive/2026/
-  ticket_booking_link: null
-  ticket_status: null
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://www.comsnets.org/
 - name: KubeCon + CloudNativeCon Japan 2026
   series: KubeCon + CloudNativeCon
   mode: in-person
@@ -1022,40 +3010,6 @@
   cfp_submission_link: null
   cfp_deadline: null
   source_url: https://www.cncf.io/kubecon-cloudnativecon-events/
-- name: SREcon26 Americas
-  series: SREcon
-  mode: in-person
-  venue: null
-  country: USA
-  topic: Site Reliability Engineering
-  description: SREcon26 Americas — listed under the 'Past' navigation menu, indicating
-    it has already occurred in 2026. No specific dates or venue details are provided
-    in the HTML.
-  scope: international conference
-  date: null
-  event_website: https://www.usenix.org/conference/srecon26americas
-  ticket_booking_link: null
-  ticket_status: null
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://www.usenix.org/conference/srecon
-- name: SREcon26 Europe/Middle East/Africa
-  series: SREcon
-  mode: in-person
-  venue: Dublin, Ireland
-  country: Ireland
-  topic: Site Reliability Engineering
-  description: SREcon is a gathering of engineers who care deeply about site reliability,
-    systems engineering, and working with complex distributed systems at scale. Register
-    Now! Early Bird Registration deadline is Monday, 24 August, 2026.
-  scope: international conference
-  date: 2026-10-13 to 2026-10-15
-  event_website: https://www.usenix.org/conference/srecon26emea
-  ticket_booking_link: https://www.usenix.org/conference/srecon26emea/registration-information
-  ticket_status: available
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://www.usenix.org/conference/srecon
 - name: FOSDEM 2026
   series: FOSDEM
   mode: in-person
@@ -1091,25 +3045,6 @@
   cfp_submission_link: null
   cfp_deadline: null
   source_url: https://cppnorth.ca
-- name: CES 2026
-  series: CES
-  mode: in-person
-  venue: Las Vegas (multiple venues including LVCC)
-  country: USA
-  topic: Consumer Technology, AI, Vehicle Tech, Digital Health, Content & Entertainment
-  description: CES 2026 is the world's most influential technology event, bringing
-    together exhibitors, attendees, media, and speakers to explore the latest innovations
-    across AI, mobility, digital health, and more. The event includes conference sessions,
-    exhibition halls, Eureka Park, C Space, CES Foundry, Creator Space, and the Digital
-    Health Summit.
-  scope: international conference
-  date: 2026-01-06 to 2026-01-09
-  event_website: https://www.ces.tech
-  ticket_booking_link: https://www.ces.tech/attend/registration-notification/
-  ticket_status: not_opened
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://www.ces.tech
 - name: August RTP Meetup
   series: All Things Open
   mode: in-person
@@ -1237,23 +3172,6 @@
   cfp_submission_link: null
   cfp_deadline: null
   source_url: https://cypher.analyticsindiamag.com/
-- name: Frontend Nation 2026
-  series: Frontend Nation
-  mode: online
-  venue: null
-  country: null
-  topic: Web Development & AI (React, Vue.js, Angular, AI and beyond)
-  description: Two days of talks, live panels, and workshops on what's hot in tech
-    - from React, Vue.js, and Angular to AI and beyond. 40+ speakers, 1,000s of developers.
-    Access all 50+ talks via replay. Powered by Amazon Web Services.
-  scope: international conference
-  date: null
-  event_website: https://frontendnation.com
-  ticket_booking_link: null
-  ticket_status: null
-  cfp_submission_link: https://forms.gle/Xi6AnqaQ2nFCddUv8
-  cfp_deadline: null
-  source_url: https://frontendnation.com
 - name: AWS re:Invent 2026
   series: AWS re:Invent
   mode: in-person
@@ -1273,55 +3191,6 @@
   cfp_submission_link: null
   cfp_deadline: null
   source_url: https://aws.amazon.com/events/reinvent/
-- name: EuroPython 2026 – Tutorials & Summits
-  series: EuroPython
-  mode: in-person
-  venue: ICE Kraków Congress Centre, Marii Konopnickiej 17, 30-302 Kraków
-  country: Poland
-  topic: Python
-  description: Full-day deep dives with an expert in a small group. Far more hands-on
-    than a talk. Sold separately. Also includes various summits (Language Summit,
-    Rust Summit, Packaging Summit, Organisers Summit).
-  scope: international conference
-  date: 2026-07-13 to 2026-07-14
-  event_website: https://ep2026.europython.eu
-  ticket_booking_link: https://ep2026.europython.eu/tickets
-  ticket_status: available
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://ep2026.europython.eu
-- name: EuroPython 2026 – Sprints Weekend
-  series: EuroPython
-  mode: in-person
-  venue: Kraków, Poland (venue to be announced)
-  country: Poland
-  topic: Python
-  description: Contribute to real Python projects alongside the people who maintain
-    them. Beginners welcome!
-  scope: international conference
-  date: 2026-07-18 to 2026-07-19
-  event_website: https://ep2026.europython.eu/sprints
-  ticket_booking_link: https://ep2026.europython.eu/tickets
-  ticket_status: available
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://ep2026.europython.eu
-- name: EuroSciPy 2026
-  series: EuroPython
-  mode: in-person
-  venue: Kraków, Poland
-  country: Poland
-  topic: Scientific Python
-  description: EuroSciPy conference co-located/overlapping with EuroPython 2026 in
-    Kraków.
-  scope: international conference
-  date: 2026-07-18 to 2026-07-23
-  event_website: null
-  ticket_booking_link: null
-  ticket_status: null
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://ep2026.europython.eu
 - name: 35th USENIX Security Symposium (USENIX Security '26)
   series: USENIX Security Symposium
   mode: in-person
@@ -1339,26 +3208,6 @@
   cfp_submission_link: https://www.usenix.org/conference/usenixsecurity26/call-for-papers
   cfp_deadline: null
   source_url: https://www.usenix.org/conference/usenixsecurity26
-- name: CIDR 2026
-  series: CIDR
-  mode: in-person
-  venue: null
-  country: null
-  topic: Innovative data systems research, systems architecture, database systems
-  description: The Conference on Innovative Data Systems Research (CIDR) gathers researchers
-    and practitioners from both academia and industry to discuss the latest innovative
-    and visionary ideas in the field. CIDR emphasizes the systems architecture perspective,
-    encouraging papers about innovative and risky data management system architecture
-    ideas, systems-building experience and insight, resourceful experimental studies,
-    and provocative position statements.
-  scope: international conference
-  date: '2026'
-  event_website: https://www.cidrdb.org/cidr2026/index.html
-  ticket_booking_link: null
-  ticket_status: null
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://www.cidrdb.org/
 - name: DebConf26
   series: DebConf
   mode: in-person
@@ -1377,23 +3226,6 @@
   cfp_submission_link: null
   cfp_deadline: null
   source_url: https://www.debconf.org/
-- name: JavaLand 2026
-  series: JavaLand
-  mode: in-person
-  venue: Europa-Park Rust
-  country: Germany
-  topic: Java / Software Development
-  description: Der Europa-Park in Rust begrüßte bei überwiegend sonnigem Frühlingswetter
-    vom 10. bis 12. März erstmals die Java-Community zur JavaLand. Community-Konferenz
-    mit Sessions, Workshops und Begegnungen mit Gleichgesinnten.
-  scope: international conference
-  date: 2026-03-10 to 2026-03-12
-  event_website: https://www.javaland.eu/de/rueckblicke/javaland-2026/
-  ticket_booking_link: https://meine.doag.org/events/javaland/shop/
-  ticket_status: available
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://www.javaland.eu/de/home/
 - name: Crypto 2026 – Affiliated Events
   series: CRYPTO
   mode: in-person
@@ -1461,40 +3293,6 @@
   cfp_submission_link: null
   cfp_deadline: null
   source_url: https://electronica-india.com/en/
-- name: DAC 2026 (63rd Design Automation Conference)
-  series: Design Automation Conference
-  mode: in-person
-  venue: null
-  country: null
-  topic: Design automation, EDA, chips to systems
-  description: The 63rd Design Automation Conference (DAC 2026) is the premier conference
-    covering design and automation of electronic systems. It features a technical
-    program, exhibitions, and industry partnership opportunities.
-  scope: international conference
-  date: '2026'
-  event_website: https://dac.com/2026
-  ticket_booking_link: null
-  ticket_status: null
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://dac.com/2026
-- name: Microsoft Build 2026
-  series: Microsoft Build
-  mode: hybrid
-  venue: Digital Event
-  country: null
-  topic: Developer technologies, AI, cloud, software development
-  description: Microsoft Build is Microsoft's annual developer conference covering
-    AI, cloud, developer tools, and platform technologies. The 2026 edition runs as
-    a hybrid (digital + in-person) event.
-  scope: international conference
-  date: 2026-06-02 to 2026-06-03
-  event_website: https://build.microsoft.com/en-US/home
-  ticket_booking_link: https://register.build.microsoft.com/flow/microsoft/build26/welcome/page/welcome
-  ticket_status: available
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://build.microsoft.com/en-US/home
 - name: SCinet Staging
   series: Supercomputing Conference
   mode: in-person
@@ -1608,59 +3406,6 @@
   cfp_submission_link: null
   cfp_deadline: null
   source_url: https://electronica.de/en/
-- name: embedded world Exhibition&Conference 2026
-  series: Embedded World
-  mode: in-person
-  venue: Messe Nuremberg
-  country: Germany
-  topic: Embedded systems, components, modules, operating systems, hardware and software
-    design, M2M communication, IoT
-  description: The embedded world Exhibition&Conference 2026 (#ew26) is the global
-    platform and place to meet for the entire embedded community, including leading
-    experts, key players and industry associations. It offers insight into embedded
-    systems from components and modules to operating systems, hardware and software
-    design, M2M communication, services, and complex system design. The event includes
-    the embedded world Conference, electronic displays Conference, exhibitor forums,
-    expert panels, guided tours, student day, women4ew networking event, embedded
-    award, and start-up City.
-  scope: international conference
-  date: 2026-03-11 to 2026-03-13
-  event_website: https://www.embedded-world.de/en
-  ticket_booking_link: /en/visitor
-  ticket_status: null
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://www.embedded-world.de/en
-- name: WWDC26 Recaps
-  series: WWDC
-  mode: hybrid
-  venue: null
-  country: null
-  topic: Apple platform updates from WWDC26
-  description: Explore the biggest updates from WWDC26, in person or online.
-  scope: international conference
-  date: '2026'
-  event_website: https://developer.apple.com/events/view/upcoming-events?search=WWDC26
-  ticket_booking_link: https://developer.apple.com/events/view/upcoming-events?search=WWDC26
-  ticket_status: available
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://developer.apple.com/
-- name: Microsoft Ignite 2026 – Pre-Event / Registration Opens
-  series: Microsoft Ignite
-  mode: hybrid
-  venue: null
-  country: null
-  topic: Microsoft Technology / Cloud / AI
-  description: Phase Launch registration period begins for Microsoft Ignite 2026.
-  scope: international conference
-  date: '2026-06-23'
-  event_website: https://ignite.microsoft.com/en-US/home
-  ticket_booking_link: null
-  ticket_status: available
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://ignite.microsoft.com/en-US/home
 - name: JavaOne 2026
   series: JavaOne
   mode: in-person
@@ -1766,64 +3511,6 @@
   cfp_submission_link: null
   cfp_deadline: null
   source_url: https://www.docker.com/events/
-- name: RubyConf India 2026
-  series: RubyConf India
-  mode: in-person
-  venue: Novotel Hyderabad Airport, Hyderabad, Telangana, India
-  country: India
-  topic: Ruby language, Ruby on Rails, frameworks, and tools
-  description: RubyConf India 2026 is a 1-day, single-track conference focused on
-    Ruby Language, Framework, and Tools. The entire conference is conducted in English,
-    bringing together Ruby enthusiasts from across the globe. It is a global event
-    complementing other RubyConf events worldwide, featuring technical talks, a Language
-    Roast segment, flash talks, and networking.
-  scope: international conference
-  date: '2026-11-21'
-  event_website: https://rubyconf.in/
-  ticket_booking_link: https://www.townscript.com/e/rubyconf-india-2026
-  ticket_status: available
-  cfp_submission_link: https://www.papercall.io/rubyconf-india-2026
-  cfp_deadline: null
-  source_url: https://rubyconf.in/
-- name: Linux Plumbers Conference 2026
-  series: Linux Plumbers Conference
-  mode: hybrid
-  venue: Prague Congress Centre, 5. kvetna 1640/65, Nusle 140 21 Prague 4
-  country: Czechia
-  topic: Linux kernel and systems plumbing — core kernel subsystems, init systems,
-    core libraries, toolchains, windowing systems, management tools, device support,
-    testing, and more
-  description: The Linux Plumbers Conference is the premier event for developers working
-    at all levels of the plumbing layer and beyond. The event is hybrid (in-person
-    and remote), though presenters are strongly encouraged to attend in person. Remote
-    presentations are allowed strictly on an emergency basis.
-  scope: international conference
-  date: 2026-10-05 to 2026-10-07
-  event_website: https://lpc.events/event/20/
-  ticket_booking_link: null
-  ticket_status: not_opened
-  cfp_submission_link: https://lpc.events/event/20/abstracts/
-  cfp_deadline: '2026-08-07'
-  source_url: https://lpc.events/event/20/page/266-lpc-2026-overview
-- name: DevFest on Campus 2026
-  series: Google DevFest India
-  mode: in-person
-  venue: SRM University, Potheri, Kattankulathur, Tamil Nadu 603203
-  country: India
-  topic: Google technologies, AI, Android, Cloud, Flutter
-  description: DevFest on Campus is a two-day event that connects developers, innovators
-    and industry leaders to learn and get inspired. It focuses on giving students
-    access to opportunities and exposure through expert talks, hands-on workshops
-    and collaborative sessions. Organized by GDG on Campus SRM Institute of Science
-    & Technology – Kattankulathur, India.
-  scope: local meetup
-  date: 2026-04-09 to 2026-04-10
-  event_website: https://devfest.gdgsrm.com
-  ticket_booking_link: https://devfest.gdgsrm.com
-  ticket_status: null
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://gdg.community.dev/events/details/google-gdg-on-campus-srm-institute-of-science-technology-kattankulathur-india-presents-devfest-on-campus-2026/
 - name: Vue.js Amsterdam 2026
   series: Vue.js Amsterdam
   mode: in-person
@@ -1842,261 +3529,6 @@
   cfp_submission_link: https://forms.gle/3W8Nzs7cNgD5Gw476
   cfp_deadline: null
   source_url: https://www.tickettailor.com/events/vuejsamsterdam/1927320
-- name: JSConf España 2026
-  series: JSConf
-  mode: in-person
-  venue: La Nave
-  country: Spain
-  topic: JavaScript
-  description: The most important JavaScript conference in Spain, featuring talks,
-    workshops, a hackathon, and networking activities for developers from Spain and
-    internationally. The 2026 edition has concluded; recordings are available on YouTube.
-  scope: international conference
-  date: '2026-03-14'
-  event_website: https://www.jsconf.es/
-  ticket_booking_link: https://www.tickettailor.com/events/midudev/1981059
-  ticket_status: sold_out
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://www.jsconf.es/
-- name: JSConf México 2026
-  series: JSConf
-  mode: in-person
-  venue: Jardín Americana
-  country: Mexico
-  topic: JavaScript
-  description: A community-driven JavaScript conference in Guadalajara covering AI
-    & JavaScript (Agents, WebGPU, LLMs in the browser), modern architectures (local-first,
-    Edge Computing, Server Components), performance, security, engineering culture,
-    and beyond-the-browser JS (Wasm, Node/Deno/Bun, Hardware JS).
-  scope: international conference
-  date: 2026-10-29 to 2026-10-30
-  event_website: https://www.jsconf.mx/
-  ticket_booking_link: https://tickets.jsconf.mx
-  ticket_status: available
-  cfp_submission_link: https://pretalx.com/jsconf-mx-2026/cfp
-  cfp_deadline: '2026-04-30'
-  source_url: https://www.jsconf.mx/
-- name: AWS Summit Bengaluru 2026 – Innovators Edition
-  series: AWS Summit India
-  mode: in-person
-  venue: KTPO Exhibition Center, Whitefield, Bengaluru
-  country: India
-  topic: Cloud computing, generative AI, agentic AI, digital transformation
-  description: The Innovators Edition of AWS Summit Bengaluru 2026, designed specifically
-    for business leaders and decision-makers. Keynotes, breakout sessions, and real-world
-    success stories on agentic AI, generative AI, data, security, and cloud technologies.
-    On-demand viewing available via AWS Summit India Online.
-  scope: national conference
-  date: '2026-04-22'
-  event_website: https://aws.amazon.com/events/summits/bengaluru/innovators/
-  ticket_booking_link: https://summits-india.virtual.awsevents.com
-  ticket_status: sold_out
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://aws.amazon.com/events/summits/bengaluru/innovators/
-- name: AWS Summit Bengaluru 2026 – Technical Edition
-  series: AWS Summit India
-  mode: in-person
-  venue: KTPO Exhibition Center, Whitefield, Bengaluru
-  country: India
-  topic: Cloud computing, Amazon Bedrock, Amazon Nova, agentic AI, serverless, ML
-  description: The Technical Edition of AWS Summit Bengaluru 2026, dedicated to builders,
-    developers, and technical practitioners. Hands-on workshops and technical sessions
-    on AWS services including Amazon Nova, Amazon Bedrock AgentCore, and Kiro IDE.
-    On-demand viewing available via AWS Summit India Online.
-  scope: national conference
-  date: '2026-04-23'
-  event_website: https://aws.amazon.com/events/summits/bengaluru/technical/
-  ticket_booking_link: https://summits-india.virtual.awsevents.com
-  ticket_status: sold_out
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://aws.amazon.com/events/summits/bengaluru/technical/
-- name: AWS Summit Mumbai 2026
-  series: AWS Summit India
-  mode: in-person
-  venue: Jio World Convention Centre, Mumbai
-  country: India
-  topic: Cloud computing, agentic AI, generative AI, serverless, industry transformation
-  description: AWS Summit Mumbai 2026 is a one-day technology conference featuring
-    keynotes, 50+ sessions, an AWS Village, Developer Community Zone, Startup Zone,
-    and the 8-Bit Agents Activation. Event has concluded; on-demand viewing available
-    via AWS Summit India Online.
-  scope: national conference
-  date: '2026-05-28'
-  event_website: https://aws.amazon.com/events/summits/mumbai/
-  ticket_booking_link: https://summits-india.virtual.awsevents.com
-  ticket_status: sold_out
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://aws.amazon.com/events/summits/mumbai/
-- name: AWS Summit India Online 2026
-  series: AWS Summit India
-  mode: online
-  venue: null
-  country: India
-  topic: Cloud computing, generative AI, agentic AI, serverless computing, cloud innovation
-  description: AWS Summit India Online is a free virtual event featuring 50+ sessions,
-    keynotes from AWS Summit Bengaluru and AWS Summit Mumbai, live Q&A with AWS experts,
-    interactive workshops, and customer showcases. Covers agentic AI, serverless computing,
-    and cloud innovation. On-demand content available after June 3, 2026.
-  scope: national conference
-  date: '2026-06-03'
-  event_website: https://aws.amazon.com/events/summits/india/
-  ticket_booking_link: https://summits-india.virtual.awsevents.com
-  ticket_status: available
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://aws.amazon.com/events/summits/india/
-- name: Embedded Linux Conference North America 2026
-  series: Embedded Linux Conference
-  mode: in-person
-  venue: Minneapolis Convention Center, 1301 Second Ave S, Minneapolis, MN 55403
-  country: United States
-  topic: Embedded Linux, open source embedded systems, kernel development, industrial/automotive/IoT
-  description: Co-located with Open Source Summit North America 2026. Premier technical
-    forum for the embedded Linux community, gathering developers, maintainers, and
-    industry experts for deep technical collaboration, hands-on learning, and knowledge
-    sharing to advance the future of embedded systems.
-  scope: international conference
-  date: 2026-05-18 to 2026-05-20
-  event_website: https://events.linuxfoundation.org/embedded-linux-conference-north-america/
-  ticket_booking_link: https://events.linuxfoundation.org/open-source-summit-north-america/register/
-  ticket_status: available
-  cfp_submission_link: https://sessionize.com/open-source-summit-north-america-2026/
-  cfp_deadline: '2026-02-16'
-  source_url: https://events.linuxfoundation.org/embedded-linux-conference-north-america/
-- name: Embedded Linux Conference Europe 2026
-  series: Embedded Linux Conference
-  mode: in-person
-  venue: Prague Congress Centre, 5. kvetna 1640/65, Nusle 140 21 Prague 4
-  country: Czechia
-  topic: Embedded Linux, open source embedded systems, kernel development, industrial/automotive/IoT
-  description: Co-located with Open Source Summit Europe 2026. Premier technical forum
-    for the embedded Linux community in Europe, gathering developers, maintainers,
-    and industry experts for deep technical collaboration, hands-on learning, and
-    knowledge sharing.
-  scope: international conference
-  date: 2026-10-07 to 2026-10-09
-  event_website: https://events.linuxfoundation.org/embedded-linux-conference-europe/
-  ticket_booking_link: https://register.linuxfoundation.org/oss-eu-2026
-  ticket_status: available
-  cfp_submission_link: https://sessionize.com/open-source-summit-europe26/
-  cfp_deadline: '2026-06-24'
-  source_url: https://events.linuxfoundation.org/embedded-linux-conference-europe/
-- name: Embedded Linux Conference Asia 2026
-  series: Embedded Linux Conference
-  mode: in-person
-  venue: Toranomon Hills Mori Tower 5th Floor, 1-23-3 Toranomon, Minato-ku, Tokyo
-    105-6305
-  country: Japan
-  topic: Embedded Linux, open source embedded systems, automotive Linux, kernel development,
-    industrial/IoT
-  description: Co-located with Open Source Summit Japan 2026 and Automotive Linux
-    Summit 2026. Premier technical forum for the embedded Linux community in Asia,
-    gathering developers, maintainers, and industry experts for deep technical collaboration,
-    hands-on learning, and knowledge sharing.
-  scope: international conference
-  date: 2026-12-07 to 2026-12-09
-  event_website: https://events.linuxfoundation.org/embedded-linux-conference-asia/
-  ticket_booking_link: https://register.linuxfoundation.org/OSS-Japan-ALS-ELC-2026
-  ticket_status: available
-  cfp_submission_link: https://sessionize.com/oss-als-elc-japan-26
-  cfp_deadline: '2026-08-24'
-  source_url: https://events.linuxfoundation.org/embedded-linux-conference-asia/
-- name: Great International Developer Summit (GIDS) 2026
-  series: Great International Developer Summit
-  mode: in-person
-  venue: J N Tata Auditorium, National Science Seminar Complex, CV Raman Rd, Malleshwaram,
-    Bengaluru, Karnataka 560012
-  country: India
-  topic: Software architecture, AI-assisted development, distributed systems, DevOps,
-    data engineering, frontend, backend, testing, reliability, engineering leadership
-  description: The 19th annual edition of Asia's largest and longest-running polyglot
-    software developer summit and expo. Four days of technical talks, conversations,
-    and experiences featuring practitioners from across the technology spectrum. Organized
-    by Saltmarch Media.
-  scope: international conference
-  date: 2026-04-21 to 2026-04-24
-  event_website: https://developersummit.com/
-  ticket_booking_link: https://www.townscript.com/e/gids2026
-  ticket_status: null
-  cfp_submission_link: https://form.jotform.com/devsummit/gids-2026-cfp
-  cfp_deadline: null
-  source_url: https://developersummit.com/faq
-- name: Great International AI Native Summit (GAINS) 2026
-  series: Great International Developer Summit
-  mode: in-person
-  venue: NIMHANS Convention Centre, Hosur Main Road, Lakkasandra, Hombegowda Nagar,
-    Bengaluru, Karnataka
-  country: India
-  topic: AI engineering, agentic AI, coding agents, AI-assisted development, orchestration,
-    evaluation, observability, AI governance, security, reliability
-  description: India's first engineering-first AI Engineering Conference by Saltmarch
-    Media (makers of GIDS), for engineers building and operating intelligent systems
-    in the age of AI. Two days of technical sessions, case studies, and networking.
-  scope: international conference
-  date: 2026-12-09 to 2026-12-10
-  event_website: https://ainativesummit.com/
-  ticket_booking_link: https://www.townscript.com/e/gains-2026
-  ticket_status: available
-  cfp_submission_link: https://form.jotform.com/saltmarch/gains2026cfp
-  cfp_deadline: null
-  source_url: https://ainativesummit.com/
-- name: PyCon US 2026
-  series: PyCon US
-  mode: in-person
-  venue: Long Beach, California
-  country: United States
-  topic: Python programming
-  description: PyCon US 2026 will be held in Long Beach, California. The international
-    community conference for the Python programming language.
-  scope: international conference
-  date: null
-  event_website: https://pycon.org
-  ticket_booking_link: null
-  ticket_status: not_opened
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://pycon.org
-- name: SIGCOMM 2026
-  series: SIGCOMM
-  mode: in-person
-  venue: Denver, Colorado
-  country: USA
-  topic: Computer and data communication networks, network architecture, protocols,
-    measurement, operations, cloud and edge systems, security and privacy, AI-driven
-    networking
-  description: ACM SIGCOMM's flagship annual conference where experts present cutting-edge
-    research, discuss trends, and collaborate on advancing the science, engineering,
-    and societal understanding of computer and data communication networks.
-  scope: international conference
-  date: null
-  event_website: null
-  ticket_booking_link: null
-  ticket_status: not_opened
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://www.sigcomm.org
-- name: CIDR 2026
-  series: CIDR
-  mode: in-person
-  venue: null
-  country: null
-  topic: Innovative data systems research, systems architecture, data management
-  description: The 2026 edition of the Conference on Innovative Data Systems Research
-    (CIDR), a venue for presenting innovative data systems architectures and visionary
-    ideas in the field, gathering researchers and practitioners from academia and
-    industry.
-  scope: international conference
-  date: null
-  event_website: https://www.cidrdb.org/cidr2026/index.html
-  ticket_booking_link: null
-  ticket_status: null
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://www.cidrdb.org/
 - name: PlatformCon 2026 Flagship Week (Virtual)
   series: PlatformCon
   mode: online
@@ -2146,102 +3578,6 @@
   cfp_submission_link: null
   cfp_deadline: null
   source_url: https://nullcon.net/
-- name: Frontend Nation 2026
-  series: Frontend Nation
-  mode: online
-  venue: null
-  country: null
-  topic: Web Development & AI (React, Vue.js, Angular, Laravel, AI, and more)
-  description: Two days of talks, live panels, and workshops on what's hot in tech
-    - from React, Vue.js, and Angular to AI and beyond. The largest free online frontend
-    developer event, featuring 40+ speakers, hands-on coding challenges (Forge Day),
-    workshops, and community panels.
-  scope: international conference
-  date: 2026-06-03 to 2026-06-04
-  event_website: https://frontendnation.com/
-  ticket_booking_link: https://frontendnation.com/
-  ticket_status: available
-  cfp_submission_link: https://forms.gle/Xi6AnqaQ2nFCddUv8
-  cfp_deadline: null
-  source_url: https://frontendnation.com/
-- name: 63rd Design Automation Conference (DAC 2026)
-  series: Design Automation Conference
-  mode: in-person
-  venue: Long Beach, CA
-  country: USA
-  topic: AI, Design, EDA, Security, Systems, Quantum, Chiplets
-  description: DAC 2026 is the 63rd annual Design Automation Conference featuring
-    keynotes, research and engineering tracks, workshops, tutorials, exhibitions,
-    hackathons, Ph.D. forum, poster gladiator sessions, and more. Record year in submissions
-    with 55% of program covering AI & Design, 26.34% increase in Research Track submissions,
-    and 26% growth in Engineering Track submissions.
-  scope: international conference
-  date: 2026-07-26 to 2026-07-29
-  event_website: https://dac.com/2026
-  ticket_booking_link: null
-  ticket_status: available
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://dac.com/2026
-- name: embedded world Exhibition & Conference 2026
-  series: Embedded World
-  mode: in-person
-  venue: NürnbergMesse GmbH, Messezentrum 1, 90471 Nürnberg
-  country: Germany
-  topic: Embedded systems, hardware, software, IoT, M2M, electronic displays
-  description: Global platform and place to meet for the entire embedded community,
-    including leading experts, key players and industry associations. Covers embedded
-    systems from components and modules to operating systems, hardware and software
-    design, M2M communication, services, and complex system design. Includes embedded
-    world Conference, electronic displays Conference, exhibitor forums, expert panels,
-    guided tours, student day, women4ew networking event, embedded award, and start-up
-    City.
-  scope: international conference
-  date: 2026-03-10 to 2026-03-12
-  event_website: https://www.embedded-world.de/en
-  ticket_booking_link: null
-  ticket_status: null
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://www.embedded-world.de/en
-- name: CppCon 2026
-  series: CppCon
-  mode: in-person
-  venue: Gaylord Rockies
-  country: USA
-  topic: C++ programming language
-  description: Annual week-long C++ conference featuring 5+ days of content across
-    five stages, 100+ sessions, 5 keynotes including a special Language Designers
-    Keynote Panel with Bjarne Stroustrup, Guido van Rossum, and Mads Torgersen, eight
-    focus tracks (Back to Basics, Business & Career, Embedded, GameDev, Robotics &
-    AI, Scientific Computing, Software Design, Tooling & Ecosystem), plus panels,
-    bonus sessions, and lightning talks. Sessions are onsite-only and will be recorded
-    and posted to YouTube afterward.
-  scope: international conference
-  date: 2026-09-12 to 2026-09-18
-  event_website: https://cppcon.org
-  ticket_booking_link: https://cppcon.org/registration
-  ticket_status: available
-  cfp_submission_link: https://cppcon.org/submissions
-  cfp_deadline: '2026-05-17'
-  source_url: https://cppcon.org
-- name: 'CppCon 2026 Field Trip: Dinosaur Center & Morrison, CO'
-  series: CppCon
-  mode: in-person
-  venue: Morrison, Colorado (Dinosaur Ridge Museum / Red Rocks area)
-  country: USA
-  topic: C++ community / social event
-  description: CppCon 2026 field trip to Morrison, Colorado, a town on the edge of
-    the Rockies famous for Red Rocks. Attendees can visit the Dinosaur Ridge Museum
-    and enjoy the scenery and town. Sponsored by the North Denver Metro C++ Meetup.
-  scope: international conference
-  date: '2026-09-13'
-  event_website: https://cppcon.org/field-trip
-  ticket_booking_link: https://cppcon.org/field-trip
-  ticket_status: available
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://cppcon.org
 - name: electronica China 2026
   series: Electronica
   mode: in-person
@@ -2258,103 +3594,6 @@
   cfp_submission_link: null
   cfp_deadline: null
   source_url: https://electronica.de/en/
-- name: DEF CON 34
-  series: DEF CON
-  mode: in-person
-  venue: Las Vegas Convention Center (LVCC) West Hall
-  country: United States
-  topic: Hacking, Cybersecurity
-  description: DEF CON 34 with theme 'Agency', featuring talks, villages, contests,
-    CTF, badge hacking, music, workshops, demo labs, and trainings. Electronic badge
-    year with a special SAO-compatible platform.
-  scope: international conference
-  date: 2026-08-06 to 2026-08-09
-  event_website: https://defcon.org/html/defcon-34/dc-34-index.html
-  ticket_booking_link: https://shop.defcon.org
-  ticket_status: available
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://defcon.org
-- name: DEF CON Singapore
-  series: DEF CON
-  mode: in-person
-  venue: Marina Bay Sands
-  country: Singapore
-  topic: Hacking, Cybersecurity
-  description: DEF CON Singapore held at Marina Bay Sands in Singapore.
-  scope: international conference
-  date: 2026-04-28 to 2026-04-30
-  event_website: null
-  ticket_booking_link: null
-  ticket_status: null
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://defcon.org
-- name: DEF CON Middle East
-  series: DEF CON
-  mode: in-person
-  venue: null
-  country: Bahrain
-  topic: Hacking, Cybersecurity
-  description: DEF CON Middle East returning to Bahrain following a successful 2025
-    event. Full DEF CON experience brought to Bahrain and the region.
-  scope: international conference
-  date: 2026-11-11 to 2026-11-12
-  event_website: null
-  ticket_booking_link: null
-  ticket_status: not_opened
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://defcon.org
-- name: DEF CON Training Middle East
-  series: DEF CON
-  mode: in-person
-  venue: null
-  country: Bahrain
-  topic: Cybersecurity Training
-  description: Two-day and three-day DEF CON training courses held ahead of DEF CON
-    Middle East in Bahrain.
-  scope: international conference
-  date: 2026-11-08 to 2026-11-10
-  event_website: https://training.defcon.org
-  ticket_booking_link: null
-  ticket_status: not_opened
-  cfp_submission_link: https://training.defcon.org
-  cfp_deadline: '2026-05-09'
-  source_url: https://defcon.org
-- name: DEF CON 34 CTF Qualifier Round
-  series: DEF CON
-  mode: online
-  venue: null
-  country: null
-  topic: Capture The Flag, Cybersecurity Competition
-  description: DEF CON 34 CTF Qualifier Round organized by the new CTF organizers
-    Benevolent Bureau of Birds (BBB). First opportunity to sample what the Birds have
-    in store.
-  scope: international conference
-  date: 2026-05-22 to 2026-05-24
-  event_website: https://bbbirds.org/
-  ticket_booking_link: null
-  ticket_status: null
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://defcon.org
-- name: EuroPython 2026 - Speaker Orientation / Mentorship
-  series: EuroPython
-  mode: online
-  venue: null
-  country: null
-  topic: Speaker development, stage presence, audience engagement
-  description: Speaker Orientation to build confidence, improve stage presence, and
-    learn how to engage your audience. Open to first-time and returning speakers.
-  scope: international conference
-  date: '2026-06-03'
-  event_website: https://ep2026.europython.eu/speaker-mentorship
-  ticket_booking_link: null
-  ticket_status: available
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://ep2026.europython.eu
 - name: Running LLM Agents Safely
   series: DockerCon
   mode: online
@@ -2374,44 +3613,6 @@
   cfp_submission_link: null
   cfp_deadline: null
   source_url: https://www.docker.com/events/?utm_campaign=2023-01-12-post-event-redirect&utm_medium=web-referral&utm_source=dockercon
-- name: IndiaFOSS 2026
-  series: India FOSS
-  mode: in-person
-  venue: NIMHANS Convention Centre
-  country: India
-  topic: Free and Open Source Software — including FOSS products, communities, technology
-    policy, funding & sustainability, open data, open hardware, open science, free/libre
-    AI, open design, and FOSS for academia/society
-  description: The 6th edition of the Digital Commons Festival by the FOSS United
-    community. One of the largest gatherings for India's Free and Open Source Software
-    communities, featuring talks, panel discussions, lightning talks, workshops &
-    demos, open space, devrooms, and project booths.
-  scope: national conference
-  date: 2026-09-26 to 2026-09-27
-  event_website: https://fossunited.org/indiafoss/2026
-  ticket_booking_link: https://fossunited.org/indiafoss/tickets
-  ticket_status: available
-  cfp_submission_link: https://fossunited.org/indiafoss/talks
-  cfp_deadline: '2026-06-15'
-  source_url: https://fossunited.org/indiafoss/2026
-- name: Maintainer Summit
-  series: India FOSS
-  mode: in-person
-  venue: Samagata Foundation, Church Street, Bengaluru
-  country: India
-  topic: Open-source and open-commons maintainer perspectives — sustainability, grants,
-    burnout, community; unconference-style
-  description: 'A dedicated pre-event for open-source and open-commons maintainers
-    to get together and discuss their perspectives before IndiaFOSS 2026. Unconference-style:
-    schedule is decided by attendees at the venue. Maintainers-only event.'
-  scope: national conference
-  date: '2026-09-25'
-  event_website: https://fossunited.org/c/indiafoss/maintainer-summit
-  ticket_booking_link: https://fossunited.org/c/indiafoss/maintainer-summit/rsvp
-  ticket_status: available
-  cfp_submission_link: null
-  cfp_deadline: null
-  source_url: https://fossunited.org/c/indiafoss/maintainer-summit
 - name: Open Source Summit India 2026
   series: Open Source Summit India
   mode: in-person
