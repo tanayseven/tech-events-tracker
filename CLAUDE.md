@@ -9,10 +9,15 @@
   - `items.py` — `PageItem` (event_name, url, html)
   - `settings.py` — Scrapy settings (delays, headers, pipeline order)
 - `app.py` — Flask + Frozen-Flask app; groups events by `series` and passes to template
+- `countries.py` — normalises scraped `country` values at render time (drops cities, merges US/USA/United States, splits "UK / US") and supplies flag emojis for the country filter
 - `templates/index.html` — Jinja2 template with search/filter UI; SVG icons inlined via macros
 - `event/<year>.yaml` — event data (both managed and manually added entries)
 - `events_list.yaml` — source of truth for which events to track (url + name)
 - `extractors.yaml` — auto-generated; XPath selectors per series for local extraction (skip Claude on re-runs)
+- `verify_urls.py` — URL checker: searches DuckDuckGo (`ddgs`, no API key) by event name and flags `events_list.yaml` URLs that don't appear in the top results; writes `url_report.yaml` (gitignored). `--apply` writes new URLs into `events_list.yaml` (CI only)
+- `verify_urls_ignore.yaml` — human-reviewed exceptions for `verify_urls.py`: `skip` (event names never searched) and `reject` (name → turned-down URLs)
+- `.github/workflows/verify-urls.yml` — daily job: runs `verify_urls.py --apply` and opens/updates one PR (`bot/verify-urls`) when new URLs are found
+- `tests/` — pytest suite (`uv run pytest`)
 - `pyproject.toml` / `uv.lock` — Python dependencies managed by uv
 - `mise.toml` — installs uv via mise
 
@@ -45,6 +50,10 @@
 
 **Model:** `claude-sonnet-4-6` at $3.00/$15.00 per 1M tokens (input/output).
 
+**URL changes go through a PR, never direct edits.** The daily `verify-urls` workflow proposes `events_list.yaml` URL updates as a single PR on branch `bot/verify-urls` (force-updated each run; no PR when nothing new). A suggestion is only applied if its URL isn't already in `events_list.yaml`. To stop a bad suggestion recurring, add it to `verify_urls_ignore.yaml`. If 5 searches fail in a row the run stops (search is likely blocked); if every search fails the job fails.
+
+**Junk-value guard:** `_extraction_valid()` rejects local `[local]` results when any field looks like raw JSON/script text (`_looks_like_blob()`), i.e. a cached XPath pointing at a `<script>` tag. That falls through to Claude, which re-learns the selectors.
+
 ## Running things
 
 ```bash
@@ -53,6 +62,9 @@ uv run python main.py            # fetch events → event/<year>.yaml
 uv run scrapy crawl events       # equivalent, via Scrapy CLI
 uv run python app.py             # dev server on :5000
 uv run python app.py freeze      # build static site → build/
+uv run python verify_urls.py     # check events_list.yaml URLs via DuckDuckGo (no API key)
+uv run python verify_urls.py --only "PyCon India"   # spot-check specific events
+uv run pytest                    # run tests
 ```
 
 ## Git commits

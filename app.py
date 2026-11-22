@@ -7,6 +7,8 @@ import yaml
 from flask import Flask, render_template
 from flask_frozen import Freezer
 
+from countries import flag, normalize_countries
+
 app = Flask(__name__, static_folder="assets", static_url_path="/assets")
 app.config["FREEZER_DESTINATION"] = "build"
 app.config["FREEZER_RELATIVE_URLS"] = True
@@ -34,6 +36,16 @@ def _sort_key(event: dict) -> tuple:
 def index():
     all_events = sorted(_load_events(), key=_sort_key)
 
+    # Canonical country names: drop cities, merge US/USA/United States, split
+    # multi-country values. `countries` drives the filter; `country` is display.
+    for event in all_events:
+        event["countries"] = normalize_countries(event.get("country"))
+        event["country"] = " / ".join(event["countries"]) or None
+    country_options = [
+        (name, flag(name))
+        for name in sorted({c for e in all_events for c in e["countries"]})
+    ]
+
     # Group by series, preserving date-order of each group's first event.
     series_map: dict[str, list[dict]] = {}
     series_order: list[str] = []
@@ -50,6 +62,7 @@ def index():
         "index.html",
         groups=groups,
         total=len(all_events),
+        country_options=country_options,
         year=YEAR,
         today_iso=dt.date.today().isoformat(),
     )

@@ -586,7 +586,7 @@
   <div class="summary">
     <span id="summary-count">
       <strong>{{ total }} event{% if total != 1 %}s{% endif %}</strong>
-      across {{ all_events | map(attribute='country') | select | unique | list | length }} countr{% if all_events | map(attribute='country') | select | unique | list | length == 1 %}y{% else %}ies{% endif %}
+      across {{ country_options | length }} countr{% if country_options | length == 1 %}y{% else %}ies{% endif %}
     </span>
   </div>
 
@@ -615,8 +615,8 @@
       </select>
       <select id="filter-country" class="filter-select">
         <option value="">🌍 All countries</option>
-        {% for c in all_events | map(attribute='country') | select | unique | sort %}
-        <option value="{{ c }}">{{ c }}</option>
+        {% for name, flag in country_options %}
+        <option value="{{ name }}">{{ flag }} {{ name }}</option>
         {% endfor %}
       </select>
     </div>
@@ -637,7 +637,7 @@
          data-search="{{ search_text }}"
          data-mode="{{ event.mode or '' }}"
          data-scope="{{ event.scope or '' }}"
-         data-country="{{ event.country or '' }}"
+         data-country="{{ event.countries | join(',') }}"
          data-timing="{{ 'past' if is_past else 'upcoming' }}">
       <div class="card-body">
         <div class="card-name">
@@ -675,7 +675,7 @@
         (group | map(attribute='description') | select | list)) | join(' ') | lower %}
     {% set group_modes     = group | map(attribute='mode')    | select | unique | list %}
     {% set group_scopes    = group | map(attribute='scope')   | select | unique | list %}
-    {% set group_countries = group | map(attribute='country') | select | unique | list %}
+    {% set group_countries = group | map(attribute='countries') | sum(start=[]) | unique | list %}
     <div class="series-card"
          data-search="{{ group_search }}"
          data-mode="{{ group_modes | join(',') }}"
@@ -784,7 +784,7 @@
                 && (!timing  || card.dataset.timing  === timing)
                 && (!mode    || card.dataset.mode    === mode)
                 && (!scope   || card.dataset.scope   === scope)
-                && (!country || card.dataset.country === country);
+                && (!country || card.dataset.country.split(',').indexOf(country) !== -1);
       card.style.display = show ? '' : 'none';
       if (show) visible++;
     });
@@ -890,32 +890,17 @@
       try { return new Intl.DisplayNames(['en'], { type: 'region' }).of(cc); } catch (e) { return cc; }
     }
 
-    // Country name → ISO code map for decorating the dropdown options
-    var NAME_TO_CODE = {
-      'India':'IN','Thailand':'TH','Italy':'IT','Japan':'JP','South Korea':'KR',
-      'Singapore':'SG','China':'CN','Germany':'DE','France':'FR','Spain':'ES',
-      'United Kingdom':'GB','Ireland':'IE','Netherlands':'NL','Sweden':'SE',
-      'Norway':'NO','Finland':'FI','Poland':'PL','Switzerland':'CH','Austria':'AT',
-      'United States':'US','Canada':'CA','Australia':'AU','New Zealand':'NZ',
-      'Brazil':'BR','Argentina':'AR','Mexico':'MX','Nigeria':'NG','Kenya':'KE',
-      'South Africa':'ZA','United Arab Emirates':'AE','Pakistan':'PK',
-      'Bangladesh':'BD','Sri Lanka':'LK','Nepal':'NP','Indonesia':'ID',
-      'Malaysia':'MY','Philippines':'PH','Vietnam':'VN','Taiwan':'TW',
-    };
+    // Flags are rendered server-side in each <option> (countries.py).
 
-    // Prepend flag emoji to each country option in the dropdown
-    if (selCountry) {
-      Array.from(selCountry.options).forEach(function (opt) {
-        if (!opt.value) return;
-        var code = NAME_TO_CODE[opt.value];
-        if (code) opt.text = flagEmoji(code) + ' ' + opt.value;
-      });
-    }
-
-    // Restore saved country preference (no modal on return visits)
+    // Restore saved country preference (no modal on return visits). A pref saved
+    // before names were normalised (e.g. "USA") may no longer be an option.
     var savedPref = localStorage.getItem('countryPref');
     if (savedPref !== null) {
-      if (selCountry) { selCountry.value = savedPref; applyFilters(); }
+      if (selCountry) {
+        var known = Array.from(selCountry.options).some(function (o) { return o.value === savedPref; });
+        selCountry.value = known ? savedPref : '';
+        applyFilters();
+      }
       return; // skip modal
     }
 
