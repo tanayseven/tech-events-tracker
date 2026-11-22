@@ -1,0 +1,18 @@
+# Human-reviewed exceptions for verify_urls.py (and the daily URL-check PR).
+#
+# skip:   event names that are never searched — web search is unreliable for them
+#         (umbrella brands, generic names, or the stored URL is known-good).
+# reject: event name -> URLs a reviewer turned down. Any candidate on the same
+#         site is never suggested again; other new candidates still are.
+#
+# Seeded from the 2026-11-22 run: these suggestions were search noise or the
+# stored URL is still correct.
+skip:
+  - BSides                                # umbrella brand; results are local chapters
+  - DockerCon                             # only listing sites rank
+  - Great International Developer Summit  # only listing sites rank
+  - ng-conf                               # results are unrelated "ng" conferences
+  - Techfest IIT Bombay                   # results are blogs about the fest
+  - Google Cloud Next                     # top hit is a registration page
+  - JavaOne                               # stored URL kept; candidates are sub-pages
+reject: {}

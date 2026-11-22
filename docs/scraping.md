@@ -107,3 +107,49 @@ YamlWriterPipeline._upsert()
       ▼
 event/<year>.yaml
 ```
+## Checking `events_list.yaml` URLs (`verify_urls.py`)
+
+A separate, report-only tool that catches stale URLs the scraper wouldn't notice
+(e.g. an old page that still loads but is no longer the official site). It needs
+no API key: searches go through DuckDuckGo via the `ddgs` package.
+
+```
+events_list.yaml name  →  ddgs.text('"<name>" <year> conference')  →  compare hosts  →  url_report.yaml
+```
+
+- **OK** — the stored URL's host (or a parent/child host, e.g. `2026.pyconfhyd.org` ↔ `pyconfhyd.org`)
+  appears in the top `--results` hits (default 5). Hosts are compared exactly, so
+  `us.pycon.org` does not confirm `in.pycon.org`.
+- **CHANGED** — it doesn't; the top hit that isn't a ticketing/listing/social site
+  (see `AGGREGATORS`) is suggested, keeping `{year}` templates via `_retemplatize()`.
+- **NOT FOUND** / **ERROR** — nothing usable, or the search failed after retries.
+
+ddgs scrapes search engines, so it can be throttled; the script waits `--delay`
+seconds between queries (default 2) and retries with backoff. Throttling sometimes
+surfaces as "No results found.", so re-run ERROR entries with `--only` before trusting them.
+Suggestions come from search ranking — always verify before editing `events_list.yaml`.
+Matching is host-level, so on shared hosts (e.g. `events.linuxfoundation.org`) a hit for a
+sibling event also counts as OK.
+
+### Daily PR (`.github/workflows/verify-urls.yml`)
+
+Runs every day at 03:30 UTC (and on demand via *Run workflow*):
+
+```
+verify_urls.py --apply --summary pr-body.md
+   → events_list.yaml changed?  no → done (no PR)
+                                yes → peter-evans/create-pull-request
+                                      branch bot/verify-urls, body = pr-body.md
+```
+
+- `--apply` only writes a CHANGED suggestion when its URL is **not already in
+  `events_list.yaml`**, so the PR contains genuinely new URLs only.
+- The same branch is force-updated each run, so there is at most one open PR.
+- `verify_urls_ignore.yaml` is the reviewer's feedback loop: `skip` an event whose
+  search results are unreliable, or `reject` a specific suggested site.
+- Circuit breaker: after 5 consecutive failed searches the run stops searching;
+  changes found so far are still proposed. If every search fails the job fails, so
+  a blocked runner IP is visible instead of silently producing no PRs.
+
+Requires the repo setting *Settings → Actions → General → Allow GitHub Actions to
+create and approve pull requests*.

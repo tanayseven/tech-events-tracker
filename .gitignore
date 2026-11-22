@@ -23,3 +23,5 @@ changes.md
 
 # OS
 .DS_Store
+# URL verification report (verify_urls.py)
+url_report.yaml

@@ -1,0 +1,55 @@
+name: Verify event URLs
+
+# Daily: search DuckDuckGo for every event in events_list.yaml (no API key) and,
+# if any stored URL looks stale, open/update a single PR with the new URLs.
+# Suggestions the reviewer rejects go in verify_urls_ignore.yaml.
+
+on:
+  schedule:
+    - cron: "30 3 * * *"  # every day at 03:30 UTC (09:00 IST)
+  workflow_dispatch:
+
+permissions:
+  contents: write        # push the bot branch
+  pull-requests: write   # open/update the PR
+
+concurrency:
+  group: verify-urls
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: jdx/mise-action@v2
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Search for stale URLs
+        run: uv run python verify_urls.py --apply --summary "$RUNNER_TEMP/pr-body.md"
+
+      - name: Keep report as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: url-report
+          path: url_report.yaml
+          if-no-files-found: ignore
+
+      # No-op when events_list.yaml is unchanged; otherwise force-updates the same
+      # branch, so there is at most one open URL-update PR at a time.
+      - name: Open or update pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: bot/verify-urls
+          delete-branch: true
+          add-paths: events_list.yaml
+          commit-message: Update stale event URLs from daily search
+          title: Update stale event URLs
+          body-path: ${{ runner.temp }}/pr-body.md
+          labels: automated
