@@ -188,8 +188,30 @@ def _apply_extractor(html: str, extractor: dict) -> list[dict] | None:
     return [row] if any(v for v in row.values()) else None
 
 
+_JSON_KEY = re.compile(r'"[\w@-]+"\s*:')
+
+
+def _looks_like_blob(value) -> bool:
+    """
+    True for raw JSON/JSON-LD/script text (an XPath that grabbed a <script> body),
+    e.g. '{"@context": ...}', 'window.emsEvent = {"name": ...}', '{&quot;x&quot;:..}'.
+    """
+    if not isinstance(value, str):
+        return False
+    v = value.lstrip()
+    return (v.startswith(("{", "["))
+            or "&quot;" in v
+            or ("{" in v and _JSON_KEY.search(v) is not None))
+
+
 def _extraction_valid(entries: list[dict]) -> bool:
-    """Extraction is considered valid when at least one entry has a date."""
+    """
+    Extraction is considered valid when at least one entry has a date and no field
+    holds a raw JSON blob. A blob means a cached XPath points at a <script> tag, so
+    fall through to Claude, which re-learns the selectors.
+    """
+    if any(_looks_like_blob(v) for e in entries for v in e.values()):
+        return False
     return any(e.get("date") for e in entries)
 
 

@@ -525,24 +525,6 @@ Google I/O:
     ticket_status: null
     topic: null
     venue: null
-GopherCon:
-  container: null
-  fields:
-    cfp_deadline: null
-    cfp_submission_link: null
-    country: null
-    date: //*[contains(@class,'element-5549211')]//p[2]//span/text()
-    description: //*[contains(@class,'element-33904819')]//p/span/text()
-    event_website: //script[@id='bootstrap-data-event']/text()
-    mode: null
-    name: //script[@id='bootstrap-data-event']/text()
-    scope: null
-    series: null
-    source_url: null
-    ticket_booking_link: null
-    ticket_status: null
-    topic: null
-    venue: //*[contains(@class,'element-5549211')]//p[1]//span/text()
 GopherCon India:
   container: null
   fields:
@@ -559,24 +541,6 @@ GopherCon India:
     ticket_booking_link: //a[contains(@href,'townscript.com')]/@href
     ticket_status: null
     venue: //div[@class='unit-body'][preceding-sibling::div//use[contains(@xlink:href,'earth-globe')]]//p/text()
-GrafanaCON:
-  container: null
-  fields:
-    cfp_deadline: null
-    cfp_submission_link: null
-    country: //script[@type='application/ld+json']/text()
-    date: //script[@type='application/ld+json']/text()
-    description: null
-    event_website: //script[@type='application/ld+json']/text()
-    mode: null
-    name: //script[@type='application/ld+json']/text()
-    scope: null
-    series: null
-    source_url: //link[@rel='canonical']/@href
-    ticket_booking_link: //a[contains(@href,'/events/grafanacon')]/@href
-    ticket_status: null
-    topic: null
-    venue: //script[@type='application/ld+json']/text()
 Great International Developer Summit:
   container: null
   fields:
@@ -748,24 +712,6 @@ JavaLand:
     ticket_booking_link: //a[contains(@href,'meine.doag.org/events/javaland/shop')]/@href
     ticket_status: null
     venue: null
-JavaOne:
-  container: null
-  fields:
-    cfp_deadline: null
-    cfp_submission_link: null
-    country: null
-    date: //div[@class='hdg-xxsm']/text()
-    description: //section[contains(@class,'sc07v1')]//p/text()
-    event_website: null
-    mode: null
-    name: //h1[@class='hdg-xl']/text()
-    scope: null
-    series: null
-    source_url: null
-    ticket_booking_link: null
-    ticket_status: null
-    topic: null
-    venue: //script[@type='application/ld+json']/text()
 KDD:
   container: null
   fields:
@@ -1156,22 +1102,6 @@ React India:
     ticket_status: null
     topic: null
     venue: //article[contains(.,'Planet Hollywood')]//p/text()
-React Summit:
-  container: null
-  fields:
-    cfp_deadline: null
-    cfp_submission_link: null
-    country: null
-    date: null
-    description: null
-    event_website: //link[@rel='canonical']/@href
-    mode: null
-    name: //script[contains(text(),'emsEvent')]/text()
-    scope: null
-    source_url: null
-    ticket_booking_link: null
-    ticket_status: null
-    venue: null
 ReactFoo:
   container: null
   fields:
