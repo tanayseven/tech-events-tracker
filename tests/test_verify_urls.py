@@ -216,3 +216,49 @@ def test_summary_escapes_pipes_in_titles(tmp_path):
 
 def test_search_engine_ad_links_are_filtered():
     assert vu._is_aggregator("https://www.bing.com/aclick?ld=abc")
+
+
+# ── Name resemblance (cases from real runs) ──────────────────────────────────
+
+@pytest.mark.parametrize("name,url", [
+    ("ReactFoo", "https://reactfoo.in/"),
+    ("Supercomputing Conference", "https://supercomputing.org/"),
+    ("Linux Plumbers Conference", "https://lpc.events/"),          # acronym
+    ("Bangalore Tech Summit", "https://www.bengalurutechsummit.com/"),  # 2 words
+    ("MachineCon", "https://machinecon.aimmediahouse.com/"),
+])
+def test_resembles(name, url):
+    assert vu._resembles(name, url)
+
+
+@pytest.mark.parametrize("name,url", [
+    ("ReactFoo", "https://react.dev/community/conferences"),
+    ("MLOps World", "https://www.webmobi.com/discovery/events/mlops-world-2026"),
+    ("MLOps World", "https://www.aiexpertmagazine.com/mlops-world-genai-summit-2026/"),
+    ("DockerCon", "https://www.docker.com/blog/lets-dockercon/"),
+    ("ng-conf", "https://angularbelgrade.org/"),
+    ("Techfest IIT Bombay", "https://iitianvibes.com/blog/techfest-2026/"),
+])
+def test_does_not_resemble(name, url):
+    assert not vu._resembles(name, url)
+
+
+def test_name_like_candidate_preferred_over_higher_ranked():
+    r = vu._verdict("https://hasgeek.com/reactfoo/", [
+        hit("https://react.dev/community/conferences"), hit("https://reactfoo.in/"),
+    ], top_n=5, name="ReactFoo")
+    assert (r.verdict, r.suggested) == (vu.CHANGED, "https://reactfoo.in/")
+
+
+def test_unsure_when_no_candidate_resembles_name():
+    r = vu._verdict("https://mlopsworld.com", [
+        hit("https://www.webmobi.com/discovery/events/mlops-world-2026"),
+        hit("https://www.aiexpertmagazine.com/mlops-world/"),
+    ], top_n=5, name="MLOps World")
+    assert r.verdict == vu.UNSURE and r.suggested is None
+
+
+def test_unsure_is_not_applied():
+    entries = [{"url": "https://a.org/", "name": "A"}]
+    res = vu.Result(name="A", current_url="https://a.org/", verdict=vu.UNSURE)
+    assert vu.apply_changes(entries, [res]) == []

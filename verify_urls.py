@@ -12,7 +12,10 @@ Output:
 
 Verdicts:
   OK         the stored URL's host appears in the top search results
-  CHANGED    it doesn't; the top non-aggregator result is suggested (check by hand)
+  CHANGED    it doesn't, and a result whose domain resembles the event name is
+             suggested (check by hand)
+  UNSURE     it doesn't, but no result looks like the event's own site; nothing
+             is suggested
   NOT FOUND  the search returned nothing usable
   ERROR      the search failed (e.g. rate limited after retries)
 
@@ -25,6 +28,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import re
 import sys
 import time
 from dataclasses import dataclass, field
@@ -45,6 +49,7 @@ MAX_CONSECUTIVE_ERRORS = 5  # circuit breaker: assume search is blocked after th
 OK = "OK"
 CHANGED = "CHANGED"
 NOT_FOUND = "NOT FOUND"
+UNSURE = "UNSURE"
 ERROR = "ERROR"
 
 # Ticketing, listing, social and news sites that rank well but are never the
@@ -104,16 +109,48 @@ def _is_aggregator(url: str) -> bool:
 
 # ── Search + verdict ──────────────────────────────────────────────────────────
 
+# Words too common in event names to identify a site on their own.
+_GENERIC = {
+    "conference", "conf", "summit", "world", "tech", "days", "day", "open",
+    "source", "india", "international", "global", "annual", "expo", "show",
+    "symposium", "forum", "event", "events", "community", "developer",
+    "developers", "great", "local", "north", "south", "east", "west", "america",
+}
+
+
+def _resembles(name: str, url: str) -> bool:
+    """
+    Does the URL's host look like it belongs to the event `name`? True when the
+    host contains a distinctive word of the name (reactfoo.in), the name's
+    acronym as a host label (lpc.events for Linux Plumbers Conference), or two or
+    more of the name's words (bengalurutechsummit.com for Bangalore Tech Summit).
+    """
+    host = _host(url)
+    if not host:
+        return False
+    flat = re.sub(r"[^a-z0-9]", "", host)
+    labels = host.split(".")
+    words = [w for w in re.findall(r"[a-z0-9]+", name.lower()) if len(w) >= 3]
+    if any(w not in _GENERIC and len(w) >= 4 and w in flat for w in words):
+        return True
+    acronym = "".join(w[0] for w in re.findall(r"[a-z0-9]+", name.lower()))
+    if len(acronym) >= 3 and acronym in labels:
+        return True
+    return sum(w in flat for w in words) >= 2
+
+
 def _query(name: str) -> str:
     return f'"{name}" {YEAR} conference'
 
 
 def _verdict(current: str, hits: list[dict], top_n: int,
-             rejected: list[str] = ()) -> Result:
+             rejected: list[str] = (), name: str | None = None) -> Result:
     """
     Pure decision logic over search hits (each a dict with 'href', 'title').
     `rejected` are URLs a human already turned down for this event; candidates on
-    the same site are never suggested.
+    the same site are never suggested. With `name`, only a candidate whose host
+    resembles the event name is suggested (CHANGED); otherwise the result is
+    UNSURE and nothing is proposed.
     """
     r = Result(name="", current_url=current)
     urls = [h.get("href") for h in hits if h.get("href")]
@@ -121,12 +158,15 @@ def _verdict(current: str, hits: list[dict], top_n: int,
         r.verdict = NOT_FOUND
         return r
 
-    r.candidates = [
+    filtered = [
         {"url": h["href"], "title": h.get("title", "")}
         for h in hits
         if h.get("href") and not _is_aggregator(h["href"])
         and not any(_same_site(h["href"], rj) for rj in rejected)
-    ][:3]
+    ]
+    if name:  # name-like sites first, keeping search order within each group
+        filtered.sort(key=lambda c: not _resembles(name, c["url"]))
+    r.candidates = filtered[:3]
 
     for u in urls[:top_n]:
         if _same_site(current, u):
@@ -135,6 +175,9 @@ def _verdict(current: str, hits: list[dict], top_n: int,
 
     if not r.candidates:
         r.verdict = NOT_FOUND
+        return r
+    if name and not _resembles(name, r.candidates[0]["url"]):
+        r.verdict = UNSURE  # top hits are articles/listings, not the event's own site
         return r
     r.verdict = CHANGED
     r.suggested = _retemplatize(r.candidates[0]["url"], current)
@@ -168,7 +211,7 @@ def check_entry(ddgs: DDGS, entry: dict, max_results: int, top_n: int,
         r = Result(name=name, current_url=url, error=str(exc))
         print(f"  {name}: {ERROR} ({exc})", flush=True)
         return r
-    r = _verdict(url, hits, top_n, rejected)
+    r = _verdict(url, hits, top_n, rejected, name=name)
     r.name = name
     print(f"  {name}: {r.verdict}", flush=True)
     return r
@@ -176,7 +219,7 @@ def check_entry(ddgs: DDGS, entry: dict, max_results: int, top_n: int,
 
 # ── Output ────────────────────────────────────────────────────────────────────
 
-_ORDER = {CHANGED: 0, NOT_FOUND: 1, ERROR: 2, OK: 3}
+_ORDER = {CHANGED: 0, UNSURE: 1, NOT_FOUND: 2, ERROR: 3, OK: 4}
 
 
 def _print_table(results: list[Result]) -> None:
@@ -279,10 +322,12 @@ def write_summary(path: Path, applied: list[Result], results: list[Result]) -> N
         others = "<br>".join(f"[{cell(c['title'] or c['url'])}]({c['url']})"
                              for c in r.candidates[1:]) or "—"
         lines.append(f"| {cell(r.name)} | {r.current_url} | {r.suggested} | {others} |")
-    rest = [r for r in results if r.verdict in (NOT_FOUND, ERROR)]
+    rest = [r for r in results if r.verdict in (UNSURE, NOT_FOUND, ERROR)]
     if rest:
-        lines += ["", "<details><summary>Not found / errors (no change made)</summary>", ""]
-        lines += [f"- {r.name}: {r.verdict}{f' ({r.error})' if r.error else ''}" for r in rest]
+        lines += ["", "<details><summary>Unsure / not found / errors (no change made)</summary>", ""]
+        for r in sorted(rest, key=lambda r: (_ORDER[r.verdict], r.name.lower())):
+            top = f" — top hit: {r.candidates[0]['url']}" if r.candidates else ""
+            lines.append(f"- {r.name}: {r.verdict}{f' ({r.error})' if r.error else ''}{top}")
         lines += ["", "</details>"]
     path.write_text("\n".join(lines) + "\n")
 
@@ -344,7 +389,7 @@ def main(argv: list[str] | None = None) -> None:
         results.append(r)
 
     _print_table(results)
-    counts = {v: sum(r.verdict == v for r in results) for v in (OK, CHANGED, NOT_FOUND, ERROR)}
+    counts = {v: sum(r.verdict == v for r in results) for v in (OK, CHANGED, UNSURE, NOT_FOUND, ERROR)}
     flagged = _write_report(results)
 
     print()

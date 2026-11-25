@@ -120,8 +120,12 @@ events_list.yaml name  →  ddgs.text('"<name>" <year> conference')  →  compar
 - **OK** — the stored URL's host (or a parent/child host, e.g. `2026.pyconfhyd.org` ↔ `pyconfhyd.org`)
   appears in the top `--results` hits (default 5). Hosts are compared exactly, so
   `us.pycon.org` does not confirm `in.pycon.org`.
-- **CHANGED** — it doesn't; the top hit that isn't a ticketing/listing/social site
-  (see `AGGREGATORS`) is suggested, keeping `{year}` templates via `_retemplatize()`.
+- **CHANGED** — it doesn't, and a hit that isn't a ticketing/listing/social site
+  (see `AGGREGATORS`) has a domain resembling the event name (`_resembles()`: a
+  distinctive name word, the acronym, or 2+ name words in the host). That hit is
+  suggested, keeping `{year}` templates via `_retemplatize()`.
+- **UNSURE** — it doesn't, but no hit looks like the event's own site (only articles
+  or listings). Nothing is suggested or applied; it's listed in the report/PR body.
 - **NOT FOUND** / **ERROR** — nothing usable, or the search failed after retries.
 
 ddgs scrapes search engines, so it can be throttled; the script waits `--delay`
