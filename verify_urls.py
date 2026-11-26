@@ -28,6 +28,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import os
 import re
 import sys
 import time
@@ -45,6 +46,9 @@ from tech_events.pipelines import EVENTS_LIST_FILE, YEAR, _retemplatize
 REPORT_FILE = Path("url_report.yaml")
 IGNORE_FILE = Path("verify_urls_ignore.yaml")
 MAX_CONSECUTIVE_ERRORS = 5  # circuit breaker: assume search is blocked after this many
+# When the breaker trips, pause this long and retry the failed entries (blocks are
+# often brief); after the last pause, give up on the remaining entries.
+BLOCK_COOLDOWNS_S = (60, 180)
 
 OK = "OK"
 CHANGED = "CHANGED"
@@ -370,10 +374,22 @@ def main(argv: list[str] | None = None) -> None:
     ddgs = DDGS()
     results = []
     consecutive_errors = 0
-    for i, entry in enumerate(entries):
+    cooldowns = list(BLOCK_COOLDOWNS_S)
+    i = 0
+    while i < len(entries):
         if consecutive_errors >= MAX_CONSECUTIVE_ERRORS:
-            # Search is blocked/throttled; stop hammering it. Remaining entries are
-            # reported as ERROR and left unchanged.
+            if cooldowns:
+                # Search looks blocked. Pause, then retry the entries that just failed.
+                pause = cooldowns.pop(0)
+                print(f"  {MAX_CONSECUTIVE_ERRORS} searches failed in a row — "
+                      f"pausing {pause:g}s, then retrying.", flush=True)
+                time.sleep(pause)
+                del results[-consecutive_errors:]
+                i -= consecutive_errors
+                consecutive_errors = 0
+                continue
+            # Still blocked; stop hammering it. Remaining entries are reported as
+            # ERROR and left unchanged.
             results += [Result(name=e["name"], current_url=e["url"],
                                error="not searched: search appears blocked")
                         for e in entries[i:]]
@@ -382,11 +398,12 @@ def main(argv: list[str] | None = None) -> None:
             break
         if i:
             time.sleep(args.delay)
-        r = check_entry(ddgs, entry, max_results=max(args.results, 10),
+        r = check_entry(ddgs, entries[i], max_results=max(args.results, 10),
                         top_n=args.results,
-                        rejected=reject.get(entry["name"].lower(), []))
+                        rejected=reject.get(entries[i]["name"].lower(), []))
         consecutive_errors = consecutive_errors + 1 if r.verdict == ERROR else 0
         results.append(r)
+        i += 1
 
     _print_table(results)
     counts = {v: sum(r.verdict == v for r in results) for v in (OK, CHANGED, UNSURE, NOT_FOUND, ERROR)}
@@ -411,10 +428,17 @@ def main(argv: list[str] | None = None) -> None:
         if args.summary:
             write_summary(args.summary, applied, results)
 
-    # Fail loudly if search is broken (e.g. the runner's IP is blocked) rather
-    # than silently reporting "no changes" forever.
+    # Search being blocked (e.g. the runner's IP is throttled) is outside this
+    # repo's control and usually clears by the next run, so it is a warning, not a
+    # failure: a red run would mark main's commit as failing. In Actions it shows
+    # as an annotation on the run rather than silently reporting "no changes".
     if counts[ERROR] == len(results):
-        sys.exit("Every search failed — DuckDuckGo may be blocking or throttling this host.")
+        msg = ("Every search failed — DuckDuckGo may be blocking or throttling this host. "
+               "No URLs were checked.")
+        if os.environ.get("GITHUB_ACTIONS") == "true":
+            print(f"::warning title=URL check skipped::{msg}")
+        else:
+            print(f"warning: {msg}", file=sys.stderr)
 
 
 if __name__ == "__main__":
