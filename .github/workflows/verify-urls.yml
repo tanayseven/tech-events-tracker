@@ -12,6 +12,7 @@ on:
 permissions:
   contents: write        # push the bot branch
   pull-requests: write   # open/update the PR
+  actions: write         # dispatch ci.yml on the bot branch
 
 concurrency:
   group: verify-urls
@@ -44,6 +45,7 @@ jobs:
       # No-op when events_list.yaml is unchanged; otherwise force-updates the same
       # branch, so there is at most one open URL-update PR at a time.
       - name: Open or update pull request
+        id: cpr
         uses: peter-evans/create-pull-request@v7
         with:
           branch: bot/verify-urls
@@ -53,3 +55,11 @@ jobs:
           title: Update stale event URLs
           body-path: ${{ runner.temp }}/pr-body.md
           labels: automated
+
+      # PRs pushed with GITHUB_TOKEN don't trigger pull_request workflows, so
+      # kick off CI explicitly; its checks attach to the PR's head commit.
+      - name: Run CI on the PR branch
+        if: steps.cpr.outputs.pull-request-operation == 'created' || steps.cpr.outputs.pull-request-operation == 'updated'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run ci.yml --ref bot/verify-urls
