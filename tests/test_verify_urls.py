@@ -186,12 +186,19 @@ def test_write_summary(tmp_path):
 
 # ── main(): circuit breaker ──────────────────────────────────────────────────
 
-def test_main_stops_after_consecutive_errors(tmp_path, monkeypatch):
-    names = [f"E{i}" for i in range(8)]
+def _events_list(tmp_path, monkeypatch, n=8):
+    names = [f"E{i}" for i in range(n)]
     (tmp_path / "events_list.yaml").write_text(
         "".join(f"- url: https://{n.lower()}.org/\n  name: {n}\n" for n in names))
     monkeypatch.chdir(tmp_path)
-    calls = []
+    return names
+
+
+def test_main_warns_and_succeeds_when_search_stays_blocked(tmp_path, monkeypatch, capsys):
+    _events_list(tmp_path, monkeypatch)
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    calls, pauses = [], []
+    monkeypatch.setattr(vu.time, "sleep", pauses.append)
 
     class AlwaysFail:
         def text(self, query, max_results):
@@ -199,10 +206,35 @@ def test_main_stops_after_consecutive_errors(tmp_path, monkeypatch):
             raise DDGSException("blocked")
 
     monkeypatch.setattr(vu, "DDGS", AlwaysFail)
-    with pytest.raises(SystemExit, match="Every search failed"):
-        vu.main(["--delay", "0"])
-    # 5 entries x 3 attempts each, then the breaker trips; E5..E7 never searched.
-    assert len(calls) == vu.MAX_CONSECUTIVE_ERRORS * 3
+    vu.main(["--delay", "0"])  # no SystemExit: a blocked search must not fail the run
+
+    # 5 entries x 3 attempts, once per round: the first try plus one retry per cool-down.
+    rounds = 1 + len(vu.BLOCK_COOLDOWNS_S)
+    assert len(calls) == vu.MAX_CONSECUTIVE_ERRORS * 3 * rounds
+    assert [p for p in pauses if p in vu.BLOCK_COOLDOWNS_S] == list(vu.BLOCK_COOLDOWNS_S)
+    assert "::warning title=URL check skipped::Every search failed" in capsys.readouterr().out
+
+
+def test_main_resumes_after_block_clears(tmp_path, monkeypatch):
+    _events_list(tmp_path, monkeypatch)
+    blocked = {"on": True}
+
+    def sleep(s):
+        if s in vu.BLOCK_COOLDOWNS_S:
+            blocked["on"] = False  # the block lifts during the first cool-down
+
+    monkeypatch.setattr(vu.time, "sleep", sleep)
+
+    class BlockedThenOk:
+        def text(self, query, max_results):
+            if blocked["on"]:
+                raise DDGSException("blocked")
+            name = query.split('"')[1]
+            return [hit(f"https://{name.lower()}.org/")]
+
+    monkeypatch.setattr(vu, "DDGS", BlockedThenOk)
+    vu.main(["--delay", "0"])
+    assert not (tmp_path / "url_report.yaml").exists()  # every entry OK, none left as ERROR
 
 
 def test_summary_escapes_pipes_in_titles(tmp_path):
