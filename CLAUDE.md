@@ -16,7 +16,8 @@
 - `extractors.yaml` — auto-generated; XPath selectors per series for local extraction (skip Claude on re-runs)
 - `verify_urls.py` — URL checker: searches DuckDuckGo (`ddgs`, no API key) by event name and flags `events_list.yaml` URLs that don't appear in the top results; writes `url_report.yaml` (gitignored). `--apply` writes new URLs into `events_list.yaml` (CI only)
 - `verify_urls_ignore.yaml` — human-reviewed exceptions for `verify_urls.py`: `skip` (event names never searched) and `reject` (name → turned-down URLs)
-- `.github/workflows/verify-urls.yml` — daily job: runs `verify_urls.py --apply` and opens/updates one PR (`bot/verify-urls`) when new URLs are found
+- `.github/workflows/verify-urls.yml` — daily job: runs `verify_urls.py --apply` and opens/updates one PR (`bot/verify-urls`) when new URLs are found, then dispatches `ci.yml` on that branch (GITHUB_TOKEN-created PRs don't trigger `pull_request` workflows)
+- `.github/workflows/ci.yml` — PR checks: `uv sync --locked`, `pytest`, `app.py freeze`; uploads the built site as a `site-preview` artifact
 - `tests/` — pytest suite (`uv run pytest`)
 - `pyproject.toml` / `uv.lock` — Python dependencies managed by uv
 - `mise.toml` — installs uv via mise
