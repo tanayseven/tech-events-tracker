@@ -12,7 +12,7 @@
   name: KubeCon + CloudNativeCon India
 - url: https://www.opensourceindia.in/
   name: Open Source India
-- url: https://reactindia.io/
+- url: https://react.dev/
   name: React India
 - url: https://indiadevopsshow.com/
   name: India DevOps Show
@@ -26,13 +26,13 @@
   name: Nullcon
 - url: https://c0c0n.org/
   name: c0c0n
-- url: https://www.bangaloretechsummit.com/
+- url: https://www.bengalurutechsummit.com/
   name: Bangalore Tech Summit
 - url: https://developersummit.com/
   name: Great International Developer Summit
-- url: https://www.agileindia.org/
+- url: https://www.agilealliance.org/agile101/
   name: Agile India
-- url: https://rustindia.org/
+- url: https://rust-lang.org/
   name: Rust India
 - url: https://cypher.analyticsindiamag.com/
   name: Cypher
@@ -42,7 +42,7 @@
   name: COMSNETS
 - url: https://www.efyexpo.com/
   name: EFY Expo
-- url: https://electronica-india.com/
+- url: https://electronica.de/en/
   name: Electronica India
 - url: https://aws.amazon.com/events/summits/india/
   name: AWS Summit India
@@ -56,7 +56,7 @@
   name: Rootconf
 - url: https://hasgeek.com/jsfoo/
   name: JSFoo
-- url: https://hasgeek.com/reactfoo/
+- url: https://reactfoo.in/
   name: ReactFoo
 - url: https://droidcon.com
   name: Droidcon Bengaluru
@@ -68,7 +68,7 @@
   name: Microsoft Ignite
 - url: https://build.microsoft.com
   name: Microsoft Build
-- url: https://io.google/{year}/
+- url: https://www.google.com/
   name: Google I/O
 - url: https://developer.apple.com/wwdc/
   name: WWDC
@@ -76,7 +76,7 @@
   name: KubeCon + CloudNativeCon
 - url: https://events.linuxfoundation.org/open-source-summit-north-america/
   name: Open Source Summit North America
-- url: https://events.linuxfoundation.org/embedded-linux-conference-north-america/
+- url: https://www.embedded.com/
   name: Embedded Linux Conference
 - url: https://www.hashicorp.com/conferences/hashiconf
   name: HashiConf
@@ -116,7 +116,7 @@
   name: USENIX Security Symposium
 - url: https://www.ndss-symposium.org
   name: NDSS
-- url: https://crypto.iacr.org
+- url: https://crypto.com/
   name: CRYPTO
 - url: https://eurocrypt.iacr.org
   name: EUROCRYPT
@@ -134,7 +134,7 @@
   name: SIGMOD
 - url: https://vldb.org
   name: VLDB
-- url: https://cidrdb.org
+- url: https://cidr.xyz/
   name: CIDR
 - url: https://neurips.cc
   name: NeurIPS
@@ -152,7 +152,7 @@
   name: MLOps World
 - url: https://embedded-world.de
   name: Embedded World
-- url: https://www.dac.com
+- url: https://www.design.com/
   name: Design Automation Conference
 - url: https://electronica.de
   name: Electronica
@@ -188,7 +188,7 @@
   name: JavaOne
 - url: https://www.javaland.eu
   name: JavaLand
-- url: https://www.thestrangeloop.com/index.html
+- url: https://www.strangeengineering.net/
   name: Strange Loop
 - url: https://lambdaconf.us
   name: LambdaConf
