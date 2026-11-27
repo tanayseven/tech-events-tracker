@@ -46,7 +46,7 @@ jobs:
       # branch, so there is at most one open URL-update PR at a time.
       - name: Open or update pull request
         id: cpr
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           branch: bot/verify-urls
           delete-branch: true
